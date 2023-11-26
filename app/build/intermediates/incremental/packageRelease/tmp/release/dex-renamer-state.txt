@@ -1,0 +1,4 @@
+#Wed Nov 22 10:57:09 GMT+03:30 2023
+base.0=D\:\\CRMP\\donat + rega\\java\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

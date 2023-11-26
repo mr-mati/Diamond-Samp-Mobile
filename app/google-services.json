@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "598420839207",
+    "project_id": "persian-796ba",
+    "storage_bucket": "persian-796ba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:598420839207:android:d4a4d4771fa990287a6702",
+        "android_client_info": {
+          "package_name": "com.mati.game"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDr10iA7sfm8Bqe3xt6WN1diX_pL_Rji5I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
