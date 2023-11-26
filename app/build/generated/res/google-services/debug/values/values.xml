@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">598420839207</string>
+    <string name="google_api_key" translatable="false">AIzaSyDr10iA7sfm8Bqe3xt6WN1diX_pL_Rji5I</string>
+    <string name="google_app_id" translatable="false">1:598420839207:android:d4a4d4771fa990287a6702</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDr10iA7sfm8Bqe3xt6WN1diX_pL_Rji5I</string>
+    <string name="google_storage_bucket" translatable="false">persian-796ba.appspot.com</string>
+    <string name="project_id" translatable="false">persian-796ba</string>
+</resources>

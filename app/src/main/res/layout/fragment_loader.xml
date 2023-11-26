@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/background_loader"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/launcher_downloader_bg">
+
+    <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/_5sdp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rcBackgroundColor="#25ffffff"
+        app:rcBackgroundPadding="0dp"
+        app:rcMax="100.0"
+        app:rcProgress="0.0"
+        app:rcProgressColor="@color/gradient1"
+        app:rcRadius="@dimen/_3sdp"
+        app:rcReverse="false"
+        app:rcSecondaryProgress="0.0"
+        app:rcSecondaryProgressColor="@color/gradient2" />
+
+    <TextView
+        android:id="@+id/loading_text"
+        style="@style/MontserratRegular14sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="درحال بررسی داده ها..."
+        android:textColor="@color/white"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/progress_bar"
+        app:layout_constraintEnd_toEndOf="@+id/progress_bar" />
+
+    <TextView
+        android:id="@+id/loading_percent"
+        style="@style/MontserratRegular14sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/progress_bar"
+        app:layout_constraintStart_toStartOf="@+id/progress_bar" />
+</androidx.constraintlayout.widget.ConstraintLayout>
