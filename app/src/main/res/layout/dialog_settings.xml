@@ -4,6 +4,7 @@
     android:id="@+id/ll_settings_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layoutDirection="ltr"
     android:orientation="vertical">
 
     <com.google.android.material.tabs.TabLayout

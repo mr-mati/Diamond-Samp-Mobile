@@ -4,6 +4,7 @@
     android:id="@+id/sd_dialog_item_main"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
+    android:layoutDirection="ltr"
     android:minWidth="@dimen/_141sdp"
     android:paddingRight="@dimen/_8sdp">
 

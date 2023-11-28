@@ -61,7 +61,7 @@ public class DialogClientSettingsColorFragment extends Fragment implements ISave
 
                 ColorPickerDialog.Builder dialog = new ColorPickerDialog.Builder(mContext)
                         .setPreferenceName("color6")
-                        .setPositiveButton("Применить",
+                        .setPositiveButton("درخواست دادن",
                                 new ColorEnvelopeListener() {
                                     @Override
                                     public void onColorSelected(ColorEnvelope envelope, boolean fromUser) {
@@ -70,7 +70,7 @@ public class DialogClientSettingsColorFragment extends Fragment implements ISave
                                         getValues();
                                     }
                                 })
-                        .setNegativeButton("Закрыть",
+                        .setNegativeButton("بستن",
                                 new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -100,7 +100,7 @@ public class DialogClientSettingsColorFragment extends Fragment implements ISave
 
                 ColorPickerDialog.Builder dialog = new ColorPickerDialog.Builder(mContext)
                         .setPreferenceName("color9")
-                        .setPositiveButton("Применить",
+                        .setPositiveButton("درخواست دادن",
                                 new ColorEnvelopeListener() {
                                     @Override
                                     public void onColorSelected(ColorEnvelope envelope, boolean fromUser) {
@@ -109,7 +109,7 @@ public class DialogClientSettingsColorFragment extends Fragment implements ISave
                                         getValues();
                                     }
                                 })
-                        .setNegativeButton("Закрыть",
+                        .setNegativeButton("بستن",
                                 new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -139,7 +139,7 @@ public class DialogClientSettingsColorFragment extends Fragment implements ISave
 
                 ColorPickerDialog.Builder dialog = new ColorPickerDialog.Builder(mContext)
                         .setPreferenceName("color0")
-                        .setPositiveButton("Применить",
+                        .setPositiveButton("درخواست دادن",
                                 new ColorEnvelopeListener() {
                                     @Override
                                     public void onColorSelected(ColorEnvelope envelope, boolean fromUser) {
@@ -148,7 +148,7 @@ public class DialogClientSettingsColorFragment extends Fragment implements ISave
                                         getValues();
                                     }
                                 })
-                        .setNegativeButton("Закрыть",
+                        .setNegativeButton("بستن",
                                 new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -178,7 +178,7 @@ public class DialogClientSettingsColorFragment extends Fragment implements ISave
 
                 ColorPickerDialog.Builder dialog = new ColorPickerDialog.Builder(mContext)
                         .setPreferenceName("color1")
-                        .setPositiveButton("Применить",
+                        .setPositiveButton("درخواست دادن",
                                 new ColorEnvelopeListener() {
                                     @Override
                                     public void onColorSelected(ColorEnvelope envelope, boolean fromUser) {
@@ -187,7 +187,7 @@ public class DialogClientSettingsColorFragment extends Fragment implements ISave
                                         getValues();
                                     }
                                 })
-                        .setNegativeButton("Закрыть",
+                        .setNegativeButton("بستن",
                                 new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -217,7 +217,7 @@ public class DialogClientSettingsColorFragment extends Fragment implements ISave
 
                 ColorPickerDialog.Builder dialog = new ColorPickerDialog.Builder(mContext)
                         .setPreferenceName("color2")
-                        .setPositiveButton("Применить",
+                        .setPositiveButton("درخواست دادن",
                                 new ColorEnvelopeListener() {
                                     @Override
                                     public void onColorSelected(ColorEnvelope envelope, boolean fromUser) {
@@ -226,7 +226,7 @@ public class DialogClientSettingsColorFragment extends Fragment implements ISave
                                         getValues();
                                     }
                                 })
-                        .setNegativeButton("Закрыть",
+                        .setNegativeButton("بستن",
                                 new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -255,7 +255,7 @@ public class DialogClientSettingsColorFragment extends Fragment implements ISave
 
                 ColorPickerDialog.Builder dialog = new ColorPickerDialog.Builder(mContext)
                         .setPreferenceName("color3")
-                        .setPositiveButton("Применить",
+                        .setPositiveButton("درخواست دادن",
                                 new ColorEnvelopeListener() {
                                     @Override
                                     public void onColorSelected(ColorEnvelope envelope, boolean fromUser) {
@@ -264,7 +264,7 @@ public class DialogClientSettingsColorFragment extends Fragment implements ISave
                                         getValues();
                                     }
                                 })
-                        .setNegativeButton("Закрыть",
+                        .setNegativeButton("بستن",
                                 new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -294,7 +294,7 @@ public class DialogClientSettingsColorFragment extends Fragment implements ISave
 
                 ColorPickerDialog.Builder dialog = new ColorPickerDialog.Builder(mContext)
                         .setPreferenceName("color4")
-                        .setPositiveButton("Применить",
+                        .setPositiveButton("درخواست دادن",
                                 new ColorEnvelopeListener() {
                                     @Override
                                     public void onColorSelected(ColorEnvelope envelope, boolean fromUser) {
@@ -303,7 +303,7 @@ public class DialogClientSettingsColorFragment extends Fragment implements ISave
                                         getValues();
                                     }
                                 })
-                        .setNegativeButton("Закрыть",
+                        .setNegativeButton("بستن",
                                 new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -333,7 +333,7 @@ public class DialogClientSettingsColorFragment extends Fragment implements ISave
 
                 ColorPickerDialog.Builder dialog = new ColorPickerDialog.Builder(mContext)
                         .setPreferenceName("color5")
-                        .setPositiveButton("Применить",
+                        .setPositiveButton("درخواست دادن",
                                 new ColorEnvelopeListener() {
                                     @Override
                                     public void onColorSelected(ColorEnvelope envelope, boolean fromUser) {
@@ -342,7 +342,7 @@ public class DialogClientSettingsColorFragment extends Fragment implements ISave
                                         getValues();
                                     }
                                 })
-                        .setNegativeButton("Закрыть",
+                        .setNegativeButton("بستن",
                                 new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {

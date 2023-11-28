@@ -2,6 +2,7 @@
     android:id="@+id/dw_root"
     android:layout_width="wrap_content"
     android:layout_height="50dp"
+    android:layoutDirection="ltr"
     android:background="@drawable/background_window_red"
     android:orientation="horizontal"
     android:visibility="visible">

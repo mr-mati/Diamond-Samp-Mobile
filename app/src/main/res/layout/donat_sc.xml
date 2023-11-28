@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     android:background="@drawable/background_window_square_red"
     android:gravity="center"
+    android:layoutDirection="ltr"
     android:layout_gravity="center"
     android:orientation="vertical"
     android:visibility="visible">

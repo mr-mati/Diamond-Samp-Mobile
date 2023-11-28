@@ -5,6 +5,7 @@
     android:id="@+id/linearLayout4regsx"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:layoutDirection="ltr"
     android:background="@drawable/reg_sex_bg"
     android:orientation="vertical">
 
