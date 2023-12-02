@@ -66,6 +66,10 @@
             android:name="com.mati.launcher.activity.LoaderActivity"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.mati.launcher.activity.UpdateActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <meta-data
             android:name="android.max_aspect"

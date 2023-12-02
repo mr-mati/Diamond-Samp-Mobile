@@ -4,6 +4,7 @@
     android:id="@+id/main_activity_root"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:layoutDirection="ltr"
     android:background="@drawable/launcher_main_bg">
 
     <EditText

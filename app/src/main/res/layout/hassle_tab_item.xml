@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/hassle_tab_item"
     android:layout_width="match_parent"
+    android:layoutDirection="ltr"
     android:layout_height="@dimen/_28sdp"
     android:paddingEnd="@dimen/_10sdp">
 

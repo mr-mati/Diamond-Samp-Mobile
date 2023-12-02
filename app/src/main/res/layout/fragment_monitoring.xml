@@ -3,6 +3,7 @@
     android:layout_height="fill_parent"
     android:clipToPadding="false"
     android:orientation="vertical"
+    android:layoutDirection="ltr"
     android:paddingLeft="@dimen/_14sdp"
     android:paddingTop="@dimen/_18sdp"
     android:paddingRight="@dimen/_14sdp">
