@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\CRMP\\donat + rega\\java\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-port\\values-port.xml",
+            "outputFile": "com.mati.game.app-mergeReleaseResources-38:/values-port/values-port.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\jalaxi\\.gradle\\caches\\transforms-3\\a779a3b8c9b45937af6c52ed205d68ee\\transformed\\appcompat-1.2.0\\res\\values-port\\values-port.xml",
+                    "source": "C:\\Users\\jalaxi\\.gradle\\caches\\transforms-3\\af8ef9a1d5288bec9e3e2af7b9209884\\transformed\\appcompat-1.2.0\\res\\values-port\\values-port.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

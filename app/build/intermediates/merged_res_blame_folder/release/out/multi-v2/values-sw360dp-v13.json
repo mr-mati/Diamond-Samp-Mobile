@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\CRMP\\donat + rega\\java\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-sw360dp-v13\\values-sw360dp-v13.xml",
+            "outputFile": "com.mati.game.app-mergeReleaseResources-38:/values-sw360dp-v13/values-sw360dp-v13.xml",
             "map": [
                 {
                     "source": "D:\\CRMP\\donat + rega\\java\\app\\src\\main\\res\\values-sw360dp\\dimens.xml",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\jalaxi\\.gradle\\caches\\transforms-3\\245285315bbc8412b0d592b76a8cb7ea\\transformed\\preference-1.1.1\\res\\values-sw360dp-v13\\values-sw360dp-v13.xml",
+                    "source": "C:\\Users\\jalaxi\\.gradle\\caches\\transforms-3\\7118975fb6755d927b10de2a7bc4bf13\\transformed\\preference-1.1.1\\res\\values-sw360dp-v13\\values-sw360dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

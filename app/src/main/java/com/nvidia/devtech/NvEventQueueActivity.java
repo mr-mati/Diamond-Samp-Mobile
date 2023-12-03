@@ -1475,7 +1475,7 @@ public static void fixEditTextForAndroid10Xiaomi(EditText editText) {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.blackrussia.launcher");
+                Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.mati.launcher");
                 launchIntent.putExtra("minimize", true);
                 if(ResumeEventDone)
                 {
@@ -1651,7 +1651,6 @@ public static void fixEditTextForAndroid10Xiaomi(EditText editText) {
 
 
     public void showHudAndLogo() {
-
     	runOnUiThread(() -> {
     	   if(logo)
     	        findViewById(R.id.logobr).setVisibility(View.VISIBLE);

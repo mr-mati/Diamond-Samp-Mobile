@@ -1909,6 +1909,7 @@
     <string name="expand_button_title">Advanced</string>
     <string name="fab_transformation_scrim_behavior" translatable="false">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
     <string name="fab_transformation_sheet_behavior" translatable="false">com.google.android.material.transformation.FabTransformationSheetBehavior</string>
+    <string name="fcm_fallback_notification_channel_label">Miscellaneous</string>
     <string name="firebase_database_url" translatable="false">https://black-russia-419fa-default-rtdb.firebaseio.com</string>
     <string name="gcm_defaultSenderId" translatable="false">1019412995639</string>
     <string name="google_api_key" translatable="false">AIzaSyChvEPu7XIf4oTMyXis21Z-fN3Z5Vhct-8</string>

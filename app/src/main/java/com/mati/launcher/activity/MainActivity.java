@@ -15,7 +15,6 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -26,6 +25,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.mati.game.R;
 import com.mati.game.core.GTASA;
 import com.mati.weikton.reg.Preferences;
@@ -41,14 +41,15 @@ import soup.neumorphism.NeumorphCardView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private FirebaseAnalytics mFirebaseAnalytics;
+
     EditText nickname;
     ImageButton ib_info;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_home);
-
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.button_click);
 
         if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED || checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED || checkSelfPermission(Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_DENIED) {
@@ -244,7 +245,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickPlay() {
         if (IsGameInstalled()) {
-            startActivity(new Intent(this, GTASA.class));
+            if (IsUpdateInstalled()) {
+                startActivity(new Intent(this, GTASA.class));
+            } else {
+                ToUpdate();
+            }
         } else {
             ToLoad();
         }
@@ -256,8 +261,18 @@ public class MainActivity extends AppCompatActivity {
         return file.exists();
     }
 
+    private boolean IsUpdateInstalled() {
+        String CheckFile = Environment.getExternalStorageDirectory() + "/PersianRp/version.ini";
+        File file = new File(CheckFile);
+        return file.exists();
+    }
+
     private void ToLoad() {
         startActivity(new Intent(this, LoaderActivity.class));
+    }
+
+    private void ToUpdate() {
+        startActivity(new Intent(this, UpdateActivity.class));
     }
 
     private void InitLogic() {

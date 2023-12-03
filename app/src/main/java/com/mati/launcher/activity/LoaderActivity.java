@@ -22,7 +22,7 @@ import java.io.File;
 import java.util.Formatter;
 
 public class LoaderActivity extends AppCompatActivity {
-    RoundCornerProgressBar progressbar;
+
     File folder;
 
     @Override
@@ -36,7 +36,7 @@ public class LoaderActivity extends AppCompatActivity {
 
     public void startDownload() {
         folder = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-        String url = "https://fastupload.io/9OLjLVQW3aE8/fhST7ySg1FTo7Pw/qw1zeZAvVGXyn/PersianRp.7z";
+        String url = "http://62.3.14.22/dl/PersianRp.7z";
         createDownloadTask(url, folder.getPath()).start();
     }
 

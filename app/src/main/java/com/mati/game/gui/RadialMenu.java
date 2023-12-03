@@ -69,7 +69,7 @@ public class RadialMenu {
                 if(!turbo)
                     button_turbo.setImageResource(R.drawable.radial_turbo_checked);
                 else 
-                    button_turbo.setImageResource(R.drawable.radial_turbo_not_checked);
+                    button_turbo.setImageResource(R.drawable.radial_suspension_not_checked);
                 turbo = !turbo;
             }
         });
@@ -113,7 +113,7 @@ public class RadialMenu {
                 if(!suspension)
                     button_suspension.setImageResource(R.drawable.radial_suspension_checked);
                 else 
-                    button_suspension.setImageResource(R.drawable.radial_suspension_not_checked);
+                    button_suspension.setImageResource(R.drawable.radial_turbo_not_checked);
                 suspension = !suspension;
             }
         });
@@ -151,7 +151,7 @@ public class RadialMenu {
         if(suspension)
             button_suspension.setImageResource(R.drawable.radial_suspension_checked);
         else 
-            button_suspension.setImageResource(R.drawable.radial_suspension_not_checked);
+            button_suspension.setImageResource(R.drawable.radial_turbo_not_checked);
         if(launch_control)
             button_launch_control.setImageResource(R.drawable.radial_control_checked);
         else 
@@ -163,7 +163,7 @@ public class RadialMenu {
         if(turbo)
             button_turbo.setImageResource(R.drawable.radial_turbo_checked);
         else 
-            button_turbo.setImageResource(R.drawable.radial_turbo_not_checked);
+            button_turbo.setImageResource(R.drawable.radial_suspension_not_checked);
         
         this.park = park;
         this.key = key;

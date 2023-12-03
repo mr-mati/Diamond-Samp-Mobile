@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\CRMP\\donat + rega\\java\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-w360dp-port-v13\\values-w360dp-port-v13.xml",
+            "outputFile": "com.mati.game.app-mergeReleaseResources-38:/values-w360dp-port-v13/values-w360dp-port-v13.xml",
             "map": [
                 {
                     "source": "D:\\CRMP\\donat + rega\\java\\app\\src\\main\\res\\values-w360dp-port\\dimens.xml",
