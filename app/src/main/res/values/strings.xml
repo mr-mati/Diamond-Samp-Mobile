@@ -86,6 +86,7 @@
 
     <string name="not_Download_data">دیتای بازی یافت نشد</string>
     <string name="installation_data">دیتای بازی یافت شد, میتونید وارد بازی شوید</string>
+    <string name="update_data">بروزرسانی جدید یافت شد, برای نصب (شروع بازی) کلیک کنید</string>
 
     <string name="car">ماشین</string>
     <string name="skin">لباس</string>

@@ -1,13 +1,15 @@
 package com.mati.launcher.activity;
 
+import static com.mati.game.core.Config.VERSION_CODE;
+
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -21,30 +23,39 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.mati.game.R;
 import com.mati.game.core.GTASA;
+import com.mati.launcher.model.Update;
+import com.mati.launcher.other.Interface;
 import com.mati.weikton.reg.Preferences;
 
 import org.ini4j.Wini;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 import soup.neumorphism.NeumorphCardView;
 
 public class MainActivity extends AppCompatActivity {
-
     private FirebaseAnalytics mFirebaseAnalytics;
-
     EditText nickname;
     ImageButton ib_info;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
 
         InitLogic();
         LoadNick();
+        CheckNewUpdate();
+
 
         String LOGO_SERVER = "https://s2.uupload.ir/files/sp_logo_dztq.png";
         ImageView logo = findViewById(R.id.logo);
@@ -73,6 +86,13 @@ public class MainActivity extends AppCompatActivity {
 
             TextView textStatus = findViewById(R.id.text_status);
             textStatus.setText(getString(R.string.installation_data));
+            textStatus.setTextColor(ContextCompat.getColor(this, R.color.green));
+
+            ImageView imgStatus = findViewById(R.id.img_status);
+            imgStatus.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_cycle_green));
+        } else if (IsUpdateInstalled()) {
+            TextView textStatus = findViewById(R.id.text_status);
+            textStatus.setText(getString(R.string.update_data));
             textStatus.setTextColor(ContextCompat.getColor(this, R.color.green));
 
             ImageView imgStatus = findViewById(R.id.img_status);
@@ -113,8 +133,7 @@ public class MainActivity extends AppCompatActivity {
                 if (info_nick.getVisibility() == View.INVISIBLE) {
                     info_nick.setVisibility(View.VISIBLE);
                     logo.setVisibility(View.INVISIBLE);
-                }
-                else{
+                } else {
                     logo.setVisibility(View.VISIBLE);
                     info_nick.setVisibility(View.INVISIBLE);
                 }
@@ -141,7 +160,14 @@ public class MainActivity extends AppCompatActivity {
                 t.schedule(new TimerTask() {
                     @Override
                     public void run() {
-                        startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://t.me/PRP_CRMP")));
+                        Intent telegram = new Intent(
+                                Intent.ACTION_VIEW,
+                                Uri.parse("https://t.me/Persian_Criminal")
+                        );
+
+                        telegram.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        telegram.setPackage("org.telegram.messenger");
+                        startActivity(telegram);
                     }
                 }, 200L);
             }
@@ -201,38 +227,6 @@ public class MainActivity extends AppCompatActivity {
                                 return false;
                             }
                         });
-
-        nickname.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                try {
-                    File f = new File(Environment.getExternalStorageDirectory() + "/PersianRp/SAMP/settings.ini");
-                    if (!f.exists()) {
-                        f.createNewFile();
-                        f.mkdirs();
-                    }
-                    Wini w = new Wini(new File(Environment.getExternalStorageDirectory() + "/PersianRp/SAMP/settings.ini"));
-                    if (checkValidNick()) {
-                        w.put("client", "name", nickname.getText().toString());
-                    } else {
-                        checkValidNick();
-                    }
-                    w.store();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
     }
 
     @Override
@@ -303,6 +297,76 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+
+    public void CheckNewUpdate() {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://vbd.fdv.dd/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        Interface sInterface = retrofit.create(Interface.class);
+        Call<Update> scall = sInterface.getUpdate();
+        scall.enqueue(new Callback<Update>() {
+            @Override
+            public void onResponse(Call<Update> call, Response<Update> response) {
+                List<Update.Value> data = response.body().getValues();
+
+                if (data.get(0) != null) {
+                    if (data.get(0).getVersion_code() != VERSION_CODE) {
+                        UpdateDialog(data.get(0).getMandatory());
+                    }
+                } else {
+                    tost("خطا در اتصال با سروور");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Update> call, Throwable t) {
+                tost("Error -> " + t.getMessage());
+            }
+        });
+    }
+
+    private void UpdateDialog(Integer visible) {
+
+        AlertDialog dialog = new AlertDialog.Builder(this).create();
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.setView(getLayoutInflater().inflate(R.layout.update_dialog, null));
+        dialog.setCancelable(false);
+        dialog.show();
+
+        ConstraintLayout btnCancel = dialog.findViewById(R.id.cancel_btn);
+        ConstraintLayout btnUpdate = dialog.findViewById(R.id.Update_Btn);
+
+        if (visible == 0) {
+            btnCancel.setVisibility(View.VISIBLE);
+        } else {
+            btnCancel.setVisibility(View.GONE);
+        }
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent telegram = new Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse("https://t.me/Mati_Source")
+                );
+
+                telegram.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                telegram.setPackage("org.telegram.messenger");
+                startActivity(telegram);
+            }
+        });
+
+    }
+
     private void LoadNick() {
         try {
             Wini w = new Wini(new File(Environment.getExternalStorageDirectory() + "/PersianRp/SAMP/settings.ini"));
@@ -314,6 +378,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void tost(String pon) {
-        Toast.makeText(this, pon, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, pon, Toast.LENGTH_LONG).show();
     }
-} 
+}

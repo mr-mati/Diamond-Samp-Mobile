@@ -8,4 +8,9 @@ public class Config {
     public static final String URL_FILES_UPDATE = "https://san-web.host/upd.zip";
     public static final String URL_CLIENT = "https://san-web.host/launcher.apk";
     public static final String URL_DONATE = "https://san-web.host/donate";
+
+    public static final String BASE_URL = "http://62.3.14.22:1212/";
+
+    public static final Integer VERSION_CODE = 2;
+
 }

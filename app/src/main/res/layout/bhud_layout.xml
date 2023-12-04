@@ -270,20 +270,12 @@
         app:srcCompat="@drawable/weapon_0" />
 
     <ImageView
-        android:id="@+id/hud_tab"
-        android:layout_width="60dp"
-        android:layout_height="50dp"
-        android:background="@drawable/mhud_tab"
-        app:layout_constraintBottom_toBottomOf="@+id/gune_bg"
-        app:layout_constraintEnd_toStartOf="@+id/gune_bg" />
-
-    <ImageView
         android:id="@+id/hud_menu"
         android:layout_width="60dp"
         android:layout_height="50dp"
         android:background="@drawable/mhud_menu"
-        app:layout_constraintBottom_toBottomOf="@+id/hud_tab"
-        app:layout_constraintEnd_toStartOf="@+id/hud_tab" />
+        app:layout_constraintBottom_toBottomOf="@+id/gune_bg"
+        app:layout_constraintEnd_toStartOf="@+id/gune_bg" />
 
     <ImageView
         android:id="@+id/radar_hude"

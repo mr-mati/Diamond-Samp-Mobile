@@ -47,7 +47,7 @@ public class Dialog {
 
     public Dialog(Activity activity) {
         this.mMainLayout = activity.findViewById(R.id.sd_dialog_main);
-        this.mCaption = (TextView) activity.findViewById(R.id.sd_dialog_caption);
+        this.mCaption = (TextView) activity.findViewById(R.id.title);
         this.mContent = (TextView) activity.findViewById(R.id.sd_dialog_text);
         ConstraintLayout findViewById1 = activity.findViewById(R.id.sd_button_positive);
         this.mLeftBtn = findViewById1;

@@ -432,6 +432,10 @@
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-41:\\drawable\\donate_all_licenses.png"
     },
     {
+        "merged": "com.mati.game.app-merged_res-40:/layout_sd_dialog.xml.flat",
+        "source": "com.mati.game.app-main-41:/layout/sd_dialog.xml"
+    },
+    {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-40:\\drawable_donate_vip_silver.png.flat",
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-41:\\drawable\\donate_vip_silver.png"
     },
@@ -746,10 +750,6 @@
     {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-40:\\drawable_hud_armor_scale.png.flat",
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-41:\\drawable\\hud_armor_scale.png"
-    },
-    {
-        "merged": "com.mati.game.app-merged_res-40:/drawable_radial_suspension_not_checked.png.flat",
-        "source": "com.mati.game.app-main-41:/drawable/radial_suspension_not_checked.png"
     },
     {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-40:\\drawable_brcmturboon.png.flat",
@@ -1142,6 +1142,10 @@
     {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-40:\\font_ttnorms_blackitalic.ttf.flat",
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-41:\\font\\ttnorms_blackitalic.ttf"
+    },
+    {
+        "merged": "com.mati.game.app-merged_res-40:/drawable_back.jpg.flat",
+        "source": "com.mati.game.app-main-41:/drawable/back.jpg"
     },
     {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-40:\\drawable_speedo_health.png.flat",
@@ -1576,10 +1580,6 @@
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-41:\\drawable\\br_peaw_servers.png"
     },
     {
-        "merged": "com.mati.game.app-merged_res-40:/layout_radial_menu.xml.flat",
-        "source": "com.mati.game.app-main-41:/layout/radial_menu.xml"
-    },
-    {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-40:\\drawable_weapon_33.png.flat",
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-41:\\drawable\\weapon_33.png"
     },
@@ -1930,10 +1930,6 @@
     {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-40:\\font_akrobat_semi_bold.otf.flat",
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-41:\\font\\akrobat_semi_bold.otf"
-    },
-    {
-        "merged": "com.mati.game.app-merged_res-40:/drawable_radial_turbo_not_checked.png.flat",
-        "source": "com.mati.game.app-main-41:/drawable/radial_turbo_not_checked.png"
     },
     {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-40:\\drawable_delete_warn.png.flat",
@@ -2406,6 +2402,10 @@
     {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-40:\\drawable_mhud_menu.png.flat",
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-41:\\drawable\\mhud_menu.png"
+    },
+    {
+        "merged": "com.mati.game.app-merged_res-40:/layout_update_dialog.xml.flat",
+        "source": "com.mati.game.app-main-41:/layout/update_dialog.xml"
     },
     {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-40:\\drawable_br_highlight_button_play.png.flat",
