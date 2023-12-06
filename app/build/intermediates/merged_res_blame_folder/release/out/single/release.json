@@ -432,10 +432,6 @@
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-41:\\drawable\\donate_all_licenses.png"
     },
     {
-        "merged": "com.mati.game.app-merged_res-40:/layout_sd_dialog.xml.flat",
-        "source": "com.mati.game.app-main-41:/layout/sd_dialog.xml"
-    },
-    {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-40:\\drawable_donate_vip_silver.png.flat",
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-41:\\drawable\\donate_vip_silver.png"
     },
@@ -1144,10 +1140,6 @@
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-41:\\font\\ttnorms_blackitalic.ttf"
     },
     {
-        "merged": "com.mati.game.app-merged_res-40:/drawable_back.jpg.flat",
-        "source": "com.mati.game.app-main-41:/drawable/back.jpg"
-    },
-    {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-40:\\drawable_speedo_health.png.flat",
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-41:\\drawable\\speedo_health.png"
     },
@@ -1162,6 +1154,10 @@
     {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-40:\\drawable_switch_off_circle.xml.flat",
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-41:\\drawable\\switch_off_circle.xml"
+    },
+    {
+        "merged": "com.mati.game.app-merged_res-40:/layout_main_render_screen.xml.flat",
+        "source": "com.mati.game.app-main-41:/layout/main_render_screen.xml"
     },
     {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-40:\\drawable_quest.png.flat",
@@ -1418,6 +1414,10 @@
     {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-40:\\drawable_hud_heath_new.xml.flat",
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-41:\\drawable\\hud_heath_new.xml"
+    },
+    {
+        "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-40:\\layout_update_dialog.xml.flat",
+        "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-41:\\layout\\update_dialog.xml"
     },
     {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-40:\\drawable-xhdpi_scrubber_control_focused_holo.png.flat",
@@ -1842,6 +1842,10 @@
     {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-40:\\drawable_rounded_rectangle_donate_platinum.xml.flat",
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-41:\\drawable\\rounded_rectangle_donate_platinum.xml"
+    },
+    {
+        "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-40:\\drawable_back.jpg.flat",
+        "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-41:\\drawable\\back.jpg"
     },
     {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-40:\\drawable_speedo_lbar2.png.flat",
@@ -2402,10 +2406,6 @@
     {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-40:\\drawable_mhud_menu.png.flat",
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-41:\\drawable\\mhud_menu.png"
-    },
-    {
-        "merged": "com.mati.game.app-merged_res-40:/layout_update_dialog.xml.flat",
-        "source": "com.mati.game.app-main-41:/layout/update_dialog.xml"
     },
     {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-40:\\drawable_br_highlight_button_play.png.flat",

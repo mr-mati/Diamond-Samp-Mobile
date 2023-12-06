@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -26,6 +27,9 @@ import java.util.ArrayList;
 public class Menu {
     public View mRootView;
     public Activity activity;
+
+    public Button exitCinema;
+    public TextView txtCinema;
     public LinearLayout menu_layout;
     public TextView menuTitle;
     private final Animation anim;
@@ -41,10 +45,21 @@ public class Menu {
             close();
         });
         this.mRootView = ((LayoutInflater) aactivity.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.menu_action_dialog, null, false);
-        Utils.HideLayout(menu_layout,false);
+        Utils.HideLayout(menu_layout, false);
     }
 
     public void Update(boolean z) {
+
+        exitCinema = activity.findViewById(R.id.exit_cinema);
+        txtCinema = activity.findViewById(R.id.cinema_text);
+        exitCinema.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                NvEventQueueActivity.getInstance().sendRPC(1, "exitCinema".getBytes(), 400);
+                exitCinema.setVisibility(View.GONE);
+                txtCinema.setVisibility(View.GONE);
+            }
+        });
+
         RecyclerView recyclerView = activity.findViewById(R.id.br_rec_view_menu);
         /*if (this.index == -1) {
             TransitionManager.beginDelayedTransition(recyclerView);
@@ -64,6 +79,10 @@ public class Menu {
                         try {
                             NvEventQueueActivity.getInstance().sendRPC(1, String.valueOf(index).getBytes("windows-1251"), index);
                             //Toast.makeText(activity, String.valueOf(index), Toast.LENGTH_SHORT).show();
+                            if (index == 399) {
+                                exitCinema.setVisibility(View.VISIBLE);
+                                txtCinema.setVisibility(View.VISIBLE);
+                            }
                             close();
                         } catch (UnsupportedEncodingException e) {
                             e.printStackTrace();
@@ -94,8 +113,7 @@ public class Menu {
         }, this.dataDialogMenuArrayList, recyclerView, mRootView, 3);
     }
 
-    public void ShowMenu()
-    {
+    public void ShowMenu() {
         Update(false);
         Utils.ShowLayout(menu_layout, true);
     }

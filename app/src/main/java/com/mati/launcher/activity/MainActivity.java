@@ -1,6 +1,7 @@
 package com.mati.launcher.activity;
 
 import static com.mati.game.core.Config.VERSION_CODE;
+import static com.mati.game.core.Config.VERSION_CODE_DATA;
 
 import android.Manifest;
 import android.content.Intent;
@@ -10,6 +11,8 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -227,6 +230,35 @@ public class MainActivity extends AppCompatActivity {
                                 return false;
                             }
                         });
+
+        nickname.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                try {
+                    File f = new File(Environment.getExternalStorageDirectory() + "/PersianRp/SAMP/settings.ini");
+                    if (!f.exists()) {
+                        f.createNewFile();
+                        f.mkdirs();
+                    }
+                    Wini w = new Wini(new File(Environment.getExternalStorageDirectory() + "/PersianRp/SAMP/settings.ini"));
+                    w.put("client", "name", nickname.getText().toString());
+                    w.store();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
     }
 
     @Override
@@ -240,7 +272,20 @@ public class MainActivity extends AppCompatActivity {
     public void onClickPlay() {
         if (IsGameInstalled()) {
             if (IsUpdateInstalled()) {
-                startActivity(new Intent(this, GTASA.class));
+                try {
+                    Wini w = new Wini(new File(Environment.getExternalStorageDirectory() + "/PersianRp/version.ini"));
+                    if (w.get("version", "code").equals(VERSION_CODE_DATA)) {
+                        if (checkValidNick()) {
+                            startActivity(new Intent(this, GTASA.class));
+                        } else {
+                            checkValidNick();
+                        }
+                    } else {
+                        ToUpdate();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             } else {
                 ToUpdate();
             }
@@ -297,6 +342,16 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+
+    private void LoadNick() {
+        try {
+            Wini w = new Wini(new File(Environment.getExternalStorageDirectory() + "/PersianRp/SAMP/settings.ini"));
+            Preferences.setNick(w.get("client", "name"));
+            w.store();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void CheckNewUpdate() {
         Retrofit retrofit = new Retrofit.Builder()
@@ -365,16 +420,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    }
-
-    private void LoadNick() {
-        try {
-            Wini w = new Wini(new File(Environment.getExternalStorageDirectory() + "/PersianRp/SAMP/settings.ini"));
-            Preferences.setNick(w.get("client", "name"));
-            w.store();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     private void tost(String pon) {

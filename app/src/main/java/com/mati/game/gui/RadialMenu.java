@@ -1,15 +1,14 @@
 package com.mati.game.gui;
 
 import android.app.Activity;
+import android.view.View;
+import android.widget.ImageView;
+
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.mati.game.R;
 import com.mati.game.gui.util.Utils;
 import com.nvidia.devtech.NvEventQueueActivity;
-
-import android.view.View;
-import android.widget.*;
-
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class RadialMenu {
     public Activity activity;
@@ -69,7 +68,7 @@ public class RadialMenu {
                 if(!turbo)
                     button_turbo.setImageResource(R.drawable.radial_turbo_checked);
                 else 
-                    button_turbo.setImageResource(R.drawable.radial_suspension_not_checked);
+                    button_turbo.setImageResource(R.drawable.radial_turbo_not_checked);
                 turbo = !turbo;
             }
         });
@@ -113,7 +112,7 @@ public class RadialMenu {
                 if(!suspension)
                     button_suspension.setImageResource(R.drawable.radial_suspension_checked);
                 else 
-                    button_suspension.setImageResource(R.drawable.radial_turbo_not_checked);
+                    button_suspension.setImageResource(R.drawable.radial_suspension_not_checked);
                 suspension = !suspension;
             }
         });

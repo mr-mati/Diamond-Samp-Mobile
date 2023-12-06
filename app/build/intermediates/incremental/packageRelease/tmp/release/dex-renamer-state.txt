@@ -1,4 +1,4 @@
-#Mon Dec 04 21:00:33 GMT+03:30 2023
+#Wed Dec 06 17:45:00 GMT+03:30 2023
 base.0=D\:\\CRMP\\donat + rega\\java\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
 base.1=D\:\\CRMP\\donat + rega\\java\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes2.dex
 base.2=D\:\\CRMP\\donat + rega\\java\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes3.dex

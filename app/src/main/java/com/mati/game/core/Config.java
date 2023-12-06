@@ -12,5 +12,5 @@ public class Config {
     public static final String BASE_URL = "http://62.3.14.22:1212/";
 
     public static final Integer VERSION_CODE = 2;
-
+    public static final String VERSION_CODE_DATA = "2";
 }

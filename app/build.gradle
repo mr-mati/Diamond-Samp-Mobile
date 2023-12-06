@@ -21,8 +21,8 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         applicationId "com.mati.game"
-        versionName "Beta-Version"
-        versionCode 1
+        versionName "Alpha-Version"
+        versionCode 2
         vectorDrawables.useSupportLibrary = true
 
         multiDexEnabled = true
