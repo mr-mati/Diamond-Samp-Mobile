@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.mati.game.app-mergeReleaseResources-38:/values-land/values-land.xml",
+            "outputFile": "com.mati.game.app-mergeReleaseResources-36:/values-land/values-land.xml",
             "map": [
                 {
                     "source": "C:\\Users\\jalaxi\\.gradle\\caches\\transforms-3\\e9e5e75522929f99d484389928fe4825\\transformed\\material-1.0.0\\res\\values-land\\values-land.xml",
@@ -14,29 +14,12 @@
                         "endOffsets": "222"
                     },
                     "to": {
-                        "startLines": "9",
+                        "startLines": "5",
                         "startColumns": "4",
-                        "startOffsets": "557",
-                        "endLines": "12",
+                        "startOffsets": "264",
+                        "endLines": "8",
                         "endColumns": "10",
-                        "endOffsets": "724"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\jalaxi\\.gradle\\caches\\transforms-3\\b900a4aee63f3fc14aadca43e3531bb3\\transformed\\jetified-firebase-inappmessaging-display-20.1.2\\res\\values-land\\values-land.xml",
-                    "from": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,131,203,276",
-                        "endColumns": "75,71,72,71",
-                        "endOffsets": "126,198,271,343"
-                    },
-                    "to": {
-                        "startLines": "5,6,7,8",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "264,340,412,485",
-                        "endColumns": "75,71,72,71",
-                        "endOffsets": "335,407,480,552"
+                        "endOffsets": "431"
                     }
                 },
                 {

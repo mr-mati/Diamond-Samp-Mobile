@@ -38,16 +38,17 @@ public class Donate extends AppCompatActivity {
     static DonatAdapter donatAdapter;
     static ActionsAdapter actionsAdapter;
 
-    public  Activity activity;
+    public Activity activity;
     public ConstraintLayout donate_layout, donate_akijas, donate_item, donate_center, donate_down, donate_uslugi, donate_vip;
 
     public LinearLayout sc_don, podt_don;
     public ImageView donate_close, plusbc, plusrub, back, imgusl;
     public Button sc_close, sc_close2, auto_button, usl_button1, usl_button2, uslugi_buy, button_okusl, button_nousl, vipsil, vipgld, vipplt;
-    public TextView  moneyy, bcc, keys, bp, nabori, aks, tovari, actija, vips, skins, sc1, sc2, auto, maintext,  uslugi, topusl, costuscl, costpodtusl;
+    public TextView moneyy, bcc, keys, bp, nabori, aks, tovari, actija, vips, skins, sc1, sc2, auto, maintext, uslugi, topusl, costuscl, costpodtusl;
     public RecyclerView autoRecycler, uslugiRecycler;
     public int money, bc, autooo, uslugi_status, carid, carcost;
     public String costpodt, CarName;
+
     public Donate(Activity aactivity) {
         activity = aactivity;
         donate_layout = activity.findViewById(R.id.donate_reytiz);
@@ -78,7 +79,7 @@ public class Donate extends AppCompatActivity {
         skins = activity.findViewById(R.id.textView14);
         costpodtusl = activity.findViewById(R.id.podt3);
         maintext = activity.findViewById(R.id.textView8);
-       // autoo = activity.findViewById(R.id.textView15);
+        // autoo = activity.findViewById(R.id.textView15);
         uslugi = activity.findViewById(R.id.textView7);
         sc_close = activity.findViewById(R.id.closesc);
         sc_close2 = activity.findViewById(R.id.butonok);
@@ -102,6 +103,7 @@ public class Donate extends AppCompatActivity {
         setListeners(aactivity);
 
     }
+
     public void setListeners(Activity aactivity) {
         activity = aactivity;
         donate_close.setOnClickListener(new View.OnClickListener() {
@@ -266,7 +268,7 @@ public class Donate extends AppCompatActivity {
                 donate_uslugi.setVisibility(View.GONE);
                 donate_vip.setVisibility(View.GONE);
                 show_auto();
-                if(autooo == 1) {
+                if (autooo == 1) {
                     back.setVisibility(View.VISIBLE);
                 }
             }
@@ -306,11 +308,11 @@ public class Donate extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 podt_don.setVisibility(View.GONE);
-                if(autooo == 1) {
-                        NvEventQueueActivity.getInstance().buycar(carid, carcost,  1);
-                }
-                else {
-                    if(uslugi_status != 0) NvEventQueueActivity.getInstance().sendDonateClick(uslugi_status + 5);
+                if (autooo == 1) {
+                    NvEventQueueActivity.getInstance().buycar(carid, carcost, 1);
+                } else {
+                    if (uslugi_status != 0)
+                        NvEventQueueActivity.getInstance().sendDonateClick(uslugi_status + 5);
                     else NvEventQueueActivity.getInstance().sendDonateClick(6);
                 }
 
@@ -328,7 +330,7 @@ public class Donate extends AppCompatActivity {
                 donate_center.setVisibility(View.VISIBLE);
                 donate_down.setVisibility(View.VISIBLE);
                 maintext.setVisibility(View.VISIBLE);
-                if(autooo == 1) {
+                if (autooo == 1) {
                     back.setVisibility(View.VISIBLE);
                 }
             }
@@ -342,6 +344,7 @@ public class Donate extends AppCompatActivity {
             }
         });
     }
+
     public void show(int money, int bc) {
 
         donate_layout.setVisibility(View.VISIBLE);
@@ -380,35 +383,34 @@ public class Donate extends AppCompatActivity {
         //moneyy.setText(new Formatter().format("%d%s", Integer.valueOf(money), "").toString());
         //bcc.setText(new Formatter().format("%d%s", Integer.valueOf(bc), "").toString());
     }
+
     public void show_sc(int money, int bc) {
         this.money = money;
         this.bc = bc;
         sc_don.setVisibility(View.VISIBLE);
-        if(money == -1) {
+        if (money == -1) {
             sc1.setText("شما با موفقیت این محصول را خریداری کرده اید");
             sc2.setText("بابت عملیات متشکریم!");
-        }
-        else if(money == -777) {
+        } else if (money == -777) {
             sc1.setText(format("شما با موفقیت خرید کرده اید %s", getNameAuto()));
             sc2.setText("برای بارگیری ماشین از,\nاستفاده کنید (car/)");
-        }
-        else if(money == -666) {
+        } else if (money == -666) {
             sc1.setText("شما با موفقیت لباس های جدید خریداری کرده اید\n" + "این شما را می پوشد");
             sc2.setText("حالا شما شبیه\n" + "یک شیک پوش واقعی!");
-        }
-        else {
+        } else {
             sc1.setText(new Formatter().format("%d قبل از میلاد را به %d روبل تبدیل کرده اید", Integer.valueOf(money), Integer.valueOf(bc)).toString());
             sc2.setText("بابت عملیات متشکریم!");
         }
 
     }
+
     public void close_sc() {
         sc_don.setVisibility(View.GONE);
     }
 
 
     private void setDonateRecycler(List<Donatee> donateList) {
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager (this, RecyclerView.HORIZONTAL, false);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
 
         donateRecycler = activity.findViewById(R.id.autoRecycler);
         donateRecycler.setLayoutManager(layoutManager);
@@ -416,8 +418,9 @@ public class Donate extends AppCompatActivity {
         donateAdapter = new DonateAdapter(activity, donateList);
         donateRecycler.setAdapter(donateAdapter);
     }
+
     private void setActionRecycler(List<Actions> actionsList) {
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager (this, RecyclerView.HORIZONTAL, false);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
 
         actionsRecycler = activity.findViewById(R.id.ActionsRecycler);
         actionsRecycler.setLayoutManager(layoutManager);
@@ -429,7 +432,7 @@ public class Donate extends AppCompatActivity {
     }
 
     private void setDonatRecycler(List<Donat> donatList) {
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager (this, RecyclerView.VERTICAL, false);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
 
         donatRecycler = activity.findViewById(R.id.UslugiRecycler);
         donatRecycler.setLayoutManager(layoutManager);
@@ -437,6 +440,7 @@ public class Donate extends AppCompatActivity {
         donatAdapter = new DonatAdapter(activity, donatList);
         donatRecycler.setAdapter(donatAdapter);
     }
+
     public void show_uslugi() {
 
         List<Donat> donatList = new ArrayList<>();
@@ -466,153 +470,162 @@ public class Donate extends AppCompatActivity {
         int imgid = activity.getResources().getIdentifier(img, "drawable", activity.getPackageName());
         imgusl.setImageResource(imgid);
     }
+
     public void show_auto() {
 
         List<Donatee> donateList = new ArrayList<>();
         donateList.add(new Donatee(1, "اقتصاد", "", "", "auto_econom", 0));
-        donateList.add(new Donatee(2, "میانگین", "","", "auto_middle",0 ));
-        donateList.add(new Donatee(3, "ویژه", "","", "auto_premium",0 ));
-        donateList.add(new Donatee(4, "موتور", "","","auto_moto", 0));
-        donateList.add(new Donatee(5, "منحصر بفرد","", "","auto_unique",0 ));
-        donateList.add(new Donatee(6, "محموله","", "","auto_gruz", 0));
-        donateList.add(new Donatee(7, "قایق بادبانی", "","","auto_yacht", 0));
+        donateList.add(new Donatee(2, "میانگین", "", "", "auto_middle", 0));
+        donateList.add(new Donatee(3, "ویژه", "", "", "auto_premium", 0));
+        donateList.add(new Donatee(4, "موتور", "", "", "auto_moto", 0));
+        donateList.add(new Donatee(5, "منحصر بفرد", "", "", "auto_unique", 0));
+        donateList.add(new Donatee(6, "محموله", "", "", "auto_gruz", 0));
+        donateList.add(new Donatee(7, "قایق بادبانی", "", "", "auto_yacht", 0));
         setDonateRecycler(donateList);
         autoRecycler.setVisibility(View.VISIBLE);
     }
+
     public void close_auto() {
 
         autoRecycler.setVisibility(View.GONE);
         autooo = 0;
     }
+
     public void close_actions() {
 
         actionsRecycler.setVisibility(View.GONE);
         autooo = 0;
     }
-    public  void show_nizk() {
+
+    public void show_nizk() {
 
         close_auto();
         List<Donatee> donateList = new ArrayList<>();
-        donateList.add(new Donatee(8, "ЗАЗ", "968М","auto_zaz", "",10));
-        donateList.add(new Donatee(9, "ВАЗ", "1111", "auto_1111","", 15));
-        donateList.add(new Donatee(10, "ВАЗ", "2101", "auto_2101", "",30));
-        donateList.add(new Donatee(11, "ГАЗ", "Волга 2410", "auto_volga","", 40));
-        donateList.add(new Donatee(12, "ВАЗ", "2106", "auto_2106", "",42));
-        donateList.add(new Donatee(13, "VOLKSWAGEN", "Golf GTI 2", "auto_golfnizk","", 70));
-        donateList.add(new Donatee(14, "ВАЗ", "2107", "auto_2107","", 75));
-        donateList.add(new Donatee(15, "ВАЗ", "2108", "auto_2108", "",85));
-        donateList.add(new Donatee(16, "ВАЗ", "2109", "auto_2108","", 90));
-        donateList.add(new Donatee(17, "ВАЗ", "2110", "auto_2110","", 95));
-        donateList.add(new Donatee(18, "ВАЗ", "2114", "auto_2114","",97));
-        donateList.add(new Donatee(19, "ВАЗ", "2115", "auto_2115","", 105));
-        donateList.add(new Donatee(20, "VOLVO", "242 DL", "auto_volvo242dl", "",125));
-        donateList.add(new Donatee(21, "ВАЗ", "2170", "auto_priora", "",150));
-        donateList.add(new Donatee(22, "BMW", "M3 E30", "auto_bmwe30","", 150));
-        donateList.add(new Donatee(23, "НИВА", "Urban", "auto_niva", "",175));
-        donateList.add(new Donatee(24, "MAZDA", "Sedan 3", "auto_mazda", "",190));
-        donateList.add(new Donatee(25, "TOYOTA", "Mark II", "auto_mark2", "",210));
-        donateList.add(new Donatee(26, "MERSEDES-BENZ", "W124", "auto_mersw124", "",220));
-        donateList.add(new Donatee(27, "MERSEDES-BENZ", "E420 W210", "auto_mersw210", "",350));
+        donateList.add(new Donatee(8, "ЗАЗ", "968М", "auto_zaz", "", 10));
+        donateList.add(new Donatee(9, "ВАЗ", "1111", "auto_1111", "", 15));
+        donateList.add(new Donatee(10, "ВАЗ", "2101", "auto_2101", "", 30));
+        donateList.add(new Donatee(11, "ГАЗ", "Волга 2410", "auto_volga", "", 40));
+        donateList.add(new Donatee(12, "ВАЗ", "2106", "auto_2106", "", 42));
+        donateList.add(new Donatee(13, "VOLKSWAGEN", "Golf GTI 2", "auto_golfnizk", "", 70));
+        donateList.add(new Donatee(14, "ВАЗ", "2107", "auto_2107", "", 75));
+        donateList.add(new Donatee(15, "ВАЗ", "2108", "auto_2108", "", 85));
+        donateList.add(new Donatee(16, "ВАЗ", "2109", "auto_2108", "", 90));
+        donateList.add(new Donatee(17, "ВАЗ", "2110", "auto_2110", "", 95));
+        donateList.add(new Donatee(18, "ВАЗ", "2114", "auto_2114", "", 97));
+        donateList.add(new Donatee(19, "ВАЗ", "2115", "auto_2115", "", 105));
+        donateList.add(new Donatee(20, "VOLVO", "242 DL", "auto_volvo242dl", "", 125));
+        donateList.add(new Donatee(21, "ВАЗ", "2170", "auto_priora", "", 150));
+        donateList.add(new Donatee(22, "BMW", "M3 E30", "auto_bmwe30", "", 150));
+        donateList.add(new Donatee(23, "НИВА", "Urban", "auto_niva", "", 175));
+        donateList.add(new Donatee(24, "MAZDA", "Sedan 3", "auto_mazda", "", 190));
+        donateList.add(new Donatee(25, "TOYOTA", "Mark II", "auto_mark2", "", 210));
+        donateList.add(new Donatee(26, "MERSEDES-BENZ", "W124", "auto_mersw124", "", 220));
+        donateList.add(new Donatee(27, "MERSEDES-BENZ", "E420 W210", "auto_mersw210", "", 350));
         setDonateRecycler(donateList);
         autoRecycler.setVisibility(View.VISIBLE);
         back.setVisibility(View.VISIBLE);
         autooo = 1;
     }
 
-    public  void show_sredn() {
+    public void show_sredn() {
         close_auto();
         List<Donatee> donateList = new ArrayList<>();
-        donateList.add(new Donatee(28, "NISSAN", "Skyline R34","auto_skyline", "",340));
-        donateList.add(new Donatee(29, "AUDI", "A4", "auto_audia4", "",375));
-        donateList.add(new Donatee(30, "BMW", "M5 E39", "auto_bmwe39","", 400));
-        donateList.add(new Donatee(31, "HYUNDAI", "Solaris", "auto_hyndai", "",415));
-        donateList.add(new Donatee(32, "VOLKSWAGEN", "Polo", "auto_polo", "",425));
-        donateList.add(new Donatee(33, "MERSEDES-BENZ", "S600 W140", "auto_mersw140", "",450));
-        donateList.add(new Donatee(35, "BMW", "M3 E46", "auto_bmwe46", "",525));
-        donateList.add(new Donatee(36, "ACURA", "TSX", "auto_acura", "",575));
-        donateList.add(new Donatee(37, "VOLKSWAGEN", "GOLF GTI", "auto_goldsredn","",700));
-        donateList.add(new Donatee(34, "FORD", "Focus RS", "auto_focus", "",900));
-        donateList.add(new Donatee(38, "MITSUBISHI", "Lancer EVO X", "auto_lanser", "",1000));
-        donateList.add(new Donatee(39, "SUBARU", "WRX STI", "auto_subaru", "",1100));
-        donateList.add(new Donatee(40, "TOYOTA", "Camry 2019", "auto_camry","", 1200));
-        donateList.add(new Donatee(41, "FORD", "Mustang GT", "auto_mustang", "",1300));
-        donateList.add(new Donatee(42, "MERSEDES-BENZ", "A45 AMG", "auto_mersa45", "",1400));
-        donateList.add(new Donatee(43, "ALFA ROMEO", "Gullia", "auto_alfa","", 1500));
-        donateList.add(new Donatee(44, "INFINITI", "Q60S", "auto_infiniti", "",1600));
-        donateList.add(new Donatee(45, "VOLVO", "V60 T6", "auto_v60", "",1750));
+        donateList.add(new Donatee(28, "NISSAN", "Skyline R34", "auto_skyline", "", 340));
+        donateList.add(new Donatee(29, "AUDI", "A4", "auto_audia4", "", 375));
+        donateList.add(new Donatee(30, "BMW", "M5 E39", "auto_bmwe39", "", 400));
+        donateList.add(new Donatee(31, "HYUNDAI", "Solaris", "auto_hyndai", "", 415));
+        donateList.add(new Donatee(32, "VOLKSWAGEN", "Polo", "auto_polo", "", 425));
+        donateList.add(new Donatee(33, "MERSEDES-BENZ", "S600 W140", "auto_mersw140", "", 450));
+        donateList.add(new Donatee(35, "BMW", "M3 E46", "auto_bmwe46", "", 525));
+        donateList.add(new Donatee(36, "ACURA", "TSX", "auto_acura", "", 575));
+        donateList.add(new Donatee(37, "VOLKSWAGEN", "GOLF GTI", "auto_goldsredn", "", 700));
+        donateList.add(new Donatee(34, "FORD", "Focus RS", "auto_focus", "", 900));
+        donateList.add(new Donatee(38, "MITSUBISHI", "Lancer EVO X", "auto_lanser", "", 1000));
+        donateList.add(new Donatee(39, "SUBARU", "WRX STI", "auto_subaru", "", 1100));
+        donateList.add(new Donatee(40, "TOYOTA", "Camry 2019", "auto_camry", "", 1200));
+        donateList.add(new Donatee(41, "FORD", "Mustang GT", "auto_mustang", "", 1300));
+        donateList.add(new Donatee(42, "MERSEDES-BENZ", "A45 AMG", "auto_mersa45", "", 1400));
+        donateList.add(new Donatee(43, "ALFA ROMEO", "Gullia", "auto_alfa", "", 1500));
+        donateList.add(new Donatee(44, "INFINITI", "Q60S", "auto_infiniti", "", 1600));
+        donateList.add(new Donatee(45, "VOLVO", "V60 T6", "auto_v60", "", 1750));
         setDonateRecycler(donateList);
         autoRecycler.setVisibility(View.VISIBLE);
         back.setVisibility(View.VISIBLE);
         autooo = 1;
     }
 
-    public  void show_visok() {
+    public void show_visok() {
         close_auto();
         List<Donatee> donateList = new ArrayList<>();
-        donateList.add(new Donatee(46, "VOLVO", "XC90", "auto_xc90", "",2100));
-        donateList.add(new Donatee(47, "CHEVROLET", "Camaro ZL1", "auto_camaro", "",2300));
-        donateList.add(new Donatee(48, "BMW", "Z4 M4Oi", "auto_bmwz4","", 2450 ));
-        donateList.add(new Donatee(49, "BMW", "M4 F84", "auto_bmwm4", "",2750));
-        donateList.add(new Donatee(50, "FORD", "Raptor F-150", "auto_raptor", "",2880));
-        donateList.add(new Donatee(51, "AUDI", "Q8", "auto_audiq7", "",3000));
-        donateList.add(new Donatee(52, "DODGE DEMON", "SRT", "auto_dodge", "",3050));
-        donateList.add(new Donatee(53, "MERSEDES-BENZ", "GT63s", "auto_mersgt63s","", 3500));
-        donateList.add(new Donatee(54, "CADILAC", "Escalade", "auto_kadilac","", 3600));
-        donateList.add(new Donatee(55, "NISSAN", "GT-R R35", "auto_nisangtr", "",3950));
-        donateList.add(new Donatee(56, "BMW", "X6M F16", "auto_bmwx6m", "",4100));
-        donateList.add(new Donatee(57, "PORSCHE", "Panamera S", "auto_porshpanamera", "",4200));
-        donateList.add(new Donatee(58, "PORSCHE", "911 Carrera", "auto_porsh911", "",4500));;
-        donateList.add(new Donatee(59, "BMW", "M5 F90", "auto_bmwf90", "",4750));
-        donateList.add(new Donatee(60, "AUDI", "RS6 C7", "auto_audirc6", "",5000));
-        donateList.add(new Donatee(61, "RANGE ROVER", "SVR", "auto_range", "",5000));
-        donateList.add(new Donatee(62, "MERSEDES-BENZ", "CLS63 AMG", "auto_merscls63", "",5150));
-        donateList.add(new Donatee(63, "AUDI", "R8 V10", "auto_audir8", "",5500));
-        donateList.add(new Donatee(64, "BMW", "i8 drive", "auto_bmwi8", "",6300));
-        donateList.add(new Donatee(65, "MERSEDES-BENZ", "GT-R", "auto_mersgtr", "",6750));
-        donateList.add(new Donatee(66, "MCLAREN", "600 LT", "auto_maclaren", "",7000));
+        donateList.add(new Donatee(46, "VOLVO", "XC90", "auto_xc90", "", 2100));
+        donateList.add(new Donatee(47, "CHEVROLET", "Camaro ZL1", "auto_camaro", "", 2300));
+        donateList.add(new Donatee(48, "BMW", "Z4 M4Oi", "auto_bmwz4", "", 2450));
+        donateList.add(new Donatee(49, "BMW", "M4 F84", "auto_bmwm4", "", 2750));
+        donateList.add(new Donatee(50, "FORD", "Raptor F-150", "auto_raptor", "", 2880));
+        donateList.add(new Donatee(51, "AUDI", "Q8", "auto_audiq7", "", 3000));
+        donateList.add(new Donatee(52, "DODGE DEMON", "SRT", "auto_dodge", "", 3050));
+        donateList.add(new Donatee(53, "MERSEDES-BENZ", "GT63s", "auto_mersgt63s", "", 3500));
+        donateList.add(new Donatee(54, "CADILAC", "Escalade", "auto_kadilac", "", 3600));
+        donateList.add(new Donatee(55, "NISSAN", "GT-R R35", "auto_nisangtr", "", 3950));
+        donateList.add(new Donatee(56, "BMW", "X6M F16", "auto_bmwx6m", "", 4100));
+        donateList.add(new Donatee(57, "PORSCHE", "Panamera S", "auto_porshpanamera", "", 4200));
+        donateList.add(new Donatee(58, "PORSCHE", "911 Carrera", "auto_porsh911", "", 4500));
+        ;
+        donateList.add(new Donatee(59, "BMW", "M5 F90", "auto_bmwf90", "", 4750));
+        donateList.add(new Donatee(60, "AUDI", "RS6 C7", "auto_audirc6", "", 5000));
+        donateList.add(new Donatee(61, "RANGE ROVER", "SVR", "auto_range", "", 5000));
+        donateList.add(new Donatee(62, "MERSEDES-BENZ", "CLS63 AMG", "auto_merscls63", "", 5150));
+        donateList.add(new Donatee(63, "AUDI", "R8 V10", "auto_audir8", "", 5500));
+        donateList.add(new Donatee(64, "BMW", "i8 drive", "auto_bmwi8", "", 6300));
+        donateList.add(new Donatee(65, "MERSEDES-BENZ", "GT-R", "auto_mersgtr", "", 6750));
         donateList.add(new Donatee(67, "MERSEDES-BENZ", "G65 AMG", "auto_gelik", "", 8525));
-        donateList.add(new Donatee(68, "FERRARI", "488 GTB", "auto_fera", "",8750));
-        donateList.add(new Donatee(69, "ASTON MARTIN", "DB11", "auto_aston", "",9250));
-        donateList.add(new Donatee(70, "LAMBORGINI ", "Aventador S", "auto_lamba", "",10000));
+        donateList.add(new Donatee(68, "FERRARI", "488 GTB", "auto_fera", "", 8750));
+        donateList.add(new Donatee(69, "ASTON MARTIN", "DB11", "auto_aston", "", 9250));
+        donateList.add(new Donatee(70, "LAMBORGINI ", "Aventador S", "auto_lamba", "", 10000));
         setDonateRecycler(donateList);
         autoRecycler.setVisibility(View.VISIBLE);
         back.setVisibility(View.VISIBLE);
         autooo = 1;
     }
 
-    public  void show_moto() {
+    public void show_moto() {
 // donateList.add(new Donatee(11, "", "", "auto_", " BC"));
         close_auto();
         List<Donatee> donateList = new ArrayList<>();
-        donateList.add(new Donatee(71, "RACER SPORT", "Скутер", "auto_racer", "",10));
-        donateList.add(new Donatee(72, "APRILLA", "MXV 450", "auto_aprilla", "",45));
-        donateList.add(new Donatee(73, "DUCATI", "SuperSport S", "auto_ducatisupersport","", 915));
-        donateList.add(new Donatee(74, "DUCATI", "XDiavel S", "auto_ducatixdiavels", "",1000));
-        donateList.add(new Donatee(75, "YAMAHA", "FZ-10", "auto_yamahafz10", "",2250));
-        donateList.add(new Donatee(76, "BMW", "S 1000 RR", "auto_bmws1000rr", "",3500));
-        donateList.add(new Donatee(77, "SUZUKI", "GSX-R750", "auto_suzukigsxr750", "",4000));
-        donateList.add(new Donatee(78, "KAWASAKI", "Ninja H2R", "auto_kawasakininja", "",5000));
+        donateList.add(new Donatee(71, "RACER SPORT", "Скутер", "auto_racer", "", 10));
+        donateList.add(new Donatee(72, "APRILLA", "MXV 450", "auto_aprilla", "", 45));
+        donateList.add(new Donatee(73, "DUCATI", "SuperSport S", "auto_ducatisupersport", "", 915));
+        donateList.add(new Donatee(74, "DUCATI", "XDiavel S", "auto_ducatixdiavels", "", 1000));
+        donateList.add(new Donatee(75, "YAMAHA", "FZ-10", "auto_yamahafz10", "", 2250));
+        donateList.add(new Donatee(76, "BMW", "S 1000 RR", "auto_bmws1000rr", "", 3500));
+        donateList.add(new Donatee(77, "SUZUKI", "GSX-R750", "auto_suzukigsxr750", "", 4000));
+        donateList.add(new Donatee(78, "KAWASAKI", "Ninja H2R", "auto_kawasakininja", "", 5000));
         setDonateRecycler(donateList);
         autoRecycler.setVisibility(View.VISIBLE);
         back.setVisibility(View.VISIBLE);
         autooo = 1;
     }
-    public  void show_skins() {
+
+    public void show_skins() {
         close_auto();
         List<Donatee> donateList = new ArrayList<>();
-        donateList.add(new Donatee(83, "مارک دار\nپارچه", "پوست مدیر", "skin_adm", "",30000));
+        donateList.add(new Donatee(83, "مارک دار\nپارچه", "پوست مدیر", "skin_adm", "", 30000));
+        donateList.add(new Donatee(84, "پوسته نایک", "پوست ویژه نایک", "skin_nike", "", 1000));
+        donateList.add(new Donatee(85, "پوسته آدیداس", "پوست ویژه آدیداس", "skin_adidas", "", 3000));
+        donateList.add(new Donatee(86, "پوسته پریمیوم", "پوست ویژه پریمیوم", "skin_premium", "", 10000));
         setDonateRecycler(donateList);
         autoRecycler.setVisibility(View.VISIBLE);
         back.setVisibility(View.VISIBLE);
         autooo = 1;
     }
-    public  void show_uniq() {
+
+    public void show_uniq() {
         close_auto();
         List<Donatee> donateList = new ArrayList<>();
-        donateList.add(new Donatee(79, "ВАЗ", "2170 (ППС)", "auto_priora", "",20000));
-        donateList.add(new Donatee(80, "ГАЗ", "ТИГР", "auto_tigr", "",30000));
-        donateList.add(new Donatee(81, "VOLKSWAGEN", "Polo (ППС)", "auto_polo","", 35000));
-        donateList.add(new Donatee(82, "BMW", "M5 F90 (ППС)", "auto_bmwf90", "",50000));
+        donateList.add(new Donatee(79, "ВАЗ", "2170 (ППС)", "auto_priora", "", 20000));
+        donateList.add(new Donatee(80, "ГАЗ", "ТИГР", "auto_tigr", "", 30000));
+        donateList.add(new Donatee(81, "VOLKSWAGEN", "Polo (ППС)", "auto_polo", "", 35000));
+        donateList.add(new Donatee(82, "BMW", "M5 F90 (ППС)", "auto_bmwf90", "", 50000));
         setDonateRecycler(donateList);
         autoRecycler.setVisibility(View.VISIBLE);
         back.setVisibility(View.VISIBLE);
@@ -630,6 +643,7 @@ public class Donate extends AppCompatActivity {
     public void GetCarName(String name) {
         this.CarName = name;
     }
+
     public String getNameAuto() {
         return CarName;
     }

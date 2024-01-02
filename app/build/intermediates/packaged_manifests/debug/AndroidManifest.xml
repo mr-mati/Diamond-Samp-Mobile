@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mati.game"
-    android:versionCode="1"
-    android:versionName="Beta-Version" >
+    android:versionCode="3"
+    android:versionName="Yalda-Version" >
 
     <uses-sdk
         android:minSdkVersion="21"
@@ -33,14 +33,6 @@
         android:normalScreens="true"
         android:resizeable="true"
         android:smallScreens="true" />
-
-    <queries>
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-
-            <data android:scheme="https" />
-        </intent>
-    </queries>
 
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- Required by older versions of Google Play services to create IID tokens -->
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" /> <!-- To allow starting foreground services on Android P+ - https://developer.android.com/preview/behavior-changes#fg-svc -->
@@ -79,6 +71,7 @@
         <activity
             android:name="com.mati.launcher.activity.MainActivity"
             android:exported="true"
+            android:screenOrientation="locked"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -94,6 +87,11 @@
             android:name="com.mati.launcher.activity.UpdateActivity"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.mati.launcher.activity.StoryActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="locked"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <meta-data
             android:name="android.max_aspect"
@@ -107,16 +105,10 @@
             android:directBootAware="true"
             android:exported="false" >
             <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.inappmessaging.display.FirebaseInAppMessagingDisplayRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
-            <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
-            <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.inappmessaging.FirebaseInAppMessagingRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
@@ -126,9 +118,6 @@
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
-            <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.abt.component.AbtRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
         </service>
 

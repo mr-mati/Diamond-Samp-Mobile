@@ -3,36 +3,114 @@ package com.mati.launcher.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class News {
 
-	@SerializedName("imageurl")
-	@Expose
-	private String imageurl;
+    @SerializedName("values")
+    @Expose
+    private List<Value> values;
 
-	@SerializedName("title")
-	@Expose
-	private String title;
+    public List<Value> getValues() {
+        return values;
+    }
 
-	@SerializedName("url")
-	@Expose
-	private String url;
+    public void setValues(List<Value> values) {
+        this.values = values;
+    }
 
-	public News (String imageurl, String title, String url) {
-		this.imageurl = imageurl;
-		this.title = title;
-		this.url = url;
-	}
+    public static class Value {
+        @SerializedName("id")
+        @Expose
+        private int id;
 
-	public String getImageUrl() {
-		return imageurl;
-	}
+        @SerializedName("Name")
+        @Expose
+        private String Name;
 
-	public String getTitle() {
-		return title;
-	}
+        @SerializedName("imgurl")
+        @Expose
+        private String imgurl;
 
-	public String getUrl() {
-		return url;
-	}
+        @SerializedName("time")
+        @Expose
+        private String time;
 
+        @SerializedName("data")
+        @Expose
+        private String data;
+
+        @SerializedName("likes")
+        @Expose
+        private int likes;
+
+        @SerializedName("url")
+        @Expose
+        private String url;
+
+        @SerializedName("show")
+        @Expose
+        private int show;
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getName() {
+            return Name;
+        }
+
+        public void setName(String Name) {
+            this.Name = Name;
+        }
+
+        public String getImgurl() {
+            return imgurl;
+        }
+
+        public void setImgurl(String imgurl) {
+            this.imgurl = imgurl;
+        }
+
+        public String getTime() {
+            return time;
+        }
+
+        public void setTime(String time) {
+            this.time = time;
+        }
+
+        public String getData() {
+            return data;
+        }
+
+        public void setData(String data) {
+            this.data = data;
+        }
+
+        public int getLikes() {
+            return likes;
+        }
+
+        public void setLikes(int likes) {
+            this.likes = likes;
+        }
+
+        public String getUrl() {
+            return url;
+        }
+
+        public void setUrl(String url) {
+            this.url = url;
+        }
+
+        public int getShow() {
+            return show;
+        }
+
+    }
 }

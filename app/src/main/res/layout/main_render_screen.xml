@@ -28,19 +28,6 @@
             android:paddingLeft="15dp"
             android:paddingRight="15dp">
 
-            <com.nvidia.devtech.CustomEditText
-                android:id="@+id/main_et_input"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:layout_weight="0.7"
-                android:background="#F48FB1"
-                android:ems="10"
-                android:imeOptions="actionDone|flagNoExtractUi|flagNoFullscreen"
-                android:inputType="text"
-                android:singleLine="true"
-                android:textSize="14sp" />
-
             <Button
                 android:id="@+id/main_but_input_prev"
                 android:layout_width="wrap_content"
@@ -70,13 +57,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.1"
-                android:backgroundTint="#F48FB1"
+                android:backgroundTint="#90CAF9"
                 android:gravity="center"
                 android:minWidth="11dip"
                 android:minHeight="11dip"
                 android:text="/"
                 android:textSize="14sp"
                 android:textStyle="bold" />
+
+            <com.nvidia.devtech.CustomEditText
+                android:id="@+id/main_et_input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="15dp"
+                android:layout_weight="0.7"
+                android:background="#90CAF9"
+                android:ems="10"
+                android:imeOptions="actionDone|flagNoExtractUi|flagNoFullscreen"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textSize="14sp" />
+
         </LinearLayout>
 
         <Button

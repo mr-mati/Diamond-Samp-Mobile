@@ -61,7 +61,7 @@
         android:layout_marginStart="10.0dip"
         android:paddingTop="10.0dip"
         android:paddingBottom="5.0dip"
-        android:src="@drawable/radial_suspension_not_checked"
+        android:src="@drawable/radial_turbo_not_checked"
         app:layout_constraintStart_toStartOf="@+id/bg_turbo_engine"
         app:layout_constraintTop_toTopOf="@+id/bg_turbo_engine" />
 
@@ -136,7 +136,7 @@
         android:paddingStart="5.0dip"
         android:paddingTop="10.0dip"
         android:paddingBottom="5.0dip"
-        android:src="@drawable/radial_turbo_not_checked"
+        android:src="@drawable/radial_suspension_not_checked"
         app:layout_constraintEnd_toEndOf="@+id/bg_control_suspension"
         app:layout_constraintTop_toTopOf="@+id/bg_control_suspension" />
 

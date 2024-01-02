@@ -34,7 +34,7 @@ public class UpdateActivity extends AppCompatActivity {
 
     public void startDownload() {
         folder = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-        String url = "http://62.3.14.22/update/PersianRp.zip";
+        String url = "http://62.3.14.22/update/PersianRp.7z";
         createDownloadTask(url, folder.getPath()).start();
     }
 
@@ -102,14 +102,14 @@ public class UpdateActivity extends AppCompatActivity {
     }
 
     public void UnZipCache(){
-        String mInputFilePath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/PersianRp.zip";
+        String mInputFilePath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/PersianRp.7z";
         String mOutputPath = Environment.getExternalStorageDirectory() + "/PersianRp/";
         new Thread() {
             @Override
             public void run() {
                 P7ZipApi.executeCommand(String.format("7z x '%s' '-o%s' -aoa", mInputFilePath, mOutputPath));
-                Utils.delete(new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/PersianRp.zip"));
-                Utils.delete(new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/PersianRp.zip.temp"));
+                Utils.delete(new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/PersianRp.7z"));
+                Utils.delete(new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/PersianRp.7z.temp"));
                 runOnUiThread(() -> {
                     afterDownload();
                 }); 

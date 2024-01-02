@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.mati.game.app-mergeDebugResources-38:/values-v17/values-v17.xml",
+            "outputFile": "com.mati.game.app-mergeDebugResources-36:/values-v17/values-v17.xml",
             "map": [
                 {
                     "source": "C:\\Users\\jalaxi\\.gradle\\caches\\transforms-3\\af8ef9a1d5288bec9e3e2af7b9209884\\transformed\\appcompat-1.2.0\\res\\values-v17\\values-v17.xml",

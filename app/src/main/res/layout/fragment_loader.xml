@@ -7,6 +7,20 @@
     android:layoutDirection="ltr"
     android:background="@drawable/launcher_downloader_bg">
 
+    <ImageView
+        android:id="@+id/loader_bg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintDimensionRatio="H,16:9"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/launcher_downloader_bg"/>
+
     <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
         android:id="@+id/progress_bar"
         android:layout_width="fill_parent"
@@ -48,4 +62,5 @@
         android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@+id/progress_bar"
         app:layout_constraintStart_toStartOf="@+id/progress_bar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

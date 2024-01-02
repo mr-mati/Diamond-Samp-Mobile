@@ -1,6 +1,7 @@
 //----------------------------------------------------------------------------------
 // File:            libs\src\com\nvidia\devtech\NvEventQueueActivity.java
-// Samples Version: Android NVIDIA samples 2 
+// File:            libs\src\com\nvidia\devtech\NvEventQueueActivity.java
+// Samples Version: Android NVIDIA samples 2
 // Email:           tegradev@nvidia.com
 // Forum:           http://developer.nvidia.com/tegra/forums/tegra-forums/android-development
 //
@@ -222,6 +223,8 @@ public abstract class NvEventQueueActivity
     public native void buycar(int id, int cost, int action);
 
     public native void showMenuu();
+
+    public native void enterSandliShagerd();
 
     public native void showTab();
 
@@ -1617,6 +1620,10 @@ public static void fixEditTextForAndroid10Xiaomi(EditText editText) {
 
     public void showMenu() { runOnUiThread(() -> { mMenu.ShowMenu(); }); }
 
+    public void showShagerd() { runOnUiThread(() -> { mHudManager.ShowShagerd(); }); }
+
+    public void hideShagerd() { runOnUiThread(() -> { mHudManager.HideShagerd(); }); }
+
     public void showradar() { runOnUiThread(() -> { mHudManager.ShowRadar(); }); }
 
     public void hideradar() { runOnUiThread(() -> { mHudManager.HideRadar(); }); }
@@ -1679,7 +1686,7 @@ public static void fixEditTextForAndroid10Xiaomi(EditText editText) {
             if(x2)
                 findViewById(R.id.imageView17).setVisibility(View.VISIBLE);
             if(micro)
-                findViewById(R.id.imageView14).setVisibility(View.VISIBLE);
+                findViewById(R.id.img_voice).setVisibility(View.VISIBLE);
         });
     }
 
@@ -1693,8 +1700,8 @@ public static void fixEditTextForAndroid10Xiaomi(EditText editText) {
     	    findViewById(R.id.grzona).setVisibility(View.GONE);
             x2 = (findViewById(R.id.imageView17).getVisibility() == View.VISIBLE) ? true : false;
     	    findViewById(R.id.imageView17).setVisibility(View.GONE);
-            micro = (findViewById(R.id.imageView14).getVisibility() == View.VISIBLE) ? true : false;
-    	    findViewById(R.id.imageView14).setVisibility(View.GONE);
+            micro = (findViewById(R.id.img_voice).getVisibility() == View.VISIBLE) ? true : false;
+    	    findViewById(R.id.img_voice).setVisibility(View.GONE);
         });
     }
 }

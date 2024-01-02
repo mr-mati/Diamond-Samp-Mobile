@@ -2,7 +2,6 @@ package com.mati.game.gui;
 
 import android.app.Activity;
 import android.view.View;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -44,6 +43,8 @@ public class HudManager {
 
     public ImageView hud_micro;
 
+    public ImageView hud_shagerd;
+
     public ImageView hud_gps;
 
     public ImageView hud_zona;
@@ -63,7 +64,9 @@ public class HudManager {
 
         hud_radar = aactivity.findViewById(R.id.radar_hude);
 
-        hud_micro = aactivity.findViewById(R.id.imageView14);
+        hud_micro = aactivity.findViewById(R.id.img_voice);
+
+        hud_shagerd = aactivity.findViewById(R.id.img_shagerd);
 
         hud_gps = aactivity.findViewById(R.id.imageView16);
         hud_zona = aactivity.findViewById(R.id.grzona);
@@ -87,14 +90,15 @@ public class HudManager {
         hud_wanted.add(activity.findViewById(R.id.hud_star_4));
         hud_wanted.add(activity.findViewById(R.id.hud_star_5));
         hud_wanted.add(activity.findViewById(R.id.hud_star_6));
-        hud_micro.setOnClickListener(view -> {
-            view.startAnimation(AnimationUtils.loadAnimation(aactivity, R.anim.button_click));
+
+        hud_shagerd.setOnClickListener(view -> {
+            NvEventQueueActivity.getInstance().enterSandliShagerd();
         });
 
         hud_menu.setOnClickListener(view -> {
-            view.startAnimation(AnimationUtils.loadAnimation(aactivity, R.anim.button_click));
+            //view.startAnimation(AnimationUtils.loadAnimation(aactivity, R.anim.button_click));
             NvEventQueueActivity.getInstance().showMenuu();
-            NvEventQueueActivity.getInstance().togglePlayer(1);
+            //NvEventQueueActivity.getInstance().togglePlayer(1);
         });
     }
 
@@ -110,10 +114,9 @@ public class HudManager {
         txt_playerid.setText(formatter.format(playerid));
         hud_money.setText(formatter.format(money));
         txt_hp.setText(formatter.format(health));
-        txt_hunger.setText(formatter.format(armour));
-        txt_armour.setText(formatter.format(hunger));
+        txt_hunger.setText(formatter.format(hunger));
+        txt_armour.setText(formatter.format(armour));
         txt_ammo.setText(formatter.format(ammo));
-
 
         int id = activity.getResources().getIdentifier(new Formatter().format("weapon_%d", Integer.valueOf(weaponidweik)).toString(), "drawable", activity.getPackageName());
         hud_weapon.setImageResource(id);
@@ -165,11 +168,21 @@ public class HudManager {
     public void ShowHud() {
         Utils.ShowLayout(hud_layout, true);
         //Utils.ShowLayout(hud_micro, false);
+        //Utils.ShowLayout(hud_shagerd, true);
+    }
+
+    public void ShowShagerd() {
+        Utils.ShowLayout(hud_shagerd, true);
+    }
+
+    public void HideShagerd() {
+        Utils.HideLayout(hud_shagerd, false);
     }
 
     public void HideHud() {
         Utils.HideLayout(hud_layout, false);
-        //Utils.HideLayout(hud_micro, false);
+        Utils.HideLayout(hud_micro, false);
+        Utils.HideLayout(hud_shagerd, false);
     }
 
 }

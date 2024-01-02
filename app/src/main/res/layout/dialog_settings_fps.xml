@@ -48,7 +48,7 @@
                     android:paddingTop="5dp"
                     android:paddingRight="10dp"
                     android:paddingBottom="5dp"
-                    android:text="جابجایی با پای پیاده"
+                    android:text="دور بین اول شخص پای پیاده"
                     android:textColor="@android:color/white"
                     android:textSize="12sp" />
 
@@ -72,6 +72,7 @@
                         android:id="@+id/hud_element_pos_x_10"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:thumbTint="@color/propel_light"
                         android:max="400"
                         android:progress="1" />
 
@@ -97,6 +98,7 @@
                         android:id="@+id/hud_element_pos_y_10"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:thumbTint="@color/propel_light"
                         android:max="400"
                         android:progress="1" />
 
@@ -122,6 +124,7 @@
                         android:id="@+id/hud_element_scale_y_10"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:thumbTint="@color/propel_light"
                         android:max="400"
                         android:progress="1" />
 
@@ -146,7 +149,7 @@
                     android:paddingTop="5dp"
                     android:paddingRight="10dp"
                     android:paddingBottom="5dp"
-                    android:text="جابجایی در حمل و نقل"
+                    android:text="دور بین اول شخص در حمل و نقل"
                     android:textColor="@android:color/white"
                     android:textSize="12sp" />
 
@@ -170,6 +173,7 @@
                         android:id="@+id/hud_element_pos_x_11"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:thumbTint="@color/propel_light"
                         android:max="400"
                         android:progress="1" />
 
@@ -195,6 +199,7 @@
                         android:id="@+id/hud_element_pos_y_11"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:thumbTint="@color/propel_light"
                         android:max="400"
                         android:progress="1" />
 
@@ -220,6 +225,7 @@
                         android:id="@+id/hud_element_scale_y_11"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:thumbTint="@color/propel_light"
                         android:max="400"
                         android:progress="1" />
 

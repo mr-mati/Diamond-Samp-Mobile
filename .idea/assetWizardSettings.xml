@@ -63,11 +63,24 @@
                                 <PersistentState>
                                   <option name="children">
                                     <map>
+                                      <entry key="backgroundImage">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="imagePath" value="C:\Users\jalaxi\Desktop\icon.png" />
+                                                <entry key="scalingPercent" value="132" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
                                       <entry key="foregroundClipArt">
                                         <value>
                                           <PersistentState>
                                             <option name="values">
                                               <map>
+                                                <entry key="color" value="000000" />
                                                 <entry key="imagePath" value="C:\Users\jalaxi\AppData\Local\Temp\ic_android_black_24dp.xml" />
                                               </map>
                                             </option>
@@ -80,8 +93,8 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\jalaxi\Desktop\Hud\icon.png" />
-                                                <entry key="scalingPercent" value="63" />
+                                                <entry key="imagePath" value="C:\Users\jalaxi\Desktop\icon.png" />
+                                                <entry key="scalingPercent" value="77" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -113,7 +126,6 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="backgroundAssetType" value="COLOR" />
                                       <entry key="backgroundColor" value="303030" />
                                       <entry key="showSafeZone" value="false" />
                                     </map>
@@ -310,8 +322,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="play_game" />
-                            <entry key="sourceFile" value="C:\Users\jalaxi\Desktop\play_game.svg" />
+                            <entry key="outputName" value="un_like" />
+                            <entry key="sourceFile" value="C:\Users\jalaxi\Desktop\heart-outline-icon.svg" />
                           </map>
                         </option>
                       </PersistentState>

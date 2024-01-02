@@ -1,5 +1,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/hud_main"
     android:layoutDirection="ltr"
     android:layout_width="match_parent"
@@ -294,18 +295,19 @@
         android:layout_marginStart="4dp"
         android:layout_marginBottom="4dp"
         android:background="@drawable/logo"
+        android:backgroundTint="#9575CD"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="UseAppTint" />
 
     <ImageView
         android:id="@+id/grzona"
         android:layout_width="83dp"
         android:layout_height="24dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="5dp"
         android:background="@drawable/greenzonatd"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView14" />
+        app:layout_constraintTop_toBottomOf="@+id/hud_menu" />
 
     <ImageView
         android:id="@+id/imageView17"
@@ -322,21 +324,32 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="Persian RolePlay"
-        android:textColor="#D7C375"
+        android:textColor="#7986CB"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/logobr"
         app:layout_constraintStart_toEndOf="@+id/logobr"
         app:layout_constraintTop_toBottomOf="@+id/imageView17" />
 
-
     <ImageView
-        android:id="@+id/imageView14"
+        android:id="@+id/img_shagerd"
         android:layout_width="67dp"
         android:layout_height="61dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toStartOf="@+id/gune_bg"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout3"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:srcCompat="@drawable/img_sandalishagerd" />
+
+    <ImageView
+        android:id="@+id/img_voice"
+        android:layout_width="67dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="18dp"
         android:visibility="gone"
-        app:layout_constraintStart_toStartOf="@+id/hud_menu"
-        app:layout_constraintTop_toBottomOf="@+id/hud_menu"
+        app:layout_constraintEnd_toEndOf="@+id/imageView16"
+        app:layout_constraintStart_toStartOf="@+id/imageView16"
+        app:layout_constraintTop_toBottomOf="@+id/imageView16"
         app:srcCompat="@drawable/off_micro" />
 
 

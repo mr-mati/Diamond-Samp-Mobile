@@ -1,10 +1,13 @@
 package com.mati.launcher.activity;
 
+import static com.mati.game.core.Config.BASE_URL;
 import static com.mati.game.core.Config.VERSION_CODE;
 import static com.mati.game.core.Config.VERSION_CODE_DATA;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -26,23 +29,32 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.PagerSnapHelper;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.mati.game.R;
 import com.mati.game.core.GTASA;
+import com.mati.launcher.adapter.NewsAdapter;
+import com.mati.launcher.model.News;
 import com.mati.launcher.model.Update;
 import com.mati.launcher.other.Interface;
+import com.mati.launcher.other.Lists;
 import com.mati.weikton.reg.Preferences;
 
 import org.ini4j.Wini;
 
 import java.io.File;
+import java.io.FilenameFilter;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -59,10 +71,20 @@ public class MainActivity extends AppCompatActivity {
     EditText nickname;
     ImageButton ib_info;
 
+    RecyclerView recyclerNews;
+    NewsAdapter storiesAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        setContentView(R.layout.fragment_another);
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
         setContentView(R.layout.fragment_home);
+
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.button_click);
 
@@ -73,14 +95,15 @@ public class MainActivity extends AppCompatActivity {
         InitLogic();
         LoadNick();
         CheckNewUpdate();
+        getStories(this);
 
+        if (CheckFile()) {
+            CeloeErrorDialog();
+        }
 
-        String LOGO_SERVER = "https://s2.uupload.ir/files/sp_logo_dztq.png";
+        String LOGO_SERVER = "http://62.3.14.22/dl/logo.png";
         ImageView logo = findViewById(R.id.logo);
-        Glide
-                .with(this)
-                .load(LOGO_SERVER)
-                .into(logo);
+        Glide.with(this).load(R.drawable.logo).load(LOGO_SERVER).placeholder(R.drawable.logo).error(R.drawable.logo).into(logo);
 
         if (IsGameInstalled()) {
 
@@ -133,12 +156,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 v.startAnimation(animation);
                 TextView info_nick = findViewById(R.id.text_view_info_about_nickname);
+                LinearLayout button_clean_game = findViewById(R.id.button_clean_game);
                 if (info_nick.getVisibility() == View.INVISIBLE) {
                     info_nick.setVisibility(View.VISIBLE);
-                    logo.setVisibility(View.INVISIBLE);
+                    button_clean_game.setVisibility(View.INVISIBLE);
                 } else {
-                    logo.setVisibility(View.VISIBLE);
                     info_nick.setVisibility(View.INVISIBLE);
+                    button_clean_game.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -163,10 +187,7 @@ public class MainActivity extends AppCompatActivity {
                 t.schedule(new TimerTask() {
                     @Override
                     public void run() {
-                        Intent telegram = new Intent(
-                                Intent.ACTION_VIEW,
-                                Uri.parse("https://t.me/Persian_Criminal")
-                        );
+                        Intent telegram = new Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/PRPMOBILE"));
 
                         telegram.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         telegram.setPackage("org.telegram.messenger");
@@ -190,46 +211,33 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        ((EditText) nickname)
-                .setOnEditorActionListener(
-                        new EditText.OnEditorActionListener() {
-                            @Override
-                            public boolean onEditorAction(
-                                    TextView v, int actionId, KeyEvent event) {
-                                if (actionId == EditorInfo.IME_ACTION_SEARCH
-                                        || actionId == EditorInfo.IME_ACTION_DONE
-                                        || event.getAction() == KeyEvent.ACTION_DOWN
-                                        && event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
-                                    try {
-                                        File f =
-                                                new File(
-                                                        Environment.getExternalStorageDirectory()
-                                                                + "/PersianRp/SAMP/settings.ini");
-                                        if (!f.exists()) {
-                                            f.createNewFile();
-                                            f.mkdirs();
-                                        }
-                                        Wini w =
-                                                new Wini(
-                                                        new File(
-                                                                Environment.getExternalStorageDirectory()
-                                                                        + "/PersianRp/SAMP/settings.ini"));
-                                        if (checkValidNick()) {
-                                            w.put("client", "name", nickname.getText().toString());
-                                            tost("نام مستعار جدید شما با موفقیت ذخیره شد");
-                                            Preferences.setNick(String.valueOf(nickname.getText()));
-                                        } else {
-                                            checkValidNick();
-                                        }
-                                        w.store();
-                                    } catch (IOException e) {
-                                        e.printStackTrace();
-                                        tost("بازی را نصب کن!");
-                                    }
-                                }
-                                return false;
-                            }
-                        });
+        ((EditText) nickname).setOnEditorActionListener(new EditText.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_SEARCH || actionId == EditorInfo.IME_ACTION_DONE || event.getAction() == KeyEvent.ACTION_DOWN && event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
+                    try {
+                        File f = new File(Environment.getExternalStorageDirectory() + "/PersianRp/persian/settings.ini");
+                        if (!f.exists()) {
+                            f.createNewFile();
+                            f.mkdirs();
+                        }
+                        Wini w = new Wini(new File(Environment.getExternalStorageDirectory() + "/PersianRp/persian/settings.ini"));
+                        if (checkValidNick()) {
+                            w.put("client", "name", nickname.getText().toString());
+                            tost("نام مستعار جدید شما با موفقیت ذخیره شد");
+                            Preferences.setNick(String.valueOf(nickname.getText()));
+                        } else {
+                            checkValidNick();
+                        }
+                        w.store();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        tost("بازی را نصب کن!");
+                    }
+                }
+                return false;
+            }
+        });
 
         nickname.addTextChangedListener(new TextWatcher() {
             @Override
@@ -240,12 +248,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 try {
-                    File f = new File(Environment.getExternalStorageDirectory() + "/PersianRp/SAMP/settings.ini");
+                    File f = new File(Environment.getExternalStorageDirectory() + "/PersianRp/persian/settings.ini");
                     if (!f.exists()) {
                         f.createNewFile();
                         f.mkdirs();
                     }
-                    Wini w = new Wini(new File(Environment.getExternalStorageDirectory() + "/PersianRp/SAMP/settings.ini"));
+                    Wini w = new Wini(new File(Environment.getExternalStorageDirectory() + "/PersianRp/persian/settings.ini"));
                     w.put("client", "name", nickname.getText().toString());
                     w.store();
                 } catch (IOException e) {
@@ -270,27 +278,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickPlay() {
-        if (IsGameInstalled()) {
-            if (IsUpdateInstalled()) {
-                try {
-                    Wini w = new Wini(new File(Environment.getExternalStorageDirectory() + "/PersianRp/version.ini"));
-                    if (w.get("version", "code").equals(VERSION_CODE_DATA)) {
-                        if (checkValidNick()) {
-                            startActivity(new Intent(this, GTASA.class));
+        if (CheckFile()) {
+            CeloeErrorDialog();
+        } else {
+            if (IsGameInstalled()) {
+                if (IsUpdateInstalled()) {
+                    try {
+                        Wini w = new Wini(new File(Environment.getExternalStorageDirectory() + "/PersianRp/version.ini"));
+                        if (w.get("version", "code").equals(VERSION_CODE_DATA)) {
+                            if (checkValidNick()) {
+                                startActivity(new Intent(this, GTASA.class));
+                            } else {
+                                checkValidNick();
+                            }
                         } else {
-                            checkValidNick();
+                            ToUpdate();
                         }
-                    } else {
-                        ToUpdate();
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
-                } catch (IOException e) {
-                    e.printStackTrace();
+                } else {
+                    ToUpdate();
                 }
             } else {
-                ToUpdate();
+                ToLoad();
             }
-        } else {
-            ToLoad();
         }
     }
 
@@ -316,7 +328,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void InitLogic() {
         try {
-            Wini w = new Wini(new File(Environment.getExternalStorageDirectory() + "/PersianRp/SAMP/settings.ini"));
+            Wini w = new Wini(new File(Environment.getExternalStorageDirectory() + "/PersianRp/persian/settings.ini"));
             nickname = findViewById(R.id.edit_text_name);
             nickname.setText(w.get("client", "name"));
             w.store();
@@ -345,7 +357,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void LoadNick() {
         try {
-            Wini w = new Wini(new File(Environment.getExternalStorageDirectory() + "/PersianRp/SAMP/settings.ini"));
+            Wini w = new Wini(new File(Environment.getExternalStorageDirectory() + "/PersianRp/persian/settings.ini"));
             Preferences.setNick(w.get("client", "name"));
             w.store();
         } catch (IOException e) {
@@ -354,10 +366,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void CheckNewUpdate() {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://vbd.fdv.dd/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
+        Retrofit retrofit = new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
 
         Interface sInterface = retrofit.create(Interface.class);
         Call<Update> scall = sInterface.getUpdate();
@@ -377,8 +386,76 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Update> call, Throwable t) {
-                tost("Error -> " + t.getMessage());
+                ErrorDialog();
             }
+        });
+    }
+
+
+    public void getStories(Context context) {
+
+        ImageView logo = findViewById(R.id.logo);
+
+        LinearLayout postTitle = findViewById(R.id.post_title);
+
+        Retrofit retrofit = new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
+
+        Interface sInterface = retrofit.create(Interface.class);
+        Call<News> scall = sInterface.getStories();
+        scall.enqueue(new Callback<News>() {
+            @Override
+            public void onResponse(Call<News> call, Response<News> response) {
+
+                List<News.Value> data = response.body().getValues();
+                if (data != null) {
+                    if (Lists.nlist.isEmpty()) {
+                        postTitle.setVisibility(View.INVISIBLE);
+                        for (News.Value item : data) {
+                            if (item.getShow() == 1) {
+                                Lists.nlist.add(item);
+                                postTitle.setVisibility(View.VISIBLE);
+                                logo.setVisibility(View.INVISIBLE);
+                            }
+                        }
+                    }
+                    logo.setVisibility(View.INVISIBLE);
+                } else {
+                    logo.setVisibility(View.VISIBLE);
+                    postTitle.setVisibility(View.INVISIBLE);
+                    recyclerNews.setVisibility(View.INVISIBLE);
+                }
+
+                recyclerNews = findViewById(R.id.stories_recycler);
+                recyclerNews.setHasFixedSize(true);
+                LinearLayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
+                recyclerNews.setLayoutManager(layoutManager);
+
+                Collections.reverse(Lists.nlist);
+                storiesAdapter = new NewsAdapter(getApplicationContext(), Lists.nlist);
+                recyclerNews.setAdapter(storiesAdapter);
+
+                PagerSnapHelper pagerSnapHelper = new PagerSnapHelper();
+                pagerSnapHelper.attachToRecyclerView(recyclerNews);
+
+                recyclerNews.addOnScrollListener(new RecyclerView.OnScrollListener() {
+                    @Override
+                    public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+                        super.onScrollStateChanged(recyclerView, newState);
+                        if (newState == RecyclerView.SCROLL_STATE_IDLE) {
+                            if (recyclerNews.getScrollState() > 3) {
+                                tost(String.valueOf(response.body().getValues().size()));
+                                recyclerView.scrollToPosition(0);
+                            }
+                        }
+                    }
+                });
+            }
+
+            @Override
+            public void onFailure(Call<News> call, Throwable t) {
+                ErrorDialog();
+            }
+
         });
     }
 
@@ -409,10 +486,7 @@ public class MainActivity extends AppCompatActivity {
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent telegram = new Intent(
-                        Intent.ACTION_VIEW,
-                        Uri.parse("https://t.me/Mati_Source")
-                );
+                Intent telegram = new Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/Mati_Source"));
 
                 telegram.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 telegram.setPackage("org.telegram.messenger");
@@ -420,6 +494,84 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void ErrorDialog() {
+        AlertDialog dialog = new AlertDialog.Builder(this).create();
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.setView(getLayoutInflater().inflate(R.layout.error_dialog, null));
+        dialog.setCancelable(false);
+        dialog.show();
+
+        ConstraintLayout btnUpdate = dialog.findViewById(R.id.Update_Btn);
+
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = getIntent();
+                finish();
+                startActivity(intent);
+            }
+        });
+
+    }
+
+
+    private void CeloeErrorDialog() {
+        AlertDialog dialog = new AlertDialog.Builder(this).create();
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.setView(getLayoutInflater().inflate(R.layout.cheat_dialog, null));
+        dialog.setCancelable(false);
+        dialog.show();
+
+        ConstraintLayout btnUpdate = dialog.findViewById(R.id.Update_Btn);
+
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = getIntent();
+                finish();
+                startActivity(intent);
+            }
+        });
+
+    }
+
+
+    public boolean CheckFile() {
+        String directoryPath = Environment.getExternalStorageDirectory() + "/PersianRp/";
+        String directoryCloe = Environment.getExternalStorageDirectory() + "/PersianRp/cloe";
+        String directoryData = Environment.getExternalStorageDirectory() + "/PersianRp/data";
+        String directorySamp = Environment.getExternalStorageDirectory() + "/PersianRp/samp";
+        String directoryAnim = Environment.getExternalStorageDirectory() + "/PersianRp/anim";
+        String directoryPersian = Environment.getExternalStorageDirectory() + "/PersianRp/persian";
+        String[] fileExtensions = {"cs", "asi", "csa", "csi", "so"};
+
+        if (hasFiles(directoryAnim, fileExtensions) || hasFiles(directoryPath, fileExtensions) || hasFiles(directoryCloe, fileExtensions) || hasFiles(directoryData, fileExtensions) || hasFiles(directorySamp, fileExtensions) || hasFiles(directoryPersian, fileExtensions)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static boolean hasFiles(String directoryPath, final String[] fileExtensions) {
+        File directory = new File(directoryPath);
+
+        final boolean result = false;
+
+        FilenameFilter filter = new FilenameFilter() {
+            @Override
+            public boolean accept(File dir, String name) {
+                for (String extension : fileExtensions) {
+                    if (name.endsWith("." + extension)) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        };
+        File[] files = directory.listFiles(filter);
+        return files != null && files.length > 0;
     }
 
     private void tost(String pon) {

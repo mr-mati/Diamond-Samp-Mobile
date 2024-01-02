@@ -1,5 +1,6 @@
 package com.mati.launcher.other;
 
+import com.mati.launcher.model.News;
 import com.mati.launcher.model.Update;
 
 import retrofit2.Call;
@@ -8,9 +9,14 @@ import retrofit2.http.Headers;
 
 public interface Interface {
 
-    @GET("http://62.3.14.22:1212/api/version")
+    @GET("version")
     @Headers("Token: P7p]j+AeL479")
     Call<Update> getUpdate();
+
+
+    @GET("stories")
+    @Headers("Token: P7p]j+AeL479")
+    Call<News> getStories();
 
     /*@GET("http://wh3606.web3.maze-host.ru/zakazi/35/servers.json")
     Call<List<Servers>> getServers();*/

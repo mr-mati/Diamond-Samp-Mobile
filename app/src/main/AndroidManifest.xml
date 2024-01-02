@@ -36,8 +36,8 @@
         android:label="@string/app_name"
         android:largeHeap="true"
         android:logo="@drawable/adtlogo"
-        android:supportsRtl="true"
         android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         tools:replace="android:icon"
         tools:targetApi="m">
@@ -55,6 +55,7 @@
             android:name="com.mati.game.core.GTASA"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
+
         <activity
             android:name="com.mati.launcher.activity.MainActivity"
             android:exported="true"
@@ -64,13 +65,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name="com.mati.launcher.activity.LoaderActivity"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name="com.mati.launcher.activity.UpdateActivity"
             android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name="com.mati.launcher.activity.StoryActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="fullSensor"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <meta-data

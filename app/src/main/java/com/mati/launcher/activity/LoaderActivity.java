@@ -4,19 +4,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar;
-import com.mati.game.R;
-import com.mati.launcher.other.Utils;
-
+import com.bumptech.glide.Glide;
 import com.hzy.libp7zip.P7ZipApi;
 import com.liulishuo.filedownloader.BaseDownloadTask;
 import com.liulishuo.filedownloader.FileDownloadSampleListener;
 import com.liulishuo.filedownloader.FileDownloader;
+import com.mati.game.R;
+import com.mati.launcher.other.Utils;
 
 import java.io.File;
 import java.util.Formatter;
@@ -32,6 +33,17 @@ public class LoaderActivity extends AppCompatActivity {
         FileDownloader.setup(this);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         startDownload();
+
+        //Glide.get(this).clearDiskCache();
+        //Glide.get(this).clearMemory();
+
+        String bgUrl = "http://62.3.14.22/dl/background.jpg";
+        ImageView background = findViewById(R.id.loader_bg);
+        Glide
+                .with(this)
+                .load(bgUrl)
+                .into(background);
+
     }
 
     public void startDownload() {
@@ -103,7 +115,7 @@ public class LoaderActivity extends AppCompatActivity {
                 });
     }
 
-    public void UnZipCache(){
+    public void UnZipCache() {
         String mInputFilePath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/PersianRp.7z";
         String mOutputPath = Environment.getExternalStorageDirectory().toString();
         new Thread() {
@@ -114,13 +126,13 @@ public class LoaderActivity extends AppCompatActivity {
                 Utils.delete(new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/PersianRp.7z.temp"));
                 runOnUiThread(() -> {
                     afterDownload();
-                }); 
+                });
             }
         }.start();
     }
-    
-    public void afterDownload(){
-    	Toast.makeText(this, "بازی با موفقیت نصب شد!", Toast.LENGTH_SHORT).show();
-         startActivity(new Intent(this, MainActivity.class));
+
+    public void afterDownload() {
+        Toast.makeText(this, "بازی با موفقیت نصب شد!", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(this, MainActivity.class));
     }
 }

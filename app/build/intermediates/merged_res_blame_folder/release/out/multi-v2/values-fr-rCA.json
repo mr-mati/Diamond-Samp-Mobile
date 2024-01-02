@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.mati.game.app-mergeReleaseResources-38:/values-fr-rCA/values-fr-rCA.xml",
+            "outputFile": "com.mati.game.app-mergeReleaseResources-36:/values-fr-rCA/values-fr-rCA.xml",
             "map": [
                 {
                     "source": "C:\\Users\\jalaxi\\.gradle\\caches\\transforms-3\\af8ef9a1d5288bec9e3e2af7b9209884\\transformed\\appcompat-1.2.0\\res\\values-fr-rCA\\values-fr-rCA.xml",

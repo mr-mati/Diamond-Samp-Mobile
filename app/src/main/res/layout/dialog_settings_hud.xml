@@ -7,8 +7,8 @@
     android:layout_marginTop="10dp"
     android:layout_marginRight="10dp"
     android:layout_marginBottom="10dp"
-    android:layoutDirection="ltr"
     android:background="@drawable/dialog_bg"
+    android:layoutDirection="ltr"
     android:orientation="vertical"
     android:weightSum="1.0">
 
@@ -82,7 +82,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.8"
                             android:max="700"
-                            android:progress="1" />
+                            android:progress="1"
+                            android:thumbTint="@color/propel_light" />
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="match_parent"
@@ -102,7 +103,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.8"
                             android:max="500"
-                            android:progress="1" />
+                            android:progress="1"
+                            android:thumbTint="@color/propel_light" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
                     <androidx.appcompat.widget.LinearLayoutCompat
@@ -129,7 +131,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:max="250"
-                            android:progress="1" />
+                            android:progress="1"
+                            android:thumbTint="@color/propel_light" />
 
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -186,7 +189,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.8"
                             android:max="1920"
-                            android:progress="1" />
+                            android:progress="1"
+                            android:thumbTint="@color/propel_light" />
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="match_parent"
@@ -206,7 +210,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.8"
                             android:max="1080"
-                            android:progress="1" />
+                            android:progress="1"
+                            android:thumbTint="@color/propel_light" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
                     <androidx.appcompat.widget.LinearLayoutCompat
@@ -233,7 +238,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:max="400"
-                            android:progress="1" />
+                            android:progress="1"
+                            android:thumbTint="@color/propel_light" />
 
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -290,7 +296,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.8"
                             android:max="1920"
-                            android:progress="1" />
+                            android:progress="1"
+                            android:thumbTint="@color/propel_light" />
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="match_parent"
@@ -310,7 +317,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.8"
                             android:max="1080"
-                            android:progress="1" />
+                            android:progress="1"
+                            android:thumbTint="@color/propel_light" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
                     <androidx.appcompat.widget.LinearLayoutCompat
@@ -337,7 +345,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:max="400"
-                            android:progress="1" />
+                            android:progress="1"
+                            android:thumbTint="@color/propel_light" />
 
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -394,7 +403,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.8"
                             android:max="1920"
-                            android:progress="1" />
+                            android:progress="1"
+                            android:thumbTint="@color/propel_light" />
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="match_parent"
@@ -414,7 +424,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.8"
                             android:max="1080"
-                            android:progress="1" />
+                            android:progress="1"
+                            android:thumbTint="@color/propel_light" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
                     <androidx.appcompat.widget.LinearLayoutCompat
@@ -444,7 +455,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.9"
                             android:max="450"
-                            android:progress="1" />
+                            android:progress="1"
+                            android:thumbTint="@color/propel_light" />
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="match_parent"
@@ -464,7 +476,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.9"
                             android:max="150"
-                            android:progress="1" />
+                            android:progress="1"
+                            android:thumbTint="@color/propel_light" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
                 </LinearLayout>
@@ -520,7 +533,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.8"
                             android:max="1920"
-                            android:progress="1" />
+                            android:progress="1"
+                            android:thumbTint="@color/propel_light" />
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="match_parent"
@@ -540,7 +554,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.8"
                             android:max="1080"
-                            android:progress="1" />
+                            android:progress="1"
+                            android:thumbTint="@color/propel_light" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
                     <androidx.appcompat.widget.LinearLayoutCompat
@@ -570,7 +585,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.9"
                             android:max="450"
-                            android:progress="1" />
+                            android:progress="1"
+                            android:thumbTint="@color/propel_light" />
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="match_parent"
@@ -590,7 +606,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.9"
                             android:max="150"
-                            android:progress="1" />
+                            android:progress="1"
+                            android:thumbTint="@color/propel_light" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
                 </LinearLayout>
@@ -647,7 +664,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.8"
                             android:max="1920"
-                            android:progress="1" />
+                            android:progress="1"
+                            android:thumbTint="@color/propel_light" />
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="match_parent"
@@ -667,7 +685,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.8"
                             android:max="1080"
-                            android:progress="1" />
+                            android:progress="1"
+                            android:thumbTint="@color/propel_light" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
                     <androidx.appcompat.widget.LinearLayoutCompat
@@ -694,7 +713,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:max="1000"
-                            android:progress="1" />
+                            android:progress="1"
+                            android:thumbTint="@color/propel_light" />
 
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -750,7 +770,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:max="600"
-                            android:progress="1" />
+                            android:progress="1"
+                            android:thumbTint="@color/propel_light" />
 
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -781,7 +802,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.8"
                             android:max="1920"
-                            android:progress="1" />
+                            android:progress="1"
+                            android:thumbTint="@color/propel_light" />
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="match_parent"
@@ -801,7 +823,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.8"
                             android:max="1080"
-                            android:progress="1" />
+                            android:progress="1"
+                            android:thumbTint="@color/propel_light" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
                 </LinearLayout>
@@ -857,7 +880,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.8"
                             android:max="1920"
-                            android:progress="1" />
+                            android:progress="1"
+                            android:thumbTint="@color/propel_light" />
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="match_parent"
@@ -877,7 +901,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.8"
                             android:max="1080"
-                            android:progress="1" />
+                            android:progress="1"
+                            android:thumbTint="@color/propel_light" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
                 </LinearLayout>
@@ -933,6 +958,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.8"
                             android:max="1920"
+                            android:thumbTint="@color/propel_light"
                             android:progress="1" />
 
                         <androidx.appcompat.widget.AppCompatTextView
@@ -953,6 +979,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.8"
                             android:max="1080"
+                            android:thumbTint="@color/propel_light"
                             android:progress="1" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -980,7 +1007,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:max="250"
-                            android:progress="1" />
+                            android:progress="1"
+                            android:thumbTint="@color/propel_light" />
 
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -1037,7 +1065,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.8"
                             android:max="1920"
-                            android:progress="1" />
+                            android:progress="1"
+                            android:thumbTint="@color/propel_light" />
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="match_parent"
@@ -1057,7 +1086,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.8"
                             android:max="1080"
-                            android:progress="1" />
+                            android:progress="1"
+                            android:thumbTint="@color/propel_light" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
                     <androidx.appcompat.widget.LinearLayoutCompat
@@ -1084,7 +1114,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:max="500"
-                            android:progress="1" />
+                            android:progress="1"
+                            android:thumbTint="@color/propel_light" />
 
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -1165,7 +1196,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="0.8"
                                 android:max="1920"
-                                android:progress="1" />
+                                android:progress="1"
+                                android:thumbTint="@color/propel_light" />
 
                             <androidx.appcompat.widget.AppCompatTextView
                                 android:layout_width="match_parent"
@@ -1185,6 +1217,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="0.8"
                                 android:max="1080"
+                                android:thumbTint="@color/propel_light"
                                 android:progress="1" />
                         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -1212,7 +1245,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:max="300"
-                                android:progress="1" />
+                                android:progress="1"
+                                android:thumbTint="@color/propel_light" />
 
                         </androidx.appcompat.widget.LinearLayoutCompat>
                     </LinearLayout>
@@ -1268,7 +1302,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="0.8"
                                 android:max="1920"
-                                android:progress="1" />
+                                android:progress="1"
+                                android:thumbTint="@color/propel_light" />
 
                             <androidx.appcompat.widget.AppCompatTextView
                                 android:layout_width="match_parent"
@@ -1288,7 +1323,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="0.8"
                                 android:max="1080"
-                                android:progress="1" />
+                                android:progress="1"
+                                android:thumbTint="@color/propel_light" />
                         </androidx.appcompat.widget.LinearLayoutCompat>
 
                         <androidx.appcompat.widget.LinearLayoutCompat
@@ -1315,7 +1351,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:max="300"
-                                android:progress="1" />
+                                android:progress="1"
+                                android:thumbTint="@color/propel_light" />
 
                         </androidx.appcompat.widget.LinearLayoutCompat>
                     </LinearLayout>
@@ -1371,7 +1408,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="0.8"
                                 android:max="1920"
-                                android:progress="1" />
+                                android:progress="1"
+                                android:thumbTint="@color/propel_light" />
 
                             <androidx.appcompat.widget.AppCompatTextView
                                 android:layout_width="match_parent"
@@ -1391,7 +1429,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="0.8"
                                 android:max="1080"
-                                android:progress="1" />
+                                android:progress="1"
+                                android:thumbTint="@color/propel_light" />
                         </androidx.appcompat.widget.LinearLayoutCompat>
 
                         <androidx.appcompat.widget.LinearLayoutCompat
@@ -1418,7 +1457,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:max="300"
-                                android:progress="1" />
+                                android:progress="1"
+                                android:thumbTint="@color/propel_light" />
 
                         </androidx.appcompat.widget.LinearLayoutCompat>
                     </LinearLayout>

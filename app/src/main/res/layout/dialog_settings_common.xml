@@ -1,4 +1,5 @@
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/settings_root_layout"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -7,9 +8,9 @@
     android:layout_marginTop="10dp"
     android:layout_marginRight="10dp"
     android:layout_marginBottom="10dp"
-    android:orientation="vertical"
-    android:layoutDirection="ltr"
     android:background="@drawable/dialog_bg"
+    android:layoutDirection="ltr"
+    android:orientation="vertical"
     android:weightSum="1.0">
 
 
@@ -50,7 +51,8 @@
                         android:fontFamily="@font/roboto_regular"
                         android:text="رادار مربعی"
                         android:textColor="@android:color/white"
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        app:thumbTint="@color/propel_light" />
 
                     <androidx.appcompat.widget.SwitchCompat
                         android:id="@+id/switch_cutout"
@@ -62,7 +64,8 @@
                         android:fontFamily="@font/roboto_regular"
                         android:text="صفحه نمایش بی کران"
                         android:textColor="@android:color/white"
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        app:thumbTint="@color/propel_light" />
 
                     <androidx.appcompat.widget.SwitchCompat
                         android:id="@+id/switch_outfit_weapons"
@@ -74,7 +77,8 @@
                         android:fontFamily="@font/roboto_regular"
                         android:text="اسلحه در پشت شما"
                         android:textColor="@android:color/white"
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        app:thumbTint="@color/propel_light" />
 
                     <androidx.appcompat.widget.SwitchCompat
                         android:id="@+id/switch_skybox"
@@ -86,7 +90,8 @@
                         android:fontFamily="@font/roboto_regular"
                         android:text="آسمان بهبود یافته"
                         android:textColor="@android:color/white"
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        app:thumbTint="@color/propel_light" />
 
                     <androidx.appcompat.widget.SwitchCompat
                         android:id="@+id/switch_dialog"
@@ -98,7 +103,8 @@
                         android:fontFamily="@font/roboto_regular"
                         android:text="دیالوگ های جدید"
                         android:textColor="@android:color/white"
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        app:thumbTint="@color/propel_light" />
 
                 </LinearLayout>
 
@@ -118,7 +124,8 @@
                         android:fontFamily="@font/roboto_regular"
                         android:text="شماره HP و زره"
                         android:textColor="@android:color/white"
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        app:thumbTint="@color/propel_light" />
 
                     <androidx.appcompat.widget.SwitchCompat
                         android:id="@+id/switch_android_keyboard"
@@ -130,7 +137,8 @@
                         android:fontFamily="@font/roboto_regular"
                         android:text="صفحه کلید اندروید"
                         android:textColor="@android:color/white"
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        app:thumbTint="@color/propel_light" />
 
                     <androidx.appcompat.widget.SwitchCompat
                         android:id="@+id/switch_fps_counter"
@@ -142,7 +150,8 @@
                         android:fontFamily="@font/roboto_regular"
                         android:text="شمارنده FPS"
                         android:textColor="@android:color/white"
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        app:thumbTint="@color/propel_light" />
 
                     <androidx.appcompat.widget.SwitchCompat
                         android:id="@+id/switch_pc_money"
@@ -154,7 +163,8 @@
                         android:fontFamily="@font/roboto_regular"
                         android:text="نمای کامپیوتر از پول"
                         android:textColor="@android:color/white"
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        app:thumbTint="@color/propel_light" />
 
                     <androidx.appcompat.widget.SwitchCompat
                         android:id="@+id/switch_hud"
@@ -166,7 +176,8 @@
                         android:fontFamily="@font/roboto_regular"
                         android:text="جدید HUD"
                         android:textColor="@android:color/white"
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        app:thumbTint="@color/propel_light" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -197,7 +208,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:max="3"
-                    android:progress="1" />
+                    android:progress="1"
+                    android:thumbTint="@color/propel_light" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 

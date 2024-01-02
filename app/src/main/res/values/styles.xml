@@ -2,12 +2,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="Theme.AppCompat.Light.NoActionBar.FullScreen" parent="@style/Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowActionBar">false</item>
-        <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
-        <item name="colorAccent">#ff0000ee</item>
-
+        <item name="android:windowFullscreen">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowTitleSize">0dp</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/new_background</item>
         <item name="fontFamily">@font/iran_sans</item>
     </style>
 
@@ -24,9 +24,9 @@
         <item name="android:textSize">14.0sp</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/wallet_secondary_text_holo_dark</item>
-        <item name="android:textColorHighlight">@color/wallet_highlighted_text_holo_dark</item>
+        <item name="android:textColorHighlight">@color/propel_light</item>
         <item name="android:textColorHint">@color/wallet_hint_foreground_holo_dark</item>
-        <item name="android:textColorLink">@color/wallet_holo_blue_light</item>
+        <item name="android:textColorLink">#3949AB</item>
     </style>
 
     <style name="WalletFragmentDefaultDetailsHeaderTextAppearance" parent="@style/WalletFragmentDefaultDetailsTextAppearance">
@@ -37,9 +37,9 @@
         <item name="android:textSize">18.0sp</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/wallet_primary_text_holo_light</item>
-        <item name="android:textColorHighlight">@color/wallet_highlighted_text_holo_light</item>
+        <item name="android:textColorHighlight">@color/propel_light</item>
         <item name="android:textColorHint">@color/wallet_hint_foreground_holo_light</item>
-        <item name="android:textColorLink">@color/wallet_link_text_light</item>
+        <item name="android:textColorLink">#3949AB</item>
     </style>
 
     <style name="WalletFragmentDefaultStyle">
@@ -76,7 +76,7 @@
     </style>
 
     <style name="AppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/propel</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     </style>
@@ -87,7 +87,9 @@
         <item name="android:windowFullscreen">true</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowTitleSize">0dp</item>
+        <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="o_mr1">shortEdges</item>
         <item name="android:statusBarColor" tools:targetApi="l">@color/new_background</item>
     </style>
 
@@ -118,7 +120,7 @@
     </style>
 
     <style name="chip" parent="Theme.MaterialComponents">
-        <item name="colorPrimary">@color/orange</item>
+        <item name="colorPrimary">#3F51B5</item>
     </style>
 
     <style name="TextAppearance.AppTheme.TextInputLayout.HintTextAlt" parent="TextAppearance.MaterialComponents.Subtitle2">

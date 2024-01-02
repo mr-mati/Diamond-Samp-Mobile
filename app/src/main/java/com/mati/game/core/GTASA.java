@@ -26,7 +26,7 @@ public class GTASA extends WarMedia {
         }
 
         System.loadLibrary("GTASA");
-        System.loadLibrary("sampvoice");
+        System.loadLibrary("PersianRp");
     }
 
     public static void staticEnterSocialClub()
@@ -94,7 +94,7 @@ public class GTASA extends WarMedia {
     public void onDestroy()
     {
         System.out.println("GTASA onDestroy");
-        Toast.makeText(getApplicationContext(), "Начните игру заново", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), " مشکلی پیش آمده! بازی را دوباره باز کنید", Toast.LENGTH_SHORT).show();
         startAll();
         super.onDestroy();
     }

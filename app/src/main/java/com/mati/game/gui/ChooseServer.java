@@ -10,12 +10,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 import com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar;
+import com.bumptech.glide.Glide;
 import com.mati.game.R;
 import com.mati.game.gui.util.Utils;
 import com.mati.launcher.model.Servers;
@@ -27,8 +29,7 @@ import java.util.Formatter;
 
 public class ChooseServer {
 
-    FrameLayout serverLayout;
-    LinearLayout loadingLayout;
+    ConstraintLayout serverLayout;
     ArrayList<Servers> mServers;
     TextView percentText;
     Activity aactivity;
@@ -38,6 +39,9 @@ public class ChooseServer {
     public ImageView hud_x2;
     public ImageView hud_gps;
     public ImageView hud_zona;
+
+    public ImageView background;
+
     RoundCornerProgressBar progressbar;
 
     public ChooseServer(Activity activity) {
@@ -47,7 +51,6 @@ public class ChooseServer {
         hud_x2 = aactivity.findViewById(R.id.imageView17);
         serverLayout = activity.findViewById(R.id.br_serverselect_layout);
         percentText = activity.findViewById(R.id.loading_percent);
-        loadingLayout = activity.findViewById(R.id.choose_server_root_loading);
         type = NvEventQueueActivity.getInstance().getLastServer();
         progressbar = aactivity.findViewById(R.id.progress_bar);
         mServers = new ArrayList<Servers>();
@@ -57,6 +60,19 @@ public class ChooseServer {
                 8,
                 1000
         ));
+
+        //Glide.get(aactivity).clearDiskCache();
+        //Glide.get(aactivity).clearMemory();
+
+        String bgUrl = "http://62.3.14.22/dl/background.jpg";
+        ImageView background = aactivity.findViewById(R.id.image_bg);
+        Glide
+                .with(aactivity)
+                .load(R.drawable.launcher_downloader_bg)
+                .error(R.drawable.launcher_downloader_bg)
+                .placeholder(R.drawable.launcher_downloader_bg)
+                .load(bgUrl)
+                .into(background);
 
         /*Retrofit retrofit = new Retrofit.Builder()
 				.baseUrl("http://vbd.fdv.dd/")

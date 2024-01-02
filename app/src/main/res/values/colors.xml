@@ -76,4 +76,6 @@
     <color name="orange">#FF8600</color>
     <color name="propel">#6300FF</color>
 
+    <color name="propel_light">#9575CD</color>
+
 </resources>

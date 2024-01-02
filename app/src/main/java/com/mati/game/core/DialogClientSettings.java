@@ -41,7 +41,7 @@ public class DialogClientSettings extends DialogFragment {
         final DialogClientSettingsAdapter adapter = new DialogClientSettingsAdapter(getChildFragmentManager(), 0);
         adapter.addFragment("مبانی",DialogClientSettingsCommonFragment.createInstance("common"));
         adapter.addFragment("رنگ ها", DialogClientSettingsColorFragment.createInstance("colors"));
-        adapter.addFragment("فردی", DialogClientSettingsFPSFragment.createInstance("fps").setRoot((ViewGroup)rootview.findViewById(R.id.ll_settings_root)));
+        adapter.addFragment("اول شخص", DialogClientSettingsFPSFragment.createInstance("fps").setRoot((ViewGroup)rootview.findViewById(R.id.ll_settings_root)));
         adapter.addFragment("HUD", DialogClientSettingsHUDFragment.createInstance("hud").setRoot((ViewGroup)rootview.findViewById(R.id.ll_settings_root)));
         adapter.addFragment("سلاح", DialogClientSettingsWeaponsFragment.createInstance("weapons").setRoot((ViewGroup)rootview.findViewById(R.id.ll_settings_root)));
         viewPager.setAdapter(adapter);
