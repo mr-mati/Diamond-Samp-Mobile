@@ -56,15 +56,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.mati.game.R;
 import com.mati.game.core.DialogClientSettings;
-import com.mati.game.gui.HudManager;
 import com.mati.game.gui.BrDialogWindow;
-import com.mati.game.gui.Speedometer;
 import com.mati.game.gui.BrNotification;
-import com.mati.game.gui.Menu;
 import com.mati.game.gui.ChooseServer;
-import com.mati.game.gui.RadialMenu;
 import com.mati.game.gui.Donate;
+import com.mati.game.gui.HudManager;
+import com.mati.game.gui.Menu;
+import com.mati.game.gui.RadialMenu;
+import com.mati.game.gui.Speedometer;
 import com.mati.game.gui.reg.Reg;
+import com.mati.game.gui.tab.Tab;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -164,6 +165,8 @@ public abstract class NvEventQueueActivity
     private RadialMenu mRadialMenu = null;
     private Donate mDonate = null;
     private Reg mReg = null;
+
+    private Tab mTab = null;
 
     /* *
      * Helper function to select fixed window size.
@@ -1034,6 +1037,7 @@ public static void fixEditTextForAndroid10Xiaomi(EditText editText) {
         mRadialMenu = new RadialMenu(this);
         mDonate = new Donate(this);
         mReg = new Reg(this);
+        mTab = new Tab(this);
 
         DoResumeEvent();
 
@@ -1631,6 +1635,10 @@ public static void fixEditTextForAndroid10Xiaomi(EditText editText) {
     public void updateSplash(int percent) { runOnUiThread(() -> { mChooseServer.Update(percent); } ); }
 
     public void showSplash() { runOnUiThread(() -> { mChooseServer.Show(); } ); }
+
+    public void showTabWindow() { runOnUiThread(() -> mTab.show(true)); }
+
+    public void setTabStat(int id, String name, int score, int ping) { runOnUiThread(() -> mTab.setStat(id, name, score, ping) ); }
 
     public void showRadial(boolean park, boolean key, boolean doors, boolean lights, boolean suspension, boolean launch_control, boolean engine, boolean turbo) { runOnUiThread(() -> { mRadialMenu.show(park, key, doors, lights, suspension, launch_control, engine, turbo); } ); }
 

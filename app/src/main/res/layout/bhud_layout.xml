@@ -265,10 +265,18 @@
         android:layout_width="50dp"
         android:layout_height="49dp"
         app:layout_constraintBottom_toBottomOf="@+id/gune_bg"
-        app:layout_constraintEnd_toEndOf="@+id/gune_bg"
+        app:layout_constraintEnd_toEndOf="@+id/bg_money"
         app:layout_constraintStart_toStartOf="@+id/gune_bg"
         app:layout_constraintTop_toTopOf="@+id/gune_bg"
         app:srcCompat="@drawable/weapon_0" />
+
+    <ImageView
+        android:id="@+id/hud_tab"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:background="@drawable/mhud_tab"
+        app:layout_constraintBottom_toBottomOf="@+id/gune_bg"
+        app:layout_constraintEnd_toStartOf="@+id/gune_bg" />
 
     <ImageView
         android:id="@+id/hud_menu"
@@ -276,7 +284,7 @@
         android:layout_height="50dp"
         android:background="@drawable/mhud_menu"
         app:layout_constraintBottom_toBottomOf="@+id/gune_bg"
-        app:layout_constraintEnd_toStartOf="@+id/gune_bg" />
+        app:layout_constraintEnd_toStartOf="@+id/hud_tab" />
 
     <ImageView
         android:id="@+id/radar_hude"
@@ -335,10 +343,9 @@
         android:layout_width="67dp"
         android:layout_height="61dp"
         android:layout_marginEnd="64dp"
-        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toStartOf="@+id/gune_bg"
         app:layout_constraintStart_toStartOf="@+id/linearLayout3"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/hud_menu"
         app:srcCompat="@drawable/img_sandalishagerd" />
 
     <ImageView

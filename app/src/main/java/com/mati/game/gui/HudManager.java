@@ -39,6 +39,8 @@ public class HudManager {
 
     public ImageView hud_x2;
 
+    public ImageView hud_tab;
+
     public ImageView hud_menu;
 
     public ImageView hud_micro;
@@ -81,6 +83,7 @@ public class HudManager {
 
         hud_money = aactivity.findViewById(R.id.hud_money);
         hud_weapon = aactivity.findViewById(R.id.hud_weapon);
+        hud_tab = aactivity.findViewById(R.id.hud_tab);
         hud_menu = aactivity.findViewById(R.id.hud_menu);
 
         hud_wanted = new ArrayList<>();
@@ -100,6 +103,11 @@ public class HudManager {
             NvEventQueueActivity.getInstance().showMenuu();
             //NvEventQueueActivity.getInstance().togglePlayer(1);
         });
+
+        hud_tab.setOnClickListener(view -> {
+            NvEventQueueActivity.getInstance().showTab();
+        });
+
     }
 
     public void UpdateHudInfo(int health, int armour, int hunger, int weaponidweik, int ammo, int playerid, int money, int wanted) {

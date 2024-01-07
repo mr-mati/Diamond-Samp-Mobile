@@ -79,7 +79,7 @@
         <activity
             android:name="com.mati.launcher.activity.StoryActivity"
             android:configChanges="orientation|screenSize"
-            android:screenOrientation="fullSensor"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <meta-data

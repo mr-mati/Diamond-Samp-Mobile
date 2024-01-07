@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-38:\\drawable_arrow_left.png.flat",
-        "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-39:\\drawable\\arrow_left.png"
-    },
-    {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-38:\\drawable_auto_moto.png.flat",
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-39:\\drawable\\auto_moto.png"
+    },
+    {
+        "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-38:\\drawable_arrow_left.png.flat",
+        "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-39:\\drawable\\arrow_left.png"
     },
     {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-38:\\drawable_speedo_arrow.png.flat",
@@ -28,12 +28,12 @@
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-39:\\drawable\\vip_platinum.png"
     },
     {
-        "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-38:\\drawable_br_vector_right_gray.xml.flat",
-        "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-39:\\drawable\\br_vector_right_gray.xml"
-    },
-    {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-38:\\drawable_rounded_rectangle_donate_gold.xml.flat",
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-39:\\drawable\\rounded_rectangle_donate_gold.xml"
+    },
+    {
+        "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-38:\\drawable_br_vector_right_gray.xml.flat",
+        "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-39:\\drawable\\br_vector_right_gray.xml"
     },
     {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-38:\\drawable_weapon_14.png.flat",
@@ -144,6 +144,10 @@
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-39:\\drawable\\shape_checked.xml"
     },
     {
+        "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-38:\\layout-land_fragment_home.xml.flat",
+        "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-39:\\layout-land\\fragment_home.xml"
+    },
+    {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-38:\\drawable_circle.xml.flat",
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-39:\\drawable\\circle.xml"
     },
@@ -186,6 +190,10 @@
     {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-38:\\drawable_divider_br_red_s_corn.xml.flat",
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-39:\\drawable\\divider_br_red_s_corn.xml"
+    },
+    {
+        "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-38:\\layout_fragment_another.xml.flat",
+        "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-39:\\layout\\fragment_another.xml"
     },
     {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-38:\\drawable_ico_seatbelt_off.png.flat",
@@ -686,6 +694,10 @@
     {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-38:\\drawable_radial_door_checked.png.flat",
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-39:\\drawable\\radial_door_checked.png"
+    },
+    {
+        "merged": "com.mati.game.app-merged_res-38:/layout_hassle_tab.xml.flat",
+        "source": "com.mati.game.app-main-39:/layout/hassle_tab.xml"
     },
     {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-38:\\drawable-hdpi-v4_ic_plusone_small_off_client.png.flat",
@@ -1300,10 +1312,6 @@
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-39:\\drawable\\vip_silver.png"
     },
     {
-        "merged": "com.mati.game.app-merged_res-38:/layout_fragment_another.xml.flat",
-        "source": "com.mati.game.app-main-39:/layout/fragment_another.xml"
-    },
-    {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-38:\\drawable_auto_gelik.png.flat",
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-39:\\drawable\\auto_gelik.png"
     },
@@ -1398,6 +1406,10 @@
     {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-38:\\drawable_auto_premium.png.flat",
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-39:\\drawable\\auto_premium.png"
+    },
+    {
+        "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-38:\\drawable_white_button_shape.xml.flat",
+        "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-39:\\drawable\\white_button_shape.xml"
     },
     {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-38:\\drawable_user1.png.flat",
@@ -2112,16 +2124,16 @@
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-39:\\drawable\\tuning_bg_submenu_apply.xml"
     },
     {
+        "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-38:\\layout_reg_login.xml.flat",
+        "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-39:\\layout\\reg_login.xml"
+    },
+    {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-38:\\drawable_br_menu_chat.xml.flat",
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-39:\\drawable\\br_menu_chat.xml"
     },
     {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-38:\\layout_fragment_donate.xml.flat",
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-39:\\layout\\fragment_donate.xml"
-    },
-    {
-        "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-38:\\layout_reg_login.xml.flat",
-        "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-39:\\layout\\reg_login.xml"
     },
     {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-38:\\drawable_donate_tile_header_right.xml.flat",
@@ -2628,6 +2640,10 @@
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-39:\\drawable\\auto_raptor.png"
     },
     {
+        "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-38:\\drawable_fingerprint_scan.png.flat",
+        "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-39:\\drawable\\fingerprint_scan.png"
+    },
+    {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-38:\\drawable_donate_tile_timer_red.xml.flat",
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-39:\\drawable\\donate_tile_timer_red.xml"
     },
@@ -2886,6 +2902,10 @@
     {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-38:\\drawable_skin_premium.png.flat",
         "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-39:\\drawable\\skin_premium.png"
+    },
+    {
+        "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-38:\\layout-port_fragment_home.xml.flat",
+        "source": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-main-39:\\layout-port\\fragment_home.xml"
     },
     {
         "merged": "C:\\Users\\jalaxi\\.gradle\\daemon\\7.3.3\\com.mati.game.app-merged_res-38:\\drawable_auto_skyline.png.flat",

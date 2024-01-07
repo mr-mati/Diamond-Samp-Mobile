@@ -3,8 +3,8 @@ apply plugin: 'com.google.gms.google-services'
 
 android {
     namespace 'com.mati.game'
-    compileSdkVersion 30
-    buildToolsVersion "33.0.0"
+    compileSdkVersion 34
+    buildToolsVersion "34.0.0"
 
     compileOptions {
        // sourceCompatibility 1.8

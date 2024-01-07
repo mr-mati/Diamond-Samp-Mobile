@@ -2,6 +2,7 @@ package com.mati.launcher.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -31,6 +32,7 @@ public class StoryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_storie);
 
         this.sliderView = (SliderView) findViewById(R.id.sliderView);
@@ -118,13 +120,5 @@ public class StoryActivity extends AppCompatActivity {
                     sliderView.setCurrentPagePosition(sliderView.getCurrentPagePosition() + 1);
             }
         }.start();
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        countDownTimer.cancel();
-        progress = 0;
-        countDownTimer = null;
     }
 }

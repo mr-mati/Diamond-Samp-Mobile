@@ -59,20 +59,63 @@
         app:layout_constraintStart_toStartOf="@+id/play_but"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
+    <FrameLayout
+        android:id="@id/test"
+        android:layout_width="246dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:background="@drawable/white_button_shape"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView19"
+        app:layout_constraintTop_toBottomOf="@+id/password_enter">
+
+        <ImageView
+            android:layout_width="@dimen/_26sdp"
+            android:layout_height="@dimen/_23sdp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/fingerprint_scan"
+            android:layout_gravity="center|start"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ورود با اثرانگشت"
+            android:fontFamily="@font/iran_sans"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="18sp"/>
+
+    </FrameLayout>
+
+    <!--<Button
+        android:id="@id/test"
+        android:layout_width="246dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/white_button_shape"
+        android:fontFamily="@font/montserrat_bold"
+        android:textCursorDrawable="@drawable/logo"
+        android:text="ورود با اثرانگشت"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView19"
+        app:layout_constraintTop_toBottomOf="@+id/password_enter" />-->
 
     <TextView
         android:id="@id/password_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
         android:fontFamily="@font/montserrat_regular"
         android:gravity="center"
+        android:layout_marginTop="8dp"
         android:text="بازیابی رمز عبور"
         android:textColor="#ff848ba2"
         android:textSize="10.0sp"
         app:layout_constraintEnd_toEndOf="@+id/password_enter"
         app:layout_constraintStart_toStartOf="@+id/password_enter"
-        app:layout_constraintTop_toBottomOf="@+id/password_enter" />
+        app:layout_constraintTop_toBottomOf="@+id/test" />
 
     <TextView
         android:id="@+id/textView6"

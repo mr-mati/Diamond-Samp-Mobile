@@ -6,9 +6,9 @@
     maven="Persian Rp:app:"
     gradle="7.2.0"
     buildFolder="build"
-    bootClassPath="C:\Users\jalaxi\AppData\Local\Android\Sdk\platforms\android-30\android.jar;C:\Users\jalaxi\AppData\Local\Android\Sdk\build-tools\33.0.0\core-lambda-stubs.jar"
+    bootClassPath="C:\Users\jalaxi\AppData\Local\Android\Sdk\platforms\android-34\android.jar;C:\Users\jalaxi\AppData\Local\Android\Sdk\build-tools\34.0.0\core-lambda-stubs.jar"
     javaSourceLevel="1.8"
-    compileTarget="android-30"
+    compileTarget="android-34"
     neverShrinking="true">
   <lintOptions
       baselineFile="lint-baseline.xml"
