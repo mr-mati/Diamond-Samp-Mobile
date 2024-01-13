@@ -407,6 +407,7 @@ public class MainActivity extends AppCompatActivity {
                 List<News.Value> data = response.body().getValues();
                 if (data != null) {
                     if (Lists.nlist.isEmpty()) {
+                        Collections.reverse(data);
                         postTitle.setVisibility(View.INVISIBLE);
                         for (News.Value item : data) {
                             if (item.getShow() == 1) {
@@ -428,7 +429,6 @@ public class MainActivity extends AppCompatActivity {
                 LinearLayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
                 recyclerNews.setLayoutManager(layoutManager);
 
-                Collections.reverse(Lists.nlist);
                 storiesAdapter = new NewsAdapter(getApplicationContext(), Lists.nlist);
                 recyclerNews.setAdapter(storiesAdapter);
 

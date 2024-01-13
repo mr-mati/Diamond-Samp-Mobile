@@ -18,6 +18,7 @@ import com.bumptech.glide.Glide;
 import com.smarteist.autoimageslider.SliderViewAdapter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class SliderStoriesAdapter extends SliderViewAdapter<SliderStoriesAdapter.Holder> {
 
@@ -51,16 +52,15 @@ public class SliderStoriesAdapter extends SliderViewAdapter<SliderStoriesAdapter
     public void onBindViewHolder(Holder holder, int i) {
         News.Value story = this.stories.get(i);
 
-        Boolean action = false;
-        if(story.getUrl() != null || story.getUrl() != "null"){
-            action = true;
+        if(story.getUrl() != null && !Objects.equals(story.getUrl(), "null")){
+            holder.more.setVisibility(View.VISIBLE);
         } else {
-            action = false;
+            holder.more.setVisibility(View.GONE);
         }
 
         holder.title.setText(story.getName());
         Glide.with(this.context).load(story.getImgurl()).into(holder.image);
-        holder.more.setVisibility(action ? View.GONE : View.VISIBLE);
+        /*holder.more.setVisibility(action ? View.GONE : View.VISIBLE);*/
         holder.more.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

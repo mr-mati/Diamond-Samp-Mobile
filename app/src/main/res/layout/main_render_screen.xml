@@ -143,7 +143,11 @@
 
         <include layout="@layout/reg_login" />
 
+        <include layout="@layout/chat_layout" />
+
         <include layout="@layout/br_serverselect" />
+
+        <include layout="@layout/chat_layout" />
 
         <!--Add Tag Mati
         <TextView

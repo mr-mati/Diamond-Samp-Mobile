@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/black">
 
+
     <com.smarteist.autoimageslider.SliderView
         android:id="@+id/sliderView"
         android:layout_width="match_parent"
@@ -34,8 +35,8 @@
             android:id="@+id/numberStories"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="@dimen/_5sdp"
             android:layout_gravity="center"
+            android:padding="@dimen/_5sdp"
             android:text="1000"
             android:textAlignment="center"
             android:textColor="@color/white"
@@ -45,9 +46,9 @@
             android:id="@+id/likeStories"
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
-            android:tint="@color/white"
             android:padding="@dimen/_5sdp"
             android:src="@drawable/un_like"
+            android:tint="@color/white"
             tools:ignore="UseAppTint" />
 
     </LinearLayout>
@@ -69,4 +70,5 @@
         app:rcReverse="false"
         app:rcSecondaryProgress="0"
         app:rcSecondaryProgressColor="@color/white15" />
+
 </FrameLayout>

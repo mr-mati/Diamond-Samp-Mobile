@@ -27,6 +27,9 @@ public class StoryActivity extends AppCompatActivity {
     private SliderStoriesAdapter sliderStoriesAdapter;
     private SliderView sliderView;
     private CountDownTimer countDownTimer;
+
+    //private SwipeRefreshLayout mSwipeRefreshLayout;
+
     private long progress;
 
     @Override
@@ -34,6 +37,10 @@ public class StoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_storie);
+       /* mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeRefreshStory);
+        mSwipeRefreshLayout.setOnRefreshListener(this);
+        mSwipeRefreshLayout.setRefreshing(false);
+        mSwipeRefreshLayout.setEnabled(true);*/
 
         this.sliderView = (SliderView) findViewById(R.id.sliderView);
         this.progressStory = (RoundCornerProgressBar) findViewById(R.id.progressStory);
@@ -41,6 +48,7 @@ public class StoryActivity extends AppCompatActivity {
         final int[] like = {0};
 
         ImageView likeStory = findViewById(R.id.likeStories);
+
 
         TextView numberLike = findViewById(R.id.numberStories);
 
@@ -92,10 +100,13 @@ public class StoryActivity extends AppCompatActivity {
     }
 
     public void closeStory() {
-        countDownTimer.cancel();
-        countDownTimer = null;
-        progress = 0;
-        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        if(countDownTimer != null) {
+            countDownTimer.cancel();
+            countDownTimer = null;
+            progress = 0;
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            finish();
+        }
     }
 
     private void startTimer() {
@@ -121,4 +132,19 @@ public class StoryActivity extends AppCompatActivity {
             }
         }.start();
     }
+
+    /*@Override
+    public void onRefresh() {
+        mSwipeRefreshLayout.setRefreshing(false);
+        mSwipeRefreshLayout.setEnabled(true);
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                mSwipeRefreshLayout.setRefreshing(false);
+                mSwipeRefreshLayout.setEnabled(false);
+                closeStory();
+            }
+        }, 1);
+    }*/
 }

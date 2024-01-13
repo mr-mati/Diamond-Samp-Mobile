@@ -129,6 +129,7 @@ public class Menu {
         this.dataDialogMenuArrayList.add(new DataDialogMenu(6, R.drawable.br_menu_ruble, "دونیت"));
         this.dataDialogMenuArrayList.add(new DataDialogMenu(7, R.drawable.br_menu_car, "ماشین ها"));
         this.dataDialogMenuArrayList.add(new DataDialogMenu(399, R.drawable.br_menu_cinematic, "سینماتیک"));
+        this.dataDialogMenuArrayList.add(new DataDialogMenu(401, R.drawable.br_menu_cinematic, "خانواده"));
     }
 
     private void setDialogMenu() {

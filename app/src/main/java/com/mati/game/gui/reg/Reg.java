@@ -8,24 +8,18 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
-
-
-/*
-
-         - Made by Weikton (tapy.me/weikton)
-
-*/
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-
-import com.mati.weikton.reg.Preferences;
-import com.nvidia.devtech.NvEventQueueActivity;
 import com.mati.game.R;
 import com.mati.game.gui.util.Utils;
+import com.mati.weikton.reg.Preferences;
+import com.nvidia.devtech.NvEventQueueActivity;
 
 import java.io.UnsupportedEncodingException;
 
@@ -65,6 +59,15 @@ public class Reg {
         reg_layout_sx.setVisibility(View.GONE);
 
         autoreg = aactivity.findViewById(R.id.auto_switch);
+
+
+        FrameLayout pon = activity.findViewById(R.id.test);
+
+        pon.setOnClickListener(view -> {
+            view.startAnimation(AnimationUtils.loadAnimation(activity, R.anim.button_click));
+            Toast.makeText(activity, "این ویژگی در دستگاه شما موجود نیست!", Toast.LENGTH_SHORT).show();
+        });
+
         autoreg.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {
             @Override

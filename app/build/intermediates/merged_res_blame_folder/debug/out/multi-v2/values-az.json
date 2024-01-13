@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.mati.game.app-mergeDebugResources-36:/values-az/values-az.xml",
+            "outputFile": "com.mati.game.app-mergeDebugResources-40:/values-az/values-az.xml",
             "map": [
                 {
                     "source": "C:\\Users\\jalaxi\\.gradle\\caches\\transforms-3\\2080b157047e6cee086395f5ecd164a5\\transformed\\jetified-play-services-base-18.0.1\\res\\values-az\\values.xml",
