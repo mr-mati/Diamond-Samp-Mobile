@@ -2,10 +2,11 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/chat_line"
     android:layout_width="720dp"
-    android:layout_height="15dp">
+    android:layout_height="15dp"
+    android:layoutDirection="ltr">
 
     <TextView
-        android:id="@id/chat_line_test"
+        android:id="@+id/chat_line_test"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="0.5dp"
@@ -16,14 +17,16 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@id/chat_line_text"
+        android:id="@+id/chat_line_text"
         android:layout_width="712dp"
         android:layout_height="13dp"
         android:layout_gravity="center"
         android:layout_marginLeft="1dp"
+        android:fontFamily="@font/iran_sans"
         android:background="@drawable/test_bg_chat"
-        android:text="  типо тест пон пон"
-        android:textColor="@color/white"
+        android:layoutDirection="ltr"
+        android:text="Salam Chetori سلام"
+        android:textColor="@color/black"
         android:textSize="8dp"
         android:textStyle="bold" />
 

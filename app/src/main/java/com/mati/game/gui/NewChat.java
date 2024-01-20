@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mati.game.R;
+import com.nvidia.devtech.NvEventQueueActivity;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -29,17 +30,12 @@ public class NewChat {
     public ChatAdapter adapter;
     public ArrayList<String> chat_lines = new ArrayList<>();
 
-    public native void showCppKeyboard();
-
     public NewChat(Activity activity) {
         this.main = activity;
-
-        chat_lines.add("salam");
-
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(activity);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(activity, RecyclerView.VERTICAL, false);
-        chat = activity.findViewById(R.id.autoRecycler);
+        chat = activity.findViewById(R.id.testChat);
         chat.setLayoutManager(layoutManager);
         chat.setVisibility(View.GONE);
 
@@ -50,7 +46,7 @@ public class NewChat {
         chat.setLayoutManager(mLayoutManager);
 
         chat.setOnClickListener(view -> {
-            showCppKeyboard();
+            NvEventQueueActivity.getInstance().onShowCppKeyboard();
         });
     }
 
@@ -99,7 +95,7 @@ public class NewChat {
                 chatLineTest = view.findViewById(R.id.chat_line_test);
 
                 chat_line_text.setOnClickListener(view1 -> {
-                    showCppKeyboard();
+                    NvEventQueueActivity.getInstance().onShowCppKeyboard();
                 });
             }
         }
