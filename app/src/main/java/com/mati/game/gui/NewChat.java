@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mati.game.R;
+import com.mati.game.gui.util.Utils;
 import com.nvidia.devtech.NvEventQueueActivity;
 
 import org.apache.commons.lang3.StringUtils;
@@ -50,9 +51,10 @@ public class NewChat {
         });
     }
 
-    public void AddChatMessage(String msg) {
+    public void AddChatMessage(String text) {
         chat.setVisibility(View.VISIBLE);
-        adapter.addItem(msg);
+        /*String optString = jSONObject.optString("i");*/
+        adapter.addItem(text);
     }
 
     public class ChatAdapter  extends RecyclerView.Adapter<ChatAdapter.ViewHolder>{
@@ -158,4 +160,13 @@ public class NewChat {
             return "#ffff00";
         }
     }
+
+    public void ShowChat() {
+        Utils.ShowLayout(chat, true);
+    }
+
+    public void HideChat() {
+        Utils.HideLayout(chat, false);
+    }
+
 }

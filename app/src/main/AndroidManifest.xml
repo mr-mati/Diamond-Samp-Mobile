@@ -10,11 +10,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
-    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <uses-feature android:glEsVersion="0x00020000" />
@@ -41,6 +39,7 @@
         android:usesCleartextTraffic="true"
         tools:replace="android:icon"
         tools:targetApi="m">
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.mati.game.provider"
@@ -52,7 +51,7 @@
         </provider>
 
         <activity
-            android:name="com.mati.game.core.GTASA"
+            android:name=".core.GTASA"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
 
@@ -62,6 +61,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -70,16 +70,19 @@
             android:name="com.mati.launcher.activity.LoaderActivity"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name="com.mati.launcher.activity.UpdateActivity"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name="com.mati.launcher.activity.StoryActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.mati.launcher.activity.WebActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="fullSensor"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <meta-data

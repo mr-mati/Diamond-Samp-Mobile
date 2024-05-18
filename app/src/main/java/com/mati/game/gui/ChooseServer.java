@@ -70,7 +70,7 @@ public class ChooseServer {
                 .with(aactivity)
                 .load(R.drawable.launcher_downloader_bg)
                 .error(R.drawable.launcher_downloader_bg)
-                .placeholder(R.drawable.launcher_downloader_bg)
+                .placeholder(R.drawable.background_gradients)
                 .load(bgUrl)
                 .into(background);
 

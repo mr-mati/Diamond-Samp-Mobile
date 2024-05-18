@@ -65,7 +65,7 @@
 
     <color name="btn_start_background">#6300FF</color>
     <color name="btn_start_shadow1">#4527A0</color>
-    <color name="btn_start_shadow2">#B39DDB</color>
+    <color name="btn_start_shadow2">#7E57C2</color>
 
     <color name="bg_progressbar_color">#1269AB</color>
     <color name="cpb_progressbar_color">#08ADDE</color>

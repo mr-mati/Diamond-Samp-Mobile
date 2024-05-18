@@ -1,4 +1,4 @@
-#Fri Jan 12 20:14:13 GMT+03:30 2024
+#Thu May 16 00:11:48 GMT+03:30 2024
 base.0=D\:\\CRMP\\donat + rega\\java\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
 base.1=D\:\\CRMP\\donat + rega\\java\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes2.dex
 path.0=classes.dex

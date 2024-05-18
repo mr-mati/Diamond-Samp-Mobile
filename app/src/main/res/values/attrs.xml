@@ -86,4 +86,22 @@
     <declare-styleable name="SeekArcTheme">
         <attr name="seekArcStyle" format="reference"></attr>
     </declare-styleable>
+
+    <attr name="gaugeDividerColor" format="color" />
+    <attr name="gaugeDividerDrawFirst" format="boolean" />
+    <attr name="gaugeDividerDrawLast" format="boolean" />
+    <attr name="gaugeDividerSize" format="integer" />
+    <attr name="gaugeDividerStep" format="integer" />
+    <attr name="gaugeEndValue" format="integer" />
+    <attr name="gaugePointEndColor" format="color" />
+    <attr name="gaugePointSize" format="integer" />
+    <attr name="gaugePointStartColor" format="color" />
+    <attr name="gaugeStartAngle" format="integer" />
+    <attr name="gaugeStartValue" format="integer" />
+    <attr name="gaugeStrokeCap" format="string" />
+    <attr name="gaugeStrokeColor" format="color" />
+    <attr name="gaugeStrokeWidth" format="dimension" />
+    <attr name="gaugeSweepAngle" format="integer" />
+    <attr name="gaugeValue" format="integer" />
+
 </resources>

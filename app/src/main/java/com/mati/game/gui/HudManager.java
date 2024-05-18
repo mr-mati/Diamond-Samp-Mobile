@@ -175,7 +175,7 @@ public class HudManager {
 
     public void ShowHud() {
         Utils.ShowLayout(hud_layout, true);
-        //Utils.ShowLayout(hud_micro, false);
+        Utils.ShowLayout(hud_micro, false);
         //Utils.ShowLayout(hud_shagerd, true);
     }
 

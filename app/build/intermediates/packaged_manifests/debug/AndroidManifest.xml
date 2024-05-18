@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mati.game"
     android:versionCode="4"
-    android:versionName="Yalda-Version" >
+    android:versionName="Shahbaz-Beta" >
 
     <uses-sdk
         android:minSdkVersion="21"
@@ -89,7 +89,12 @@
         <activity
             android:name="com.mati.launcher.activity.StoryActivity"
             android:configChanges="orientation|screenSize"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.mati.launcher.activity.WebActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="fullSensor"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <meta-data

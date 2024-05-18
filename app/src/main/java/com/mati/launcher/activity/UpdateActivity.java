@@ -34,7 +34,7 @@ public class UpdateActivity extends AppCompatActivity {
 
     public void startDownload() {
         folder = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-        String url = "http://62.3.14.22/update/PersianRp.7z";
+        String url = "https://dl.lpgame.ir/Persian Mobile/PersianRp.7z";
         createDownloadTask(url, folder.getPath()).start();
     }
 
@@ -68,7 +68,8 @@ public class UpdateActivity extends AppCompatActivity {
                     @Override
                     protected void error(BaseDownloadTask task, Throwable e) {
                         super.error(task, e);
-                        Toast.makeText(getApplicationContext(), "خطایی روی داد، لطفاً دوباره نصب را امتحان کنید", Toast.LENGTH_SHORT).show();
+                        /*Toast.makeText(getApplicationContext(), "خطایی روی داد، لطفاً دوباره نصب را امتحان کنید", Toast.LENGTH_SHORT).show();*/
+                        Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(UpdateActivity.this, MainActivity.class));
 
                     }

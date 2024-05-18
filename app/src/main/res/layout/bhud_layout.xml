@@ -343,6 +343,7 @@
         android:layout_width="67dp"
         android:layout_height="61dp"
         android:layout_marginEnd="64dp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toStartOf="@+id/gune_bg"
         app:layout_constraintStart_toStartOf="@+id/linearLayout3"
         app:layout_constraintTop_toBottomOf="@+id/hud_menu"
@@ -352,11 +353,9 @@
         android:id="@+id/img_voice"
         android:layout_width="67dp"
         android:layout_height="61dp"
-        android:layout_marginTop="18dp"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="@+id/imageView16"
-        app:layout_constraintStart_toStartOf="@+id/imageView16"
-        app:layout_constraintTop_toBottomOf="@+id/imageView16"
+        app:layout_constraintEnd_toStartOf="@+id/img_shagerd"
+        app:layout_constraintStart_toEndOf="@+id/img_shagerd"
+        app:layout_constraintTop_toBottomOf="@+id/img_shagerd"
         app:srcCompat="@drawable/off_micro" />
 
 

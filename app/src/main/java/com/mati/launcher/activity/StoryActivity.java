@@ -2,7 +2,6 @@ package com.mati.launcher.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -35,12 +34,7 @@ public class StoryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_storie);
-       /* mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeRefreshStory);
-        mSwipeRefreshLayout.setOnRefreshListener(this);
-        mSwipeRefreshLayout.setRefreshing(false);
-        mSwipeRefreshLayout.setEnabled(true);*/
 
         this.sliderView = (SliderView) findViewById(R.id.sliderView);
         this.progressStory = (RoundCornerProgressBar) findViewById(R.id.progressStory);
@@ -100,7 +94,7 @@ public class StoryActivity extends AppCompatActivity {
     }
 
     public void closeStory() {
-        if(countDownTimer != null) {
+        if (countDownTimer != null) {
             countDownTimer.cancel();
             countDownTimer = null;
             progress = 0;

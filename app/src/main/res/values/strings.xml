@@ -85,6 +85,7 @@
 
     <string name="telegram">تلگرام</string>
     <string name="discord">دیسکورد</string>
+    <string name="forum">انجمن</string>
 
     <string name="not_Download_data">دیتای بازی یافت نشد</string>
     <string name="installation_data">دیتای بازی یافت شد, میتونید وارد بازی شوید</string>
@@ -127,5 +128,9 @@
     <string name="cancel">لغو</string>
     <string name="permission">دسترسی</string>
     <string name="permission_check">چک کردن دسترسی</string>
+
+
+    <string name="chat_connected_to">Connected to</string>
+    <string name="chat_t">T</string>
 
 </resources>

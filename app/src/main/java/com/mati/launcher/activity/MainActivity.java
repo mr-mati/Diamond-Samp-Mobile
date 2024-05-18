@@ -170,7 +170,7 @@ public class MainActivity extends AppCompatActivity {
                 t.schedule(new TimerTask() {
                     @Override
                     public void run() {
-                        startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://discord.gg/")));
+                        onClickForum();
                     }
                 }, 200L);
             }
@@ -273,6 +273,12 @@ public class MainActivity extends AppCompatActivity {
                 requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO}, 1000);
             }
         }
+    }
+
+    public void onClickForum() {
+        Intent intent = new Intent(this, WebActivity.class);
+        intent.putExtra("Web_Url", "forum.prpMobile.Ir");
+        startActivity(intent);
     }
 
     public void onClickPlay() {

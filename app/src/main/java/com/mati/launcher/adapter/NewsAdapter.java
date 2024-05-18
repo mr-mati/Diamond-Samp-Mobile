@@ -45,13 +45,12 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         Glide
                 .with(context)
                 .load(news.getImgurl())
-                .placeholder(R.drawable.launcher_downloader_bg)
+                .placeholder(R.drawable.background_gradients)
                 .apply(RequestOptions.bitmapTransform(new BlurTransformation(25, 3)))
                 .into(holder.image);
         Glide
                 .with(context)
                 .load(news.getImgurl())
-                .placeholder(R.drawable.launcher_downloader_bg)
                 .circleCrop()
                 .into(holder.profile);
 

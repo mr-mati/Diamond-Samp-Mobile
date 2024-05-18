@@ -165,7 +165,13 @@ public abstract class NvEventQueueActivity
     private ChooseServer mChooseServer = null;
     private RadialMenu mRadialMenu = null;
     private Donate mDonate = null;
+
     public NewChat newChat = null;
+
+    /*private KeyBoard mKeyBoard = null;
+
+    private FrameLayout mFrontUILayout = null;*/
+
     private Reg mReg = null;
 
     private Tab mTab = null;
@@ -179,6 +185,8 @@ public abstract class NvEventQueueActivity
     }
 
     public native void onEventBackPressed();
+
+    public native void onShowCppKeyboard();
 
     public native void onSettingsWindowSave();
 
@@ -963,6 +971,7 @@ public abstract class NvEventQueueActivity
         mSurfaceView = view;
         mRootFrame = findViewById(R.id.main_fl_root);
         mAndroidUI = findViewById(R.id.ui_layout);
+        /*mFrontUILayout  = (FrameLayout) findViewById(R.id.front_ui_layout);*/
 
         SurfaceHolder holder = view.getHolder();
         holder.setType(SurfaceHolder.SURFACE_TYPE_GPU);
@@ -984,6 +993,7 @@ public abstract class NvEventQueueActivity
         mRadialMenu = new RadialMenu(this);
         mDonate = new Donate(this);
         newChat = new NewChat(this);
+        /*mKeyBoard = new KeyBoard(this);*/
         mReg = new Reg(this);
         mTab = new Tab(this);
 
@@ -1484,6 +1494,10 @@ public abstract class NvEventQueueActivity
         return mRootFrame;
     }
 
+    /*public FrameLayout getFrontUILayout() {
+        return this.mFrontUILayout;
+    }*/
+
     public static NvEventQueueActivity getInstance() {
         return instance;
     }
@@ -1501,11 +1515,22 @@ public abstract class NvEventQueueActivity
             mHudManager.ShowHud();
         });
     }
-    //public void showTest() { runOnUiThread(() -> { //тут уже действие, надеюсь понятно }); }
 
     public void hideHud() {
         runOnUiThread(() -> {
             mHudManager.HideHud();
+        });
+    }
+
+    public void showChat() {
+        runOnUiThread(() -> {
+            newChat.ShowChat();
+        });
+    }
+
+    public void hideChat() {
+        runOnUiThread(() -> {
+            newChat.HideChat();
         });
     }
 
@@ -1716,10 +1741,6 @@ public abstract class NvEventQueueActivity
         });
     }
 
-    public void addMessageToChat(String msg) {
-        runOnUiThread(() -> newChat.AddChatMessage(msg));
-    }
-
     public void showHudAndLogo() {
         runOnUiThread(() -> {
             if (logo)
@@ -1766,6 +1787,10 @@ public abstract class NvEventQueueActivity
             micro = (findViewById(R.id.img_voice).getVisibility() == View.VISIBLE) ? true : false;
             findViewById(R.id.img_voice).setVisibility(View.GONE);
         });
+    }
+
+    public void addMessageToChat(String text) {
+        runOnUiThread(() -> newChat.AddChatMessage(text));
     }
 
 }
