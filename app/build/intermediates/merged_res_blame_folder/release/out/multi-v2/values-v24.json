@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.mati.game.app-mergeReleaseResources-41:/values-v24/values-v24.xml",
+            "outputFile": "com.mati.game.app-mergeReleaseResources-68:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\jalaxi\\.gradle\\caches\\transforms-3\\af8ef9a1d5288bec9e3e2af7b9209884\\transformed\\appcompat-1.2.0\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\jalaxi\\.gradle\\caches\\transforms-3\\6b5067504880088c4434c717607a0142\\transformed\\appcompat-1.2.0\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

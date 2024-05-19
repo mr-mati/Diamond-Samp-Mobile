@@ -89,7 +89,7 @@ public class Donate extends AppCompatActivity {
         vipgld = activity.findViewById(R.id.donate_button2);
         vipplt = activity.findViewById(R.id.donate_button3);
         auto_button = activity.findViewById(R.id.donate_buton);
-        uslugi_buy = activity.findViewById(R.id.donate_butееon);
+        uslugi_buy = activity.findViewById(R.id.donate_button);
         back = activity.findViewById(R.id.imageView22);
         sc1 = activity.findViewById(R.id.sc1);
         sc2 = activity.findViewById(R.id.sc2);

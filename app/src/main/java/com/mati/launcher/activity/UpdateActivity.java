@@ -15,7 +15,7 @@ import com.liulishuo.filedownloader.BaseDownloadTask;
 import com.liulishuo.filedownloader.FileDownloadSampleListener;
 import com.liulishuo.filedownloader.FileDownloader;
 import com.mati.game.R;
-import com.mati.launcher.other.Utils;
+import com.mati.launcher.utils.Utils;
 
 import java.io.File;
 import java.util.Formatter;

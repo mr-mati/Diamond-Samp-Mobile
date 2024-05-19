@@ -16,7 +16,7 @@ import androidx.core.content.ContextCompat;
 import com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar;
 import com.mati.game.R;
 import com.mati.launcher.adapter.SliderStoriesAdapter;
-import com.mati.launcher.other.Lists;
+import com.mati.launcher.utils.Lists;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 

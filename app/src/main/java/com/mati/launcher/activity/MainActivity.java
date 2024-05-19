@@ -43,10 +43,10 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import com.mati.game.R;
 import com.mati.game.core.GTASA;
 import com.mati.launcher.adapter.NewsAdapter;
-import com.mati.launcher.model.News;
-import com.mati.launcher.model.Update;
-import com.mati.launcher.other.Interface;
-import com.mati.launcher.other.Lists;
+import com.mati.launcher.data.model.News;
+import com.mati.launcher.data.model.Update;
+import com.mati.launcher.utils.Interface;
+import com.mati.launcher.utils.Lists;
 import com.mati.weikton.reg.Preferences;
 
 import org.ini4j.Wini;

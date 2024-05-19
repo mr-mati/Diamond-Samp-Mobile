@@ -20,7 +20,7 @@ import com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar;
 import com.bumptech.glide.Glide;
 import com.mati.game.R;
 import com.mati.game.gui.util.Utils;
-import com.mati.launcher.model.Servers;
+import com.mati.launcher.data.model.Servers;
 import com.nvidia.devtech.NvEventQueueActivity;
 
 import java.io.UnsupportedEncodingException;

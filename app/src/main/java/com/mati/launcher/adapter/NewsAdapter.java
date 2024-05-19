@@ -15,7 +15,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.mati.game.R;
 import com.mati.launcher.activity.StoryActivity;
-import com.mati.launcher.model.News;
+import com.mati.launcher.data.model.News;
 
 import java.util.ArrayList;
 

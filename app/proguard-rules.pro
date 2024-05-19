@@ -12,8 +12,8 @@
 -keep public class com.mati.launcher.activity.* { *; }
 -keep public class com.mati.launcher.adapter.* { *; }
 -keep public class com.mati.launcher.fragment.* { *; }
--keep public class com.mati.launcher.model.* { *; }
--keep public class com.mati.launcher.other.* { *; }
+-keep public class com.mati.launcher.data.model.* { *; }
+-keep public class com.mati.launcher.utils.* { *; }
 -keep public class com.mati.weikton.reg.* { *; }
 
 #
