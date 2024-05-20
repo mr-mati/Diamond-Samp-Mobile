@@ -1769,8 +1769,8 @@ public abstract class NvEventQueueActivity
                 findViewById(R.id.grzona).setVisibility(View.VISIBLE);
             if (x2)
                 findViewById(R.id.imageView17).setVisibility(View.VISIBLE);
-            if (micro)
-                findViewById(R.id.img_voice).setVisibility(View.VISIBLE);
+            /*if (micro)
+                findViewById(R.id.img_voice).setVisibility(View.VISIBLE);*/
         });
     }
 
@@ -1784,8 +1784,8 @@ public abstract class NvEventQueueActivity
             findViewById(R.id.grzona).setVisibility(View.GONE);
             x2 = (findViewById(R.id.imageView17).getVisibility() == View.VISIBLE) ? true : false;
             findViewById(R.id.imageView17).setVisibility(View.GONE);
-            micro = (findViewById(R.id.img_voice).getVisibility() == View.VISIBLE) ? true : false;
-            findViewById(R.id.img_voice).setVisibility(View.GONE);
+            /*micro = (findViewById(R.id.img_voice).getVisibility() == View.VISIBLE) ? true : false;
+            findViewById(R.id.img_voice).setVisibility(View.GONE);*/
         });
     }
 

@@ -9,14 +9,26 @@
         android:id="@+id/mainFragment"
         android:name="com.mati.launcher.newUi.fragments.MainFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_settingFragment"
-            app:destination="@id/settingFragment" />
+            app:destination="@id/settingFragment"
+            app:popUpTo="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/settingFragment"
         android:name="com.mati.persianlauncher.fragment.SettingFragment"
         android:label="fragment_setting"
         tools:layout="@layout/fragment_setting" />
+    <fragment
+        android:id="@+id/webFragment"
+        android:name="com.mati.launcher.newUi.fragments.WebFragment"
+        android:label="fragment_web"
+        tools:layout="@layout/fragment_web">
+        <argument
+            android:name="webUrl"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="https://PRPMOBILE.ir/" />
+    </fragment>
 </navigation>

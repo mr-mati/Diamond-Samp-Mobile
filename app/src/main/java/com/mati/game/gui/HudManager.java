@@ -66,7 +66,7 @@ public class HudManager {
 
         hud_radar = aactivity.findViewById(R.id.radar_hude);
 
-        hud_micro = aactivity.findViewById(R.id.img_voice);
+        /*hud_micro = aactivity.findViewById(R.id.img_voice);*/
 
         hud_shagerd = aactivity.findViewById(R.id.img_shagerd);
 

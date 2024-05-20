@@ -135,7 +135,7 @@
 
         <include layout="@layout/radial_menu" />
 
-        <include layout="@layout/donate_reytiz" />
+        <include layout="@layout/donate_screen" />
 
         <include layout="@layout/donat_sc" />
 

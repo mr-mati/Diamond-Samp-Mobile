@@ -7,6 +7,11 @@
     android:background="@drawable/main_banner"
     tools:context="com.mati.launcher.newUi.fragments.MainFragment">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/main_banner"
+        android:scaleType="centerCrop"/>
 
     <FrameLayout
         android:id="@+id/frameLayout2"
@@ -37,21 +42,6 @@
         app:layout_constraintStart_toEndOf="@+id/frameLayout2"
         app:layout_constraintTop_toTopOf="@+id/frameLayout2" />
 
-
-    <Button
-        android:id="@+id/PlayGame"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:layout_margin="8dp"
-        android:background="@drawable/btn_start"
-        android:fontFamily="@font/iran_sans"
-        android:text="شروع"
-        android:textColor="@color/white"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <LinearLayout
         android:id="@+id/linearLayout5"
         android:layout_width="wrap_content"
@@ -79,14 +69,30 @@
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/PlayGame"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/btn_start"
+        android:fontFamily="@font/iran_sans"
+        android:text="شروع"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
     <FrameLayout
         android:id="@+id/setting"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_margin="16dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/btn_items"
-        app:layout_constraintEnd_toStartOf="@+id/ping"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="@+id/ping"
+        app:layout_constraintTop_toBottomOf="@+id/ping">
 
         <ImageView
             android:layout_width="32dp"
@@ -100,11 +106,10 @@
         android:id="@+id/shop"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/btn_items"
-        app:layout_constraintBottom_toBottomOf="@+id/setting"
-        app:layout_constraintEnd_toStartOf="@+id/setting"
-        app:layout_constraintTop_toTopOf="@+id/setting">
+        app:layout_constraintEnd_toEndOf="@+id/setting"
+        app:layout_constraintTop_toBottomOf="@+id/setting">
 
         <ImageView
             android:layout_width="32dp"
@@ -118,11 +123,10 @@
         android:id="@+id/download"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/btn_items"
-        app:layout_constraintBottom_toBottomOf="@+id/shop"
-        app:layout_constraintEnd_toStartOf="@+id/shop"
-        app:layout_constraintTop_toTopOf="@+id/setting">
+        app:layout_constraintEnd_toEndOf="@+id/shop"
+        app:layout_constraintTop_toBottomOf="@+id/shop">
 
         <ImageView
             android:layout_width="32dp"
@@ -137,11 +141,10 @@
         android:layout_width="40dp"
         android:layout_height="50dp"
         android:layout_margin="8dp"
-        android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/setting"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/setting">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/ic_ping"
@@ -166,9 +169,8 @@
         android:layout_height="46dp"
         android:layout_margin="8dp"
         android:src="@drawable/ic_discord"
-        app:layout_constraintBottom_toTopOf="@+id/PlayGame"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ping" />
+        app:layout_constraintTop_toBottomOf="@+id/download" />
 
     <ImageView
         android:id="@+id/telegram"
@@ -179,13 +181,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/discord" />
 
-    <!--<androidx.recyclerview.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/stories_recycler"
-        android:layout_width="400dp"
-        android:layout_height="@dimen/_100sdp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_120sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/telegram"
         tools:itemCount="50"
-        tools:listitem="@layout/item_news" />-->
+        tools:listitem="@layout/item_news" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

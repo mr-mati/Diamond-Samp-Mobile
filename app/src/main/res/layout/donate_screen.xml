@@ -827,7 +827,7 @@
             android:text="700 BC"
             android:textColor="@color/white"
             android:textSize="13sp"
-            app:layout_constraintBottom_toTopOf="@+id/donate_butееon"
+            app:layout_constraintBottom_toTopOf="@+id/donate_button"
             app:layout_constraintEnd_toEndOf="@+id/imageView27"
             app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="@+id/imageView27" />

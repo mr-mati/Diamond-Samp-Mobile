@@ -34,12 +34,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
-        fristFragment()
-
     }
 
-    private fun replaceFragment(fragment: Fragment) {
+    /*private fun replaceFragment(fragment: Fragment) {
         val transient = supportFragmentManager.beginTransaction()
         transient.replace(R.id.frame_main, fragment)
         transient.commit()
@@ -47,6 +44,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun fristFragment() {
         replaceFragment(MainFragment())
-    }
+    }*/
 
 }

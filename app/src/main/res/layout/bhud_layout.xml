@@ -349,14 +349,14 @@
         app:layout_constraintTop_toBottomOf="@+id/hud_menu"
         app:srcCompat="@drawable/img_sandalishagerd" />
 
-    <ImageView
+    <!--<ImageView
         android:id="@+id/img_voice"
         android:layout_width="67dp"
         android:layout_height="61dp"
         app:layout_constraintEnd_toStartOf="@+id/img_shagerd"
         app:layout_constraintStart_toEndOf="@+id/img_shagerd"
         app:layout_constraintTop_toBottomOf="@+id/img_shagerd"
-        app:srcCompat="@drawable/off_micro" />
+        app:srcCompat="@drawable/off_micro" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
