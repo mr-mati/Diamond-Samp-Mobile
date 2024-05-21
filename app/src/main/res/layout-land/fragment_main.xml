@@ -115,13 +115,31 @@
     </FrameLayout>
 
     <FrameLayout
-        android:id="@+id/download"
+        android:id="@+id/website"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_margin="8dp"
         android:background="@drawable/btn_items"
         app:layout_constraintBottom_toBottomOf="@+id/shop"
         app:layout_constraintEnd_toStartOf="@+id/shop"
+        app:layout_constraintTop_toTopOf="@+id/shop">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_web" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/download"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/btn_items"
+        app:layout_constraintBottom_toBottomOf="@+id/website"
+        app:layout_constraintEnd_toStartOf="@+id/website"
         app:layout_constraintTop_toTopOf="@+id/setting">
 
         <ImageView
@@ -179,13 +197,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/discord" />
 
-    <!--<androidx.recyclerview.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/stories_recycler"
-        android:layout_width="400dp"
-        android:layout_height="@dimen/_100sdp"
+        android:layout_width="300dp"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_margin="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:itemCount="50"
-        tools:listitem="@layout/item_news" />-->
+        tools:listitem="@layout/item_news" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

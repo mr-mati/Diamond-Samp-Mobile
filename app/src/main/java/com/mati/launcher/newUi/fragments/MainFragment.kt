@@ -24,6 +24,7 @@ import com.mati.game.R
 import com.mati.game.core.Config
 import com.mati.game.core.GTASA
 import com.mati.game.databinding.FragmentMainBinding
+import com.mati.game.databinding.ShopDialogBinding
 import com.mati.launcher.activity.LoaderActivity
 import com.mati.launcher.activity.UpdateActivity
 import com.mati.launcher.adapter.NewsAdapter
@@ -97,11 +98,21 @@ class MainFragment : Fragment() {
         }
 
         binding.shop.setOnClickListener {
+            shopDialog()
+        }
 
+        binding.website.setOnClickListener {
+            findNavController().navigate(R.id.action_mainFragment_to_webFragment)
         }
 
         binding.download.setOnClickListener {
-
+            if (IsGameInstalled()) {
+                if (!IsUpdateInstalled()) {
+                    ToUpdate()
+                }
+            } else {
+                ToLoad()
+            }
         }
 
         binding.telegram.setOnClickListener {
@@ -335,6 +346,23 @@ class MainFragment : Fragment() {
         }
     }
 
+    private fun shopDialog() {
+        val dialog = AlertDialog.Builder(requireContext()).create()
+        val dialogBinding = ShopDialogBinding.inflate(layoutInflater)
+        dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.setView(dialogBinding.root)
+        dialog.setCancelable(false)
+        dialog.show()
+
+        dialogBinding.btnOpenTelegram.setOnClickListener {
+            val telegram = Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/mr_mati"))
+            telegram.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            telegram.setPackage("org.telegram.messenger")
+            startActivity(telegram)
+            dialog.dismiss()
+        }
+    }
+
 
     private fun CeloeErrorDialog() {
         val dialog = AlertDialog.Builder(requireContext()).create()
@@ -412,13 +440,12 @@ class MainFragment : Fragment() {
                 if (data != null) {
                     if (Lists.nlist.isEmpty()) {
                         data.reverse()
-                        recyclerNews.visibility = View.VISIBLE
                     }
                 } else {
                     recyclerNews.visibility = View.INVISIBLE
                 }
 
-                recyclerNews = binding.storiesRecycler!!
+                recyclerNews = binding.storiesRecycler
                 recyclerNews.setHasFixedSize(true)
                 val layoutManager =
                     LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)

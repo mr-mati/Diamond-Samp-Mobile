@@ -39,6 +39,7 @@ class SettingFragment : Fragment() {
         LoadNick()
         loadVoice()
         loadData()
+        loadKeyboard()
         loadFps()
 
         binding.btnEdit.setOnClickListener {
@@ -110,6 +111,7 @@ class SettingFragment : Fragment() {
                         " نام کاربری شما تغییر کرد به : ${dialogBinding.editText.text} ",
                         Toast.LENGTH_SHORT
                     ).show()
+                    binding.userName.text = dialogBinding.editText.text
                     dialog.dismiss()
                 } catch (e: IOException) {
                     e.printStackTrace()
@@ -165,10 +167,10 @@ class SettingFragment : Fragment() {
                         .toString() + "/PersianRp/persian/settings.ini"
                 )
             )
-            Preferences.setNick(w["gui", "fps"])
+            Preferences.setNick(w["gui", "voicelist"])
             w.store()
 
-            when (w["client", "name"]) {
+            when (w["gui", "voicelist"]) {
                 "1" -> {
                     binding.txtSelectVoiceChat.text = "روشن"
                     binding.txtSelectVoiceChat.setTextColor(Color.parseColor("#2ECC71"))
@@ -200,6 +202,34 @@ class SettingFragment : Fragment() {
         }
     }
 
+    private fun loadKeyboard() {
+        try {
+            val w = Ini(
+                File(
+                    Environment.getExternalStorageDirectory()
+                        .toString() + "/PersianRp/persian/settings.ini"
+                )
+            )
+            Preferences.setNick(w["gui", "androidKeyboard"])
+            w.store()
+
+            when (w["gui", "androidKeyboard"]) {
+                "1" -> {
+                    binding.txtSelectKeyboard.text = "اندروید"
+                    binding.txtSelectKeyboard.setTextColor(Color.parseColor("#b9b9b9"))
+                }
+
+                "0" -> {
+                    binding.txtSelectKeyboard.text = "بازی"
+                    binding.txtSelectKeyboard.setTextColor(Color.parseColor("#b9b9b9"))
+                }
+            }
+
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+    }
+
     private fun loadFps() {
         try {
             val w = Ini(
@@ -211,7 +241,7 @@ class SettingFragment : Fragment() {
             Preferences.setNick(w["gui", "fps"])
             w.store()
 
-            when (w["client", "name"]) {
+            when (w["gui", "fps"]) {
                 "30" -> {
                     binding.radioNoLimit.isChecked = false
                     binding.radio30f.isChecked = true

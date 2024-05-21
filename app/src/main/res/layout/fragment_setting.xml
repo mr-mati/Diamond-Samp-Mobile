@@ -144,8 +144,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|end"
                         android:layout_margin="10dp"
-                        android:text="English"
-                        android:textColor="@color/secondaryTextColor"
+                        android:text="فارسی"
+                        android:textColor="#b9b9b9"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -217,7 +217,7 @@
                 </FrameLayout>
 
                 <FrameLayout
-                    android:id="@+id/modifyMode"
+                    android:id="@+id/keyboard"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
@@ -226,18 +226,18 @@
 
 
                     <TextView
-                        android:id="@+id/txt_modifyMode"
+                        android:id="@+id/txt_keyboard"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="end|start"
                         android:layout_margin="10dp"
-                        android:text="@string/Modify_Mode"
+                        android:text="@string/keyboard"
                         android:textColor="@color/white"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/txt_select_modifyMode"
+                        android:id="@+id/txt_select_keyboard"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|end"
