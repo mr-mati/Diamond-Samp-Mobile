@@ -229,7 +229,7 @@
                         android:id="@+id/txt_modifyMode"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center|start"
+                        android:layout_gravity="end|start"
                         android:layout_margin="10dp"
                         android:text="@string/Modify_Mode"
                         android:textColor="@color/white"
@@ -282,7 +282,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/sparkviewMain">
 
                         <RadioButton
-                            android:id="@+id/radio_12h"
+                            android:id="@+id/radio_noLimit"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
@@ -298,7 +298,7 @@
                             android:textStyle="bold" />
 
                         <RadioButton
-                            android:id="@+id/radio_1d"
+                            android:id="@+id/radio_30f"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
@@ -314,7 +314,7 @@
                             android:textStyle="bold" />
 
                         <RadioButton
-                            android:id="@+id/radio_1w"
+                            android:id="@+id/radio_60f"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
@@ -334,6 +334,7 @@
                 </FrameLayout>
 
                 <FrameLayout
+                    android:id="@+id/btn_close"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
@@ -342,10 +343,10 @@
 
 
                     <TextView
-                        android:id="@+id/txt_LogOut"
+                        android:id="@+id/txt_close"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center|start"
+                        android:layout_gravity="center|end"
                         android:layout_margin="10dp"
                         android:text="@string/Log_Out"
                         android:textColor="@color/colorLoss"
@@ -355,6 +356,7 @@
                 </FrameLayout>
 
                 <FrameLayout
+                    android:id="@+id/btn_deleteData"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
@@ -363,12 +365,12 @@
 
 
                     <TextView
-                        android:id="@+id/txt_deleteGame"
+                        android:id="@+id/txt_deleteData"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center|start"
+                        android:layout_gravity="center|end"
                         android:layout_margin="10dp"
-                        android:text="@string/Delete_Game"
+                        android:text="@string/Delete_Data"
                         android:textColor="@color/colorLoss"
                         android:textSize="16sp"
                         android:textStyle="bold" />
