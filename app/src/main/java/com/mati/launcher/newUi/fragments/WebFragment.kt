@@ -11,7 +11,9 @@ import android.webkit.WebViewClient
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.mati.FiveGames.util.NetworkChecker
+import com.mati.game.R
 import com.mati.game.databinding.FragmentWebBinding
 
 class WebFragment : Fragment() {
@@ -53,6 +55,8 @@ class WebFragment : Fragment() {
                 if (webView.url != loadingUrl) {
                     webView.goBack()
                     return
+                } else {
+                    findNavController().navigate(R.id.action_webFragment_to_mainFragment)
                 }
             }
         })

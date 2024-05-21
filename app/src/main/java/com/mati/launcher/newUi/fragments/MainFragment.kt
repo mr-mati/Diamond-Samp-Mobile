@@ -112,7 +112,7 @@ class MainFragment : Fragment() {
         }
 
         binding.discord.setOnClickListener {
-
+            findNavController().navigate(R.id.action_mainFragment_to_webFragment)
         }
 
     }
@@ -166,6 +166,13 @@ class MainFragment : Fragment() {
         return file.exists()
     }
 
+    private fun IsUpdateInstalled(): Boolean {
+        val CheckFile =
+            Environment.getExternalStorageDirectory().toString() + "/PersianRp/version.ini"
+        val file = File(CheckFile)
+        return file.exists()
+    }
+
     fun CheckFile(): Boolean {
         val directoryPath = Environment.getExternalStorageDirectory().toString() + "/PersianRp/"
         val directoryCloe = Environment.getExternalStorageDirectory().toString() + "/PersianRp/cloe"
@@ -209,13 +216,6 @@ class MainFragment : Fragment() {
 
     private fun tost(pon: String) {
         Toast.makeText(requireContext(), pon, Toast.LENGTH_LONG).show()
-    }
-
-    private fun IsUpdateInstalled(): Boolean {
-        val CheckFile =
-            Environment.getExternalStorageDirectory().toString() + "/PersianRp/version.ini"
-        val file = File(CheckFile)
-        return file.exists()
     }
 
     private fun LoadNick() {
@@ -412,6 +412,7 @@ class MainFragment : Fragment() {
                 if (data != null) {
                     if (Lists.nlist.isEmpty()) {
                         data.reverse()
+                        recyclerNews.visibility = View.VISIBLE
                     }
                 } else {
                     recyclerNews.visibility = View.INVISIBLE
