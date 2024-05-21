@@ -108,7 +108,7 @@
     <string name="Gta_Data">دیتای بازی</string>
     <string name="Modify_Mode">حالت مود</string>
     <string name="Log_Out">خروج از بازی</string>
-    <string name="Delete_Game">حذف بازی</string>
+    <string name="Delete_Data">حذف دیتا</string>
 
     <string name="on">روشن</string>
     <string name="off">خاموش</string>
