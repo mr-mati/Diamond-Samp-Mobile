@@ -1,4 +1,4 @@
-package com.mati.persianlauncher.fragment
+package com.mati.launcher.newUi.fragments
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -23,6 +23,8 @@ import java.io.IOException
 
 class SettingFragment : Fragment() {
     private lateinit var binding: FragmentSettingBinding
+    lateinit var w: Ini
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -36,11 +38,17 @@ class SettingFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
+        setFps()
+
         LoadNick()
         loadVoice()
         loadData()
         loadKeyboard()
         loadFps()
+
+        binding.btnBack.setOnClickListener {
+            findNavController().navigate(R.id.action_settingFragment_to_mainFragment)
+        }
 
         binding.btnEdit.setOnClickListener {
             changeNameDialog()
@@ -124,7 +132,7 @@ class SettingFragment : Fragment() {
 
     private fun LoadNick() {
         try {
-            val w = Ini(
+            w = Ini(
                 File(
                     Environment.getExternalStorageDirectory()
                         .toString() + "/PersianRp/persian/settings.ini"
@@ -161,7 +169,7 @@ class SettingFragment : Fragment() {
 
     private fun loadVoice() {
         try {
-            val w = Ini(
+            w = Ini(
                 File(
                     Environment.getExternalStorageDirectory()
                         .toString() + "/PersianRp/persian/settings.ini"
@@ -204,7 +212,7 @@ class SettingFragment : Fragment() {
 
     private fun loadKeyboard() {
         try {
-            val w = Ini(
+            w = Ini(
                 File(
                     Environment.getExternalStorageDirectory()
                         .toString() + "/PersianRp/persian/settings.ini"
@@ -230,9 +238,69 @@ class SettingFragment : Fragment() {
         }
     }
 
+    private fun setFps() {
+        binding.radioGropMain.setOnCheckedChangeListener { _, checkedId ->
+            when (checkedId) {
+                R.id.radio_30f -> {
+
+                    try {
+                        w = Ini(
+                            File(
+                                Environment.getExternalStorageDirectory()
+                                    .toString() + "/PersianRp/persian/settings.ini"
+                            )
+                        )
+                        Preferences.setNick(w["gui", "fps"])
+                        w.store()
+                        w.put("gui", "fps", "30")
+                    } catch (e: IOException) {
+                        e.printStackTrace()
+                    }
+
+                }
+
+                R.id.radio_60f -> {
+
+                    try {
+                        w = Ini(
+                            File(
+                                Environment.getExternalStorageDirectory()
+                                    .toString() + "/PersianRp/persian/settings.ini"
+                            )
+                        )
+                        Preferences.setNick(w["gui", "fps"])
+                        w.store()
+                        w.put("gui", "fps", "60")
+                    } catch (e: IOException) {
+                        e.printStackTrace()
+                    }
+
+                }
+
+                R.id.radio_noLimit -> {
+
+                    try {
+                        w = Ini(
+                            File(
+                                Environment.getExternalStorageDirectory()
+                                    .toString() + "/PersianRp/persian/settings.ini"
+                            )
+                        )
+                        Preferences.setNick(w["gui", "fps"])
+                        w.store()
+                        w.put("gui", "fps", "120")
+                    } catch (e: IOException) {
+                        e.printStackTrace()
+                    }
+
+                }
+            }
+        }
+    }
+
     private fun loadFps() {
         try {
-            val w = Ini(
+            w = Ini(
                 File(
                     Environment.getExternalStorageDirectory()
                         .toString() + "/PersianRp/persian/settings.ini"

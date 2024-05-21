@@ -23,7 +23,7 @@
     </fragment>
     <fragment
         android:id="@+id/settingFragment"
-        android:name="com.mati.persianlauncher.fragment.SettingFragment"
+        android:name="com.mati.launcher.newUi.fragments.SettingFragment"
         android:label="fragment_setting"
         tools:layout="@layout/fragment_setting" >
         <action
