@@ -82,11 +82,11 @@
                 android:padding="16dp"
                 android:src="@drawable/ic_edit"
                 android:tooltipText="Change Name"
-                app:backgroundTint="@drawable/button_red_rectangle"
+                app:backgroundTint="@color/colorPrimaryDusk"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:maxImageSize="32dp"
-                app:tint="#ff666666"
+                app:tint="@color/white"
                 app:useCompatPadding="true" />
 
             <!--<TextView
