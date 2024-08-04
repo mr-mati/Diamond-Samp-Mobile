@@ -48,6 +48,9 @@ class WebFragment : Fragment() {
         WebView.setWebContentsDebuggingEnabled(true)
         WebView.setWebContentsDebuggingEnabled(true)
 
+        binding.btnBack.setOnClickListener {
+            findNavController().navigate(R.id.action_webFragment_to_mainFragment)
+        }
 
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
@@ -60,7 +63,6 @@ class WebFragment : Fragment() {
                 }
             }
         })
-
     }
 
 

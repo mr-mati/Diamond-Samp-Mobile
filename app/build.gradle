@@ -53,6 +53,7 @@ dependencies {
     implementation "com.github.skydoves:colorpickerpreference:2.0.4"
     implementation 'ru.egslava:MaskedEditText:1.0.5'
     implementation 'androidx.activity:activity:1.9.0'
+    implementation 'com.google.firebase:firebase-crashlytics:19.0.3'
     testImplementation 'junit:junit:4.12'
     implementation 'com.github.Triggertrap:SeekArc:v1.1'
     implementation 'com.akexorcist:round-corner-progress-bar:2.1.2'

@@ -251,8 +251,8 @@ class SettingFragment : Fragment() {
                             )
                         )
                         Preferences.setNick(w["gui", "fps"])
-                        w.store()
                         w.put("gui", "fps", "30")
+                        w.store()
                     } catch (e: IOException) {
                         e.printStackTrace()
                     }
@@ -269,8 +269,8 @@ class SettingFragment : Fragment() {
                             )
                         )
                         Preferences.setNick(w["gui", "fps"])
-                        w.store()
                         w.put("gui", "fps", "60")
+                        w.store()
                     } catch (e: IOException) {
                         e.printStackTrace()
                     }
@@ -287,8 +287,8 @@ class SettingFragment : Fragment() {
                             )
                         )
                         Preferences.setNick(w["gui", "fps"])
-                        w.store()
                         w.put("gui", "fps", "120")
+                        w.store()
                     } catch (e: IOException) {
                         e.printStackTrace()
                     }

@@ -73,11 +73,11 @@ class MainFragment : Fragment() {
         handler.post(pingRunnable)
 
         LoadNick()
-        getStories(requireActivity())
-        CheckNewUpdate()
+       //getStories(requireActivity())
+        //CheckNewUpdate()
 
         if (CheckFile()) {
-            CeloeErrorDialog()
+            //CeloeErrorDialog()
         }
 
         if (IsGameInstalled()) {
@@ -137,7 +137,7 @@ class MainFragment : Fragment() {
 
     fun onClickPlay() {
         if (CheckFile()) {
-            CeloeErrorDialog()
+            //CeloeErrorDialog()
         } else {
             if (IsGameInstalled()) {
                 if (IsUpdateInstalled()) {
@@ -351,7 +351,6 @@ class MainFragment : Fragment() {
         val dialogBinding = ShopDialogBinding.inflate(layoutInflater)
         dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog.setView(dialogBinding.root)
-        dialog.setCancelable(false)
         dialog.show()
 
         dialogBinding.btnOpenTelegram.setOnClickListener {
