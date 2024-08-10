@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/hud_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/main_weapon"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/circle_weapon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/hud_weapon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/main_weapon"
+        app:layout_constraintEnd_toEndOf="@+id/main_weapon"
+        app:layout_constraintStart_toStartOf="@+id/main_weapon"
+        app:layout_constraintTop_toTopOf="@+id/main_weapon"
+        app:srcCompat="@drawable/weapon_0" />
+
+    <ImageView
+        android:id="@+id/main_info"
+        android:layout_width="220dp"
+        android:layout_height="250dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/rect_info"
+        app:layout_constraintBottom_toBottomOf="@+id/main_weapon"
+        app:layout_constraintEnd_toStartOf="@+id/hud_weapon"
+        app:layout_constraintTop_toTopOf="@+id/hud_weapon" />
+
+    <View
+        android:id="@+id/view_hp"
+        android:layout_width="1dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="52dp"
+        app:layout_constraintStart_toStartOf="@+id/main_info"
+        app:layout_constraintTop_toTopOf="@+id/hud_weapon" />
+
+    <ImageView
+        android:id="@+id/img_hp"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:src="@drawable/hp_icon"
+        app:layout_constraintBottom_toTopOf="@+id/hud_weapon"
+        app:layout_constraintStart_toEndOf="@+id/view_hp"
+        app:layout_constraintTop_toTopOf="@+id/view_hp" />
+
+    <ProgressBar
+        android:id="@+id/hud_health_pb"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="80dp"
+        android:layout_height="7.5dp"
+        android:layout_marginStart="16dp"
+        android:indeterminate="false"
+        android:progress="80"
+        android:progressDrawable="@drawable/progressbar"
+        app:layout_constraintBottom_toBottomOf="@+id/img_hp"
+        app:layout_constraintStart_toEndOf="@+id/img_hp"
+        app:layout_constraintTop_toTopOf="@+id/img_hp" />
+
+    <View
+        android:id="@+id/view_armour"
+        android:layout_width="1dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="42dp"
+        app:layout_constraintBottom_toTopOf="@+id/img_cash"
+        app:layout_constraintStart_toStartOf="@+id/main_info"
+        app:layout_constraintTop_toBottomOf="@+id/img_hp" />
+
+    <ImageView
+        android:id="@+id/img_armour"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:src="@drawable/armour_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/view_armour"
+        app:layout_constraintStart_toEndOf="@+id/view_armour"
+        app:layout_constraintTop_toTopOf="@+id/view_armour" />
+
+    <ProgressBar
+        android:id="@+id/hud_armour_pb"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="80dp"
+        android:layout_height="7.5dp"
+        android:layout_marginStart="16dp"
+        android:indeterminate="false"
+        android:progress="80"
+        android:progressDrawable="@drawable/progreessbar2"
+        app:layout_constraintBottom_toBottomOf="@+id/img_armour"
+        app:layout_constraintStart_toEndOf="@+id/img_armour"
+        app:layout_constraintTop_toTopOf="@+id/img_armour" />
+
+    <View
+        android:id="@+id/view_cash"
+        android:layout_width="1dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="32dp"
+        app:layout_constraintStart_toStartOf="@+id/main_info"
+        app:layout_constraintTop_toBottomOf="@+id/view_hp" />
+
+    <ImageView
+        android:id="@+id/img_cash"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:src="@drawable/cash_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/view_cash"
+        app:layout_constraintStart_toEndOf="@+id/view_cash"
+        app:layout_constraintTop_toTopOf="@+id/view_cash" />
+
+    <TextView
+        android:id="@+id/hud_money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/muller_bold"
+        android:text="250.477.815"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/_8sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_cash"
+        app:layout_constraintStart_toEndOf="@+id/img_cash"
+        app:layout_constraintTop_toTopOf="@+id/img_cash" />
+
+    <ImageView
+        android:id="@+id/hud_menu"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/menu_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/main_info"
+        app:layout_constraintEnd_toEndOf="@+id/main_weapon"
+        app:layout_constraintTop_toBottomOf="@+id/main_weapon" />
+
+    <ImageView
+        android:id="@+id/hud_tab"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/tablist_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/hud_menu"
+        app:layout_constraintEnd_toStartOf="@+id/hud_menu"
+        app:layout_constraintTop_toTopOf="@+id/hud_menu" />" />
+
+    <ImageView
+        android:id="@+id/radar_hude"
+        android:layout_width="103dp"
+        android:layout_height="103dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/mhud_radar"
+        android:backgroundTint="@color/orange"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/logobr"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="@drawable/mobile_logo"
+            tools:ignore="UseAppTint" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/hud_menu"
+        app:layout_constraintEnd_toStartOf="@+id/hud_menu"
+        app:layout_constraintStart_toStartOf="@+id/main_info"
+        app:layout_constraintTop_toTopOf="@+id/hud_menu">
+
+        <ImageView
+            android:id="@+id/hud_star_1"
+            android:layout_width="@dimen/_9sdp"
+            android:layout_height="@dimen/_9sdp"
+            android:layout_marginEnd="18dp"
+            android:src="@drawable/ic_star" />
+
+        <ImageView
+            android:id="@+id/hud_star_2"
+            android:layout_width="@dimen/_9sdp"
+            android:layout_height="@dimen/_9sdp"
+            android:layout_marginEnd="22dp"
+            android:src="@drawable/ic_star" />
+
+        <ImageView
+            android:id="@+id/hud_star_3"
+            android:layout_width="@dimen/_9sdp"
+            android:layout_height="@dimen/_9sdp"
+            android:layout_marginEnd="24dp"
+            android:src="@drawable/ic_star" />
+
+        <ImageView
+            android:id="@+id/hud_star_4"
+            android:layout_width="@dimen/_9sdp"
+            android:layout_height="@dimen/_9sdp"
+            android:layout_marginEnd="24dp"
+            android:src="@drawable/ic_star" />
+
+        <ImageView
+            android:id="@+id/hud_star_5"
+            android:layout_width="@dimen/_9sdp"
+            android:layout_height="@dimen/_9sdp"
+            android:layout_marginEnd="28dp"
+            android:src="@drawable/ic_star" />
+
+        <ImageView
+            android:id="@+id/hud_star_6"
+            android:layout_width="@dimen/_9sdp"
+            android:layout_height="@dimen/_9sdp"
+            android:layout_marginEnd="32dp"
+            android:src="@drawable/ic_star" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/img_shagerd"
+        android:layout_width="67dp"
+        android:layout_height="61dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/hud_tab"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout3"
+        app:layout_constraintTop_toBottomOf="@+id/hud_menu"
+        app:srcCompat="@drawable/img_sandalishagerd" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

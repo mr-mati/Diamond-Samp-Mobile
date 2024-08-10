@@ -125,7 +125,7 @@
             android:background="#ff000000"
             android:visibility="visible" />
 
-        <include layout="@layout/bhud_layout" />
+        <include layout="@layout/newhud" />
 
         <include layout="@layout/chat_layout" />
 
