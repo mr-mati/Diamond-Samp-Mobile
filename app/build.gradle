@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'org.jetbrains.kotlin.android'
+apply plugin: 'com.google.firebase.crashlytics'
 
 android {
     namespace 'com.mati.game'
@@ -34,6 +35,7 @@ android {
         multiDexEnabled = true
 
         ndk {
+            //noinspection ChromeOsAbiSupport
             abiFilters 'armeabi-v7a'
         }
     }
@@ -53,7 +55,7 @@ dependencies {
     implementation "com.github.skydoves:colorpickerpreference:2.0.4"
     implementation 'ru.egslava:MaskedEditText:1.0.5'
     implementation 'androidx.activity:activity:1.9.0'
-    implementation 'com.google.firebase:firebase-crashlytics:19.0.3'
+    implementation 'com.google.firebase:firebase-crashlytics:15.0.0'
     testImplementation 'junit:junit:4.12'
     implementation 'com.github.Triggertrap:SeekArc:v1.1'
     implementation 'com.akexorcist:round-corner-progress-bar:2.1.2'
