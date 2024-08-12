@@ -174,7 +174,6 @@
         custom:layout_constraintTop_toTopOf="@id/imageView9" />
 
     <TextView
-        android:id="@id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5.0dip"
