@@ -5,11 +5,8 @@ import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import com.google.firebase.analytics.FirebaseAnalytics
-import com.mati.game.R
 import com.mati.game.databinding.ActivityMainBinding
-import com.mati.launcher.newUi.fragments.MainFragment
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -35,15 +32,4 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-
-    /*private fun replaceFragment(fragment: Fragment) {
-        val transient = supportFragmentManager.beginTransaction()
-        transient.replace(R.id.frame_main, fragment)
-        transient.commit()
-    }
-
-    private fun fristFragment() {
-        replaceFragment(MainFragment())
-    }*/
-
 }

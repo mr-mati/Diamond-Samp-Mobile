@@ -18,7 +18,7 @@ import com.mati.game.databinding.FragmentWebBinding
 
 class WebFragment : Fragment() {
     lateinit var binding: FragmentWebBinding
-    private var loadingUrl = "https://PRPMOBILE.ir/"
+    private var loadingUrl = "https://SAMPRP.IR/"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

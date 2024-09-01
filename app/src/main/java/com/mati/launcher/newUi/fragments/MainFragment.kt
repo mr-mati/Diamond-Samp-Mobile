@@ -1,5 +1,6 @@
 package com.mati.launcher.newUi.fragments
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
@@ -20,16 +21,17 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 import com.mati.game.R
 import com.mati.game.core.Config
 import com.mati.game.core.GTASA
 import com.mati.game.databinding.FragmentMainBinding
 import com.mati.game.databinding.ShopDialogBinding
-import com.mati.launcher.activity.LoaderActivity
 import com.mati.launcher.activity.UpdateActivity
 import com.mati.launcher.adapter.NewsAdapter
 import com.mati.launcher.data.model.News
 import com.mati.launcher.data.model.Update
+import com.mati.launcher.newUi.DownloadActivity
 import com.mati.launcher.utils.Interface
 import com.mati.launcher.utils.Lists
 import com.mati.weikton.reg.Preferences
@@ -73,11 +75,13 @@ class MainFragment : Fragment() {
         handler.post(pingRunnable)
 
         LoadNick()
-       //getStories(requireActivity())
+        //getStories(requireActivity())
         //CheckNewUpdate()
 
+        checkAntiCheat()
+
         if (CheckFile()) {
-            //CeloeErrorDialog()
+            CeloeErrorDialog()
         }
 
         if (IsGameInstalled()) {
@@ -94,7 +98,19 @@ class MainFragment : Fragment() {
         }
 
         binding.setting.setOnClickListener {
-            findNavController().navigate(R.id.action_mainFragment_to_settingFragment)
+            if (IsGameInstalled()) {
+                findNavController().navigate(R.id.action_mainFragment_to_settingFragment)
+            } else {
+                val parentLayout: View = binding.root
+                Snackbar.make(
+                    parentLayout,
+                    "ابتدا با کلیک روی کلید دانلود دیتا را دانلود کنید",
+                    Snackbar.LENGTH_LONG
+                )
+                    .setAction("ok") { }
+                    .setActionTextColor(resources.getColor(android.R.color.holo_red_light))
+                    .show()
+            }
         }
 
         binding.shop.setOnClickListener {
@@ -108,10 +124,10 @@ class MainFragment : Fragment() {
         binding.download.setOnClickListener {
             if (IsGameInstalled()) {
                 if (!IsUpdateInstalled()) {
-                    ToUpdate()
+                    toUpdate()
                 }
             } else {
-                ToLoad()
+                toLoad()
             }
         }
 
@@ -137,7 +153,7 @@ class MainFragment : Fragment() {
 
     fun onClickPlay() {
         if (CheckFile()) {
-            //CeloeErrorDialog()
+            CeloeErrorDialog()
         } else {
             if (IsGameInstalled()) {
                 if (IsUpdateInstalled()) {
@@ -145,7 +161,7 @@ class MainFragment : Fragment() {
                         val ini = Ini(
                             File(
                                 Environment.getExternalStorageDirectory()
-                                    .toString() + "/PersianRp/version.ini"
+                                    .toString() + "/DiamondMobile/version.ini"
                             )
                         )
                         if (ini["version", "code"] == Config.VERSION_CODE_DATA) {
@@ -156,42 +172,46 @@ class MainFragment : Fragment() {
                                 checkValidNick()
                             }
                         } else {
-                            ToUpdate()
+                            toUpdate()
                         }
                     } catch (e: IOException) {
                         e.printStackTrace()
                     }
                 } else {
-                    ToUpdate()
+                    toUpdate()
                 }
             } else {
-                ToLoad()
+                toLoad()
             }
         }
     }
 
     private fun IsGameInstalled(): Boolean {
         val CheckFile =
-            Environment.getExternalStorageDirectory().toString() + "/PersianRp/texdb/gta3.img"
+            Environment.getExternalStorageDirectory().toString() + "/DiamondMobile/texdb/gta3.img"
         val file = File(CheckFile)
         return file.exists()
     }
 
     private fun IsUpdateInstalled(): Boolean {
         val CheckFile =
-            Environment.getExternalStorageDirectory().toString() + "/PersianRp/version.ini"
+            Environment.getExternalStorageDirectory().toString() + "/DiamondMobile/version.ini"
         val file = File(CheckFile)
         return file.exists()
     }
 
     fun CheckFile(): Boolean {
-        val directoryPath = Environment.getExternalStorageDirectory().toString() + "/PersianRp/"
-        val directoryCloe = Environment.getExternalStorageDirectory().toString() + "/PersianRp/cloe"
-        val directoryData = Environment.getExternalStorageDirectory().toString() + "/PersianRp/data"
-        val directorySamp = Environment.getExternalStorageDirectory().toString() + "/PersianRp/samp"
-        val directoryAnim = Environment.getExternalStorageDirectory().toString() + "/PersianRp/anim"
+        val directoryPath = Environment.getExternalStorageDirectory().toString() + "/DiamondMobile/"
+        val directoryCloe =
+            Environment.getExternalStorageDirectory().toString() + "/DiamondMobile/cloe"
+        val directoryData =
+            Environment.getExternalStorageDirectory().toString() + "/DiamondMobile/data"
+        val directorySamp =
+            Environment.getExternalStorageDirectory().toString() + "/DiamondMobile/samp"
+        val directoryAnim =
+            Environment.getExternalStorageDirectory().toString() + "/DiamondMobile/anim"
         val directoryPersian =
-            Environment.getExternalStorageDirectory().toString() + "/PersianRp/persian"
+            Environment.getExternalStorageDirectory().toString() + "/DiamondMobile/persian"
         val fileExtensions = arrayOf("cs", "asi", "csa", "csi", "so")
 
         return if (hasFiles(directoryAnim, fileExtensions) || hasFiles(
@@ -234,7 +254,7 @@ class MainFragment : Fragment() {
             val w = Ini(
                 File(
                     Environment.getExternalStorageDirectory()
-                        .toString() + "/PersianRp/persian/settings.ini"
+                        .toString() + "/DiamondMobile/persian/settings.ini"
                 )
             )
             Preferences.setNick(w["client", "name"])
@@ -282,7 +302,7 @@ class MainFragment : Fragment() {
 
                 if (data[0] != null) {
                     if (data[0]!!.version_code != Config.VERSION_CODE) {
-                        UpdateDialog(data[0]!!.mandatory)
+                        updateDialog(data[0]!!.mandatory)
                     }
                 } else {
                     tost("خطا در اتصال با سروور")
@@ -295,17 +315,28 @@ class MainFragment : Fragment() {
         })
     }
 
-    private fun ToLoad() {
-        val intent = Intent(requireContext(), LoaderActivity::class.java)
+    private fun toLoad() {
+        val intent = Intent(requireContext(), DownloadActivity::class.java)
         startActivity(intent)
     }
 
-    private fun ToUpdate() {
+    private fun toUpdate() {
         val intent = Intent(requireContext(), UpdateActivity::class.java)
         startActivity(intent)
     }
 
-    private fun UpdateDialog(visible: Int) {
+    @SuppressLint("ResourceAsColor")
+    private fun checkAntiCheat() {
+        if (IsGameInstalled() && IsUpdateInstalled()) {
+            binding.statsAntiCheat?.text = "Active"
+            binding.statsAntiCheat?.setTextColor(Color.parseColor("#ff3ea2ff"))
+        } else {
+            binding.statsAntiCheat?.text = "not Active"
+            binding.statsAntiCheat?.setTextColor(Color.parseColor("#E61717"))
+        }
+    }
+
+    private fun updateDialog(visible: Int) {
         val dialog = AlertDialog.Builder(requireContext()).create()
         dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog.setView(layoutInflater.inflate(R.layout.update_dialog, null))

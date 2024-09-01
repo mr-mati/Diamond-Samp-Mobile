@@ -1,5 +1,6 @@
 package com.mati.launcher.newUi
 
+import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.os.Environment
@@ -30,7 +31,6 @@ class DownloadActivity : AppCompatActivity() {
         binding = FragmentLoaderBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Setup FileDownloader
         FileDownloader.setup(applicationContext)
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
 
@@ -96,7 +96,7 @@ class DownloadActivity : AppCompatActivity() {
 
                 override fun completed(task: BaseDownloadTask) {
                     super.completed(task)
-                    binding.loadingText.text = "جعبه گشایی......"
+                    binding.loadingText.text = "جعبه گشایی..."
                     binding.loadingPercent.text = "2/3"
                     unZipCache()
                 }
@@ -124,12 +124,13 @@ class DownloadActivity : AppCompatActivity() {
     }
 
     private fun afterDownload() {
-        binding.loadingText.text = "کمی صبر کنید"
+        binding.loadingText.text = "کمی صبر و تقوا پیشه کنید"
         binding.loadingPercent.text = "3/3"
         Toast.makeText(this, "بازی با موفقیت نصب شد!", Toast.LENGTH_SHORT).show()
         CoroutineScope(Dispatchers.Main).launch {
             delay(5000)
-            recreate()
+            val intent = Intent(this@DownloadActivity, MainActivity::class.java)
+            startActivity(intent)
         }
     }
 }

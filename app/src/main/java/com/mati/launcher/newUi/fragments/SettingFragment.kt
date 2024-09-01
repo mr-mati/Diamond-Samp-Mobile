@@ -8,6 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AlertDialog
@@ -37,18 +39,25 @@ class SettingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        initListener()
+        initLoadSetting()
 
-        setFps()
-
-        LoadNick()
-        loadVoice()
-        loadData()
-        loadKeyboard()
-        loadFps()
 
         binding.btnBack.setOnClickListener {
             findNavController().navigate(R.id.action_settingFragment_to_mainFragment)
         }
+
+        requireActivity().onBackPressedDispatcher.addCallback(
+            viewLifecycleOwner,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    findNavController().navigate(R.id.action_settingFragment_to_mainFragment)
+                }
+            })
+
+    }
+
+    private fun initListener() {
 
         binding.btnEdit.setOnClickListener {
             changeNameDialog()
@@ -62,14 +71,23 @@ class SettingFragment : Fragment() {
 
         }
 
-        requireActivity().onBackPressedDispatcher.addCallback(
-            viewLifecycleOwner,
-            object : OnBackPressedCallback(true) {
-                override fun handleOnBackPressed() {
-                    findNavController().navigate(R.id.action_settingFragment_to_mainFragment)
-                }
-            })
+        binding.btnVoiceChat.setOnClickListener {
+            editVoice()
+        }
 
+        binding.keyboard.setOnClickListener {
+            editKeyboard()
+        }
+
+    }
+
+    private fun initLoadSetting() {
+        setFps()
+        LoadNick()
+        loadVoice()
+        loadData()
+        loadKeyboard()
+        loadFps()
     }
 
     private fun changeNameDialog() {
@@ -86,7 +104,7 @@ class SettingFragment : Fragment() {
             w = Ini(
                 File(
                     Environment.getExternalStorageDirectory()
-                        .toString() + "/PersianRp/persian/settings.ini"
+                        .toString() + "/DiamondMobile/persian/settings.ini"
                 )
             )
             Preferences.setNick(w["client", "name"])
@@ -106,7 +124,7 @@ class SettingFragment : Fragment() {
                 try {
                     val f = File(
                         Environment.getExternalStorageDirectory()
-                            .toString() + "/PersianRp/persian/settings.ini"
+                            .toString() + "/DiamondMobile/persian/settings.ini"
                     )
                     if (!f.exists()) {
                         f.createNewFile()
@@ -135,7 +153,7 @@ class SettingFragment : Fragment() {
             w = Ini(
                 File(
                     Environment.getExternalStorageDirectory()
-                        .toString() + "/PersianRp/persian/settings.ini"
+                        .toString() + "/DiamondMobile/persian/settings.ini"
                 )
             )
             Preferences.setNick(w["client", "name"])
@@ -172,7 +190,7 @@ class SettingFragment : Fragment() {
             w = Ini(
                 File(
                     Environment.getExternalStorageDirectory()
-                        .toString() + "/PersianRp/persian/settings.ini"
+                        .toString() + "/DiamondMobile/persian/settings.ini"
                 )
             )
             Preferences.setNick(w["gui", "voicelist"])
@@ -190,6 +208,33 @@ class SettingFragment : Fragment() {
                 }
             }
 
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+    }
+
+    private fun editVoice() {
+        try {
+            w = Ini(
+                File(
+                    Environment.getExternalStorageDirectory()
+                        .toString() + "/DiamondMobile/persian/settings.ini"
+                )
+            )
+            showDialog(
+                caption = "وضعیت ویس را انتیخاب کند",
+                txtBtn1 = "روشن",
+                txtBtn2 = "خاموش",
+                action1 = {
+                    tost("ویس را روشن کردید")
+                    w.put("gui", "voicelist", "1")
+                    w.store()
+                },
+                action2 = {
+                    tost("ویس را خاموش کردید")
+                    w.put("gui", "voicelist", "0")
+                    w.store()
+                })
         } catch (e: IOException) {
             e.printStackTrace()
         }
@@ -215,7 +260,7 @@ class SettingFragment : Fragment() {
             w = Ini(
                 File(
                     Environment.getExternalStorageDirectory()
-                        .toString() + "/PersianRp/persian/settings.ini"
+                        .toString() + "/DiamondMobile/persian/settings.ini"
                 )
             )
             Preferences.setNick(w["gui", "androidKeyboard"])
@@ -238,6 +283,33 @@ class SettingFragment : Fragment() {
         }
     }
 
+    private fun editKeyboard() {
+        try {
+            w = Ini(
+                File(
+                    Environment.getExternalStorageDirectory()
+                        .toString() + "/DiamondMobile/persian/settings.ini"
+                )
+            )
+            showDialog(
+                caption = "کیبورد بازی را انتخاب کنید",
+                txtBtn1 = "بازی",
+                txtBtn2 = "اندروید",
+                action1 = {
+                    tost("کیبورد روی بازی ست شد")
+                    w.put("gui", "androidKeyboard", "0")
+                    w.store()
+                },
+                action2 = {
+                    tost("کیبورد روی اندروید ست شد")
+                    w.put("gui", "androidKeyboard", "1")
+                    w.store()
+                })
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+    }
+
     private fun setFps() {
         binding.radioGropMain.setOnCheckedChangeListener { _, checkedId ->
             when (checkedId) {
@@ -247,7 +319,7 @@ class SettingFragment : Fragment() {
                         w = Ini(
                             File(
                                 Environment.getExternalStorageDirectory()
-                                    .toString() + "/PersianRp/persian/settings.ini"
+                                    .toString() + "/DiamondMobile/persian/settings.ini"
                             )
                         )
                         Preferences.setNick(w["gui", "fps"])
@@ -265,7 +337,7 @@ class SettingFragment : Fragment() {
                         w = Ini(
                             File(
                                 Environment.getExternalStorageDirectory()
-                                    .toString() + "/PersianRp/persian/settings.ini"
+                                    .toString() + "/DiamondMobile/persian/settings.ini"
                             )
                         )
                         Preferences.setNick(w["gui", "fps"])
@@ -283,7 +355,7 @@ class SettingFragment : Fragment() {
                         w = Ini(
                             File(
                                 Environment.getExternalStorageDirectory()
-                                    .toString() + "/PersianRp/persian/settings.ini"
+                                    .toString() + "/DiamondMobile/persian/settings.ini"
                             )
                         )
                         Preferences.setNick(w["gui", "fps"])
@@ -303,7 +375,7 @@ class SettingFragment : Fragment() {
             w = Ini(
                 File(
                     Environment.getExternalStorageDirectory()
-                        .toString() + "/PersianRp/persian/settings.ini"
+                        .toString() + "/DiamondMobile/persian/settings.ini"
                 )
             )
             Preferences.setNick(w["gui", "fps"])
@@ -336,16 +408,56 @@ class SettingFragment : Fragment() {
 
     private fun IsGameInstalled(): Boolean {
         val CheckFile =
-            Environment.getExternalStorageDirectory().toString() + "/PersianRp/texdb/gta3.img"
+            Environment.getExternalStorageDirectory().toString() + "/DiamondMobile/texdb/gta3.img"
         val file = File(CheckFile)
         return file.exists()
     }
 
     private fun IsUpdateInstalled(): Boolean {
         val CheckFile =
-            Environment.getExternalStorageDirectory().toString() + "/PersianRp/version.ini"
+            Environment.getExternalStorageDirectory().toString() + "/DiamondMobile/version.ini"
         val file = File(CheckFile)
         return file.exists()
+    }
+
+    private fun showDialog(
+        caption: String,
+        txtBtn1: String,
+        txtBtn2: String,
+        action1: () -> Unit,
+        action2: () -> Unit,
+    ) {
+
+        val dialog = AlertDialog.Builder(requireContext()).create()
+        dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.setView(layoutInflater.inflate(R.layout.dialog_setting, null))
+        dialog.setCancelable(true)
+        dialog.show()
+
+        val txtCaption = dialog.findViewById<TextView>(R.id.txt_caption)
+
+        txtCaption?.text = caption
+
+        val txt1 = dialog.findViewById<TextView>(R.id.txt_1)
+        val txt2 = dialog.findViewById<TextView>(R.id.txt_2)
+
+        txt1?.text = txtBtn1
+        txt2?.text = txtBtn2
+
+        val btn1 = dialog.findViewById<LinearLayout>(R.id.btn_1)
+        val btn2 = dialog.findViewById<LinearLayout>(R.id.btn_2)
+
+        btn1?.setOnClickListener {
+            action1()
+            dialog.dismiss()
+            initLoadSetting()
+        }
+
+        btn2?.setOnClickListener {
+            action2()
+            dialog.dismiss()
+            initLoadSetting()
+        }
     }
 
     private fun tost(pon: String) {
