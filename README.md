@@ -49,47 +49,32 @@
   <div class="screenshot-grid">
     <!-- card 1 -->
     <div class="shot-card">
-      <div class="shot-placeholder">
+      <div class="https://github.com/mr-mati/Diamond-Samp-Mobile/blob/main/IMG_20260714_010653_896.jpg">
         <span>🏠</span> Main Menu
       </div>
       <div class="shot-label">Launcher Home</div>
     </div>
     <!-- card 2 -->
     <div class="shot-card">
-      <div class="shot-placeholder">
+      <div class="https://github.com/mr-mati/Diamond-Samp-Mobile/blob/main/IMG_20260714_010559_956.jpg">
         <span>🕹️</span> In‑Game HUD
       </div>
       <div class="shot-label">Custom HUD</div>
     </div>
     <!-- card 3 -->
     <div class="shot-card">
-      <div class="shot-placeholder">
-        <span>🚗</span> Vehicle Panel
+      <div class="https://github.com/mr-mati/Diamond-Samp-Mobile/blob/main/IMG_20260714_010527_734.jpg">
+        <span>🚗</span> Vehicle
       </div>
       <div class="shot-label">Vehicle Manager</div>
     </div>
     <!-- card 4 -->
     <div class="shot-card">
-      <div class="shot-placeholder">
-        <span>👤</span> Player Shadow
-      </div>
-      <div class="shot-label">Dynamic Shadows</div>
-    </div>
-    <!-- card 5 -->
-    <div class="shot-card">
-      <div class="shot-placeholder">
+      <div class="https://github.com/mr-mati/Diamond-Samp-Mobile/blob/main/IMG_20260714_010547_918.jpg">
         <span>🖼️</span> Texture Quality
       </div>
       <div class="shot-label">Enhanced Textures</div>
     </div>
-    <!-- card 6 -->
-    <div class="shot-card">
-      <div class="shot-placeholder">
-        <span>🌐</span> Server Browser
-      </div>
-      <div class="shot-label">Server List</div>
-    </div>
-  </div>
 
   <!-- ===== SYSTEM REQUIREMENTS ===== -->
   <h2>📱 System Requirements</h2>
