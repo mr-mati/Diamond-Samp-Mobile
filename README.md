@@ -147,8 +147,8 @@ cd diamond-samp-mobile
   <!-- ===== CONTACT ===== -->
   <h2>📬 Contact &amp; Support</h2>
   <ul>
-    <li><strong>Discord</strong>: <a href="#">Join our server</a></li>
-    <li><strong>Telegram</strong>: @DiamondSAMP</li>
+    <li><strong>Mail</strong>: <a href="mdy.mati@gmail.com">mdy.mati@gmail.com</a></li>
+    <li><strong>Telegram</strong>: @Mr_Mati</li>
     <li><strong>Issues</strong>: <a href="#">GitHub Issues</a></li>
   </ul>
 
