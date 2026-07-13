@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>📱 Diamond SAMP Mobile</title>
 </head>
 <body>
 
@@ -11,7 +10,7 @@
 
   <!-- ===== BANNER ===== -->
   <div class="banner">
-    <h1>Mr Mati</h1>
+    <h1>📱 Diamond SAMP Mobile</h1>
     <div class="sub">The Ultimate SAMP Client for Android – Optimized, Feature-Rich, and Performance-Driven</div>
     <div class="badge-row">
       <span class="badge"><i>🤖</i> Android 4 – 15</span>
